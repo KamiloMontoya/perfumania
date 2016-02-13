@@ -4,14 +4,18 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th>Acciones</th>
   </tr>
  
   <% @all_productos.each do |article| %>
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
+      <td><a href="/productos/<%= article.id %>"> Ver </a></td>
+
     </tr>
   <% end %>
 </table>
-<button  type="button" class="btn btn-success"><a href="/productos/new">Click Me!</a></button>
-
+<a href="/productos/new">
+  <button  type="button" class="btn btn-success">Agregar un nuevo Producto</button>
+</a>
