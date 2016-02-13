@@ -1,4 +1,4 @@
-Instalación en MAC_OS_X_10.11 - el Capitan
+Instalación en MAC_OS_X_10.11 - el Capitan.
 
 1. Instalar curl (verificar versión con el comando curl --version)
 2. Instalar homebrew
