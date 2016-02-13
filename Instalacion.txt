@@ -40,3 +40,6 @@ Ejecución del Proyecto - Primera vez.
 5. Arrancar el Servidor
 	rails server
 
+Integrando Bootstrap
+	http://www.fotolinux.org/programacion/rubyonrails/integrando-bootstrap-en-rails/
+
