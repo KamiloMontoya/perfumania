@@ -1,0 +1,42 @@
+Instalación en MAC_OS_X_10.11 - el Capitan
+
+1. Instalar curl (verificar versión con el comando curl --version)
+2. Instalar homebrew
+	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+3. Instalar RVM
+	\curl -sSL https://get.rvm.io | bash -s stable
+	source .bash_profile
+	type rvm | head -1  ## Para verificar la correcta instalación de RVM
+
+	## Instalamos la versión 1.9.3 de ruby por medio del RVMs
+	rvm install 1.9.3
+	rvm list
+	rvm --default use <version>
+4. Instalar la gema de rails
+	gem install rails
+5. Se puede instalr git por medio del comando:
+	brew install git
+6. Instalar MYSQL
+	brew install mysql
+	# To have launchd start mysql at login:
+	ln -sfv /usr/local/opt/mysql/*plist ~/Library/LaunchAgents
+
+	# Then to load mysql now:
+	launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+
+	#lanzar el servidor
+	mysql.server start
+
+
+Ejecución del Proyecto - Primera vez.
+
+1. Instalando gemas respectivas  (Asegurarse de que el servidor MYSQL esté correindo)
+	bundle install
+2. En el archivo /config/database.yml verificar USER y PASSWORD para la conexión con MYSQL
+3. Creando las Bases de datos
+	rake db:setup
+4. Ejecutando Migraciones
+	rake db:migrate
+5. Arrancar el Servidor
+	rails server
+
