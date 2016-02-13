@@ -47,6 +47,3 @@ group :development, :test do
   gem 'spring'
 end
 
-# CAmilo gay
-# Diego aspero
-
