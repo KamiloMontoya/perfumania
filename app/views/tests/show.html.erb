@@ -1,0 +1,74 @@
+
+<% if notice %>
+<p id="notice" class="alert alert-success" role="alert" ><%= notice %></p>
+<% end %>
+
+<h3> Test: <%= @test.name %>
+<%= link_to '   Editar', edit_test_path(@test),{ :class=>"label label-primary"} %>
+</h3>
+
+<table class="table table-hover table-responsive" align="center">
+  <thead>
+    <tr>
+      <th>Preguntas</th>
+      <th> Acciones</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tfoot>
+     <tr>
+      <td><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">Agregar Pregunta </button></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <%  @test.questions.each do |quest| %>
+      <tr>
+        <td><%= quest.title %></td>
+        <td>
+          <%= link_to 'Opciones de Respuesta', ''+@test.id.to_s+'/questions/'+quest.id.to_s, { :class=>"btn btn-info"} %>
+        </td>
+        <td>
+          <%= link_to 'Eliminar', quest, {method: :delete, data: { confirm: 'Desea eliminar esta pregunta?' }, :class=>"btn btn-danger"}%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to 'Volver al listado', tests_path, {:class => "btn btn-success btn-sm"}%>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Agregar Preguntas:</h4>
+      </div>
+      <div class="modal-body"> 
+        <%= form_for([@test, @test.questions.build],{:class => "form-horizontal" }) do |f| %>
+          <div class="form-inline">
+            <label class="control-label">Pregunta: </label>
+            <%= f.text_area :title, {:class => "form-control"} %>
+          </div>
+          <div class="form-group" style="display:none;">
+            <%= f.number_field :test_id, {:class => "form-control col-md-2"} %>
+          </div>   
+          <div class="modal-footer">
+              <%= f.submit 'Agregar', :class => "btn btn-success btn-sm"%>
+          </div>       
+        <% end %>         
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

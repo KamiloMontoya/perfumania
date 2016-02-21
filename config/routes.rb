@@ -1,10 +1,21 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :questions
+  resources :tests
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
    resources :productos
    root 'welcome#index'
+
+  resources :questions do
+    resources :answers
+  end
+
+  resources :tests do
+    resources :questions
+  end
 
   # Example of regular route:
      # get 'productos/:id' => 'productos#view'

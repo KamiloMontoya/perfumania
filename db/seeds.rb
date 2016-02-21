@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Test.create(id: 1 ,name: "Descubre tu fragancia masculína")
+
+Question.create(id: 1, title: "¿Con qué color te identificas?", test_id: 1)

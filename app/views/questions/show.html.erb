@@ -1,0 +1,70 @@
+<% if notice %>
+<p id="notice" class="alert alert-success" role="alert" ><%= notice %></p>
+<% end %>
+
+<h2> Pregunta: <%= @question.title %>
+<%= link_to '   Editar', edit_question_path(@question),{ :class=>"label label-primary"} %>
+</h2>
+
+
+
+<table class="table table-hover table-responsive" align="center">
+  <thead>
+    <tr>
+      <th>Respuestas</th>
+      <th> Acciones</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tfoot>
+     <tr>
+      <td><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal">Agregar Respuesta </button></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <% @question.answers.each do |answer| %>
+      <tr>
+        <td><%= answer.title %></td>
+        <td>
+          <%= link_to 'Eliminar', answer, {method: :delete, data: { confirm: 'Desea eliminar esta respuesta?' }, :class=>"btn btn-danger"}%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to 'Volver al test', '/tests/'+@question.test_id.to_s, {:class => "btn btn-success btn-sm"}%>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Agregar opción de respuesta:</h4>
+      </div>
+      <div class="modal-body"> 
+        <%= form_for([@question, @question.answers.build]) do |f| %>
+          <div class="form-inline">
+            <label class="control-label">Respuesta: </label>
+            <%= f.text_field :title, {:class => "form-control"} %>
+          </div>
+          <div class="form-group" style="display:none;">
+            <%= f.number_field :question_id, {:class => "form-control col-md-2"} %>
+          </div>   
+          <div class="modal-footer">
+              <%= f.submit 'Agregar', :class => "btn btn-success btn-sm"%>
+          </div>       
+        <% end %>         
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
