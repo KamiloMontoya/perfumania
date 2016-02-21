@@ -28,8 +28,8 @@ class TestsController < ApplicationController
 
     respond_to do |format|
       if @test.save
-        format.html { redirect_to @test, notice: 'Test was successfully created.' }
-        format.json { render :show, status: :created, location: @test }
+        format.html { redirect_to '/tests', notice: 'Nuevo test, creado exitosamente.' }
+        format.json { render :show, status: :created, location: '/tests' }
       else
         format.html { render :new }
         format.json { render json: @test.errors, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class TestsController < ApplicationController
   def update
     respond_to do |format|
       if @test.update(test_params)
-        format.html { redirect_to @test, notice: 'Test was successfully updated.' }
+        format.html { redirect_to @test, notice: 'Test actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @test }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class TestsController < ApplicationController
   def destroy
     @test.destroy
     respond_to do |format|
-      format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }
+      format.html { redirect_to tests_url, notice: 'Test eliminado.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class TestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def test_params
-      params.require(:test).permit(:name)
+      params.require(:test).permit(:name, :description)
     end
 end
