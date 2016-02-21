@@ -52,7 +52,7 @@
       </div>
       <div class="modal-body"> 
         <%= form_for([@test, @test.questions.build],{:class => "form-horizontal" }) do |f| %>
-          <div class="form-inline">
+          <div class="form-group">
             <label class="control-label">Pregunta: </label>
             <%= f.text_area :title, {:class => "form-control"} %>
           </div>
