@@ -27,6 +27,10 @@ Instalación en MAC_OS_X_10.11 - el Capitan.
 	#lanzar el servidor
 	mysql.server start
 
+NOTA: Si se presentan problemas con el RVM, instalar las versiones deshabilitando el autolib:
+$ rvm autolibs disable
+$ rvm requirements # manually install these
+$ rvm install ruby
 
 Ejecución del Proyecto - Primera vez.
 
