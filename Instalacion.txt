@@ -47,3 +47,9 @@ Ejecución del Proyecto - Primera vez.
 Integrando Bootstrap
 	http://www.fotolinux.org/programacion/rubyonrails/integrando-bootstrap-en-rails/
 
+Generando un módulo Scaffold:
+
+rails generate scaffold Products name:string description:string category_id:integer segment_id:integer image_path:string
+
+
+
