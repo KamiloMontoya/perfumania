@@ -1,16 +1,28 @@
 
 <% number = 1 %>
-
-<% @test.questions.each do |question| %>
-<% leter= 'A' %>
-<b><%= number.to_s %> <%= '. ' << question.title %></b>
-<br>
-	<ul>
-	<% question.answers.each do |answer| %>
-	<li><%= leter.chr %> <%='. ' << answer.title %></li>
-	<% leter = leter.ord + 1 %>
+<%= form_tag({:controller => "test", :action => "preview"}, :method => "post") do %>
+	<div class="form-group">
+	    <%= label_tag "name", "Nombres y Apellidos" %>
+	    <%= text_field_tag "Nombre", "", :required => "required" %>
+    </div>
+	<div class="form-group">
+		<%= label_tag "email", "Correo Electrónico" %>
+	    <%= text_field_tag "Correo Electrónico", "", :required => "required" %>
+    </div>
+	<% @test.questions.each do |question| %>
+		<% leter= 'A' %>
+	 	<div class="form-group">
+	    <label><%= number.to_s %> <%= '. ' << question.title %></label>
+	    </div>
+			<ul>
+			<% question.answers.each do |answer| %>
+			<li><%= leter.chr %> <%='. ' << answer.title %></li>
+			<% leter = leter.ord + 1 %>
+			<% end %>
+			</ul>
+		<br>
+		<% number += 1 %>
 	<% end %>
-	</ul>
-<br>
-<% number += 1 %>
-<% end %>
+
+	 <%= submit_tag "Enviar" %>
+<% end %> <!-- End Form -->
