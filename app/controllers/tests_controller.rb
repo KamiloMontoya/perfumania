@@ -64,6 +64,8 @@ class TestsController < ApplicationController
   # Preview test_preview/1
   def preview
      @test = Test.find(params[:id])
+     if request.post?
+     end
   end
 
   private
