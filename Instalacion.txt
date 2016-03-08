@@ -34,8 +34,10 @@ $ rvm install ruby
 
 Ejecución del Proyecto - Primera vez.
 
-1. Instalando gemas respectivas  (Asegurarse de que el servidor MYSQL esté correindo)
-	bundle install
+1. Instalando gemas respectivas  (Asegurarse de que el servidor MYSQL esté correindo, y que se haya instalalado MYSQL con el comando brew install mysql )
+		bundle install
+	NOTA: Si al correr el comando bota el error que el comando bundle no existe, se debe instalar por medio de la siguiente línea:
+		sudo gem install bundler
 2. En el archivo /config/database.yml verificar USER y PASSWORD para la conexión con MYSQL
 3. Creando las Bases de datos
 	rake db:setup
@@ -48,8 +50,7 @@ Integrando Bootstrap
 	http://www.fotolinux.org/programacion/rubyonrails/integrando-bootstrap-en-rails/
 
 Generando un módulo Scaffold:
-
-rails generate scaffold Products name:string description:string category_id:integer segment_id:integer image_path:string
+	rails generate scaffold Products name:string description:string category_id:integer segment_id:integer image_path:string
 
 
 
