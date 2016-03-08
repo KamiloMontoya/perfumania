@@ -1,0 +1,16 @@
+
+<% number = 1 %>
+
+<% @test.questions.each do |question| %>
+<% leter= 'A' %>
+<b><%= number.to_s %> <%= '. ' << question.title %></b>
+<br>
+	<ul>
+	<% question.answers.each do |answer| %>
+	<li><%= leter.chr %> <%='. ' << answer.title %></li>
+	<% leter = leter.ord + 1 %>
+	<% end %>
+	</ul>
+<br>
+<% number += 1 %>
+<% end %>
