@@ -63,8 +63,13 @@ class TestsController < ApplicationController
 
   # Preview test_preview/1
   def preview
-     @test = Test.find(params[:id])
+    @test = Test.find(params[:id])
+  end
+
+  #Procesa los datos del formulario
+  def preview_proccess
      if request.post?
+        abort(params.inspect)
      end
   end
 

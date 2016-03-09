@@ -1,13 +1,13 @@
 
 <% number = 1 %>
-<%= form_tag({:controller => "test", :action => "preview"}, :method => "post") do %>
+<%= form_tag('/preview_proccess', :method => "post") do %>
 	<div class="form-group">
 	    <%= label_tag "name", "Nombres y Apellidos" %>
-	    <%= text_field_tag "Nombre", "", :required => "required" %>
+	    <%= text_field_tag "name", "", :required => "required" %>
     </div>
 	<div class="form-group">
 		<%= label_tag "email", "Correo Electrónico" %>
-	    <%= text_field_tag "Correo Electrónico", "", :required => "required" %>
+	    <%= text_field_tag "email", "", :required => "required" %>
     </div>
 	<% @test.questions.each do |question| %>
 		<% leter= 'A' %>
