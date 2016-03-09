@@ -13,6 +13,7 @@ class Product < ActiveRecord::Base
 
 	def photo_filename
 		File.join Rails.root, 'public', 'img', 'products', "#{id}.#{@extension}"
+
 	end
 
 	private

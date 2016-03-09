@@ -1,29 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @product.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descripción:</strong>
   <%= @product.description %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>Categoria:</strong>
   <%= @product.category_id %>
 </p>
 
 <p>
-  <strong>Segment:</strong>
+  <strong>Segmento:</strong>
   <%= @product.segment_id %>
 </p>
 
 <p>
-  <strong>Image path:</strong>
+  <strong>Imagen:</strong>
   <%= image_tag @product.image_path %>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Editar', edit_product_path(@product) %> |
+<%= link_to 'Volver', products_path %>
