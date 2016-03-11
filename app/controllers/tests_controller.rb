@@ -69,6 +69,9 @@ class TestsController < ApplicationController
   #Procesa los datos del formulario
   def preview_proccess
      if request.post?
+        name = params[:name]
+        email = params[:email]
+        test_id = params[:test_id]
         abort(params.inspect)
      end
   end
