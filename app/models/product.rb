@@ -1,12 +1,11 @@
 class Product < ActiveRecord::Base
 	#attr_accessible :image_path, :description, :name, :category_id, :segment_id
-	after_save :save_image
+	after_save :save_image, :save_image_path
 
 	def image=(file_data)
 		unless file_data.blank?
 			@file_data = file_data
 			@extension = file_data.original_filename.split('.').last.downcase	
-			self.image_path = "/img/products/#{id}.#{@extension}"	
 		end
 		
 	end
@@ -22,9 +21,15 @@ class Product < ActiveRecord::Base
 			File.open(photo_filename,'wb') do |f|
 				f.write(@file_data.read)
 			end
-			@file_data = nil
-
+			@file_data = nil			
 		end
+	end
+
+	def save_image_path
+		product_id_2 = self.id
+
+		image_path_new = "/img/products/#{product_id_2}.#{@extension}"
+		self.update_column(:image_path, image_path_new)
 	end
 
 end

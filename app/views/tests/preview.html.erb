@@ -1,0 +1,37 @@
+
+<% number = 1 %>
+<div class="row">
+	<h2> <%= @test.name%> </h2>
+	<p> <%= @test.description %> </p>		
+</div>
+
+<%= form_tag('/preview_proccess', :method => "post") do %>
+	<div class="form-group" style="display:none">
+		<input name="test_id" value=<%= @test.id%> > </input>
+	</div>
+	<div class="field form-group">
+	    <%= label_tag "name", "Nombres y Apellidos" %>
+	    <%= text_field_tag "name", "", required: "required" %>
+    </div>
+	<div class="field form-group">
+		<%= label_tag "email", "Correo Electrónico" %>
+	    <%= email_field_tag "email", "", required: "required" %>
+    </div>
+	<% @test.questions.each do |question| %>
+		<% leter= 'A' %>
+	 	<div class="field form-group">
+	    <label class=""><%= number.to_s %> <%= '. ' << question.title %></label>
+	    	<fieldset>
+	    		<% question.answers.each do |answer| %>
+	    			<%= radio_button_tag "question_#{question.id}", answer.id, false, {required: 'required'} %>
+	    			<%= label_tag question.id, leter.chr+'. '+ answer.title %>
+	    			
+	    			<% leter = leter.ord + 1 %>
+	    		<% end %>
+	    	</fieldset>
+		</div>
+		<% number += 1 %>
+	<% end %>
+
+	 <%= submit_tag "Enviar", id: "submit", name: "submit", class: "form_submit", disabled: false, disable_with: "Por favor espere..." %>
+<% end %> <!-- End Form -->
