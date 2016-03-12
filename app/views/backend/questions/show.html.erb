@@ -3,7 +3,7 @@
 <% end %>
 
 <h3> Pregunta: <%= @question.title %>
-<%= link_to '   Editar', edit_question_path(@question),{ :class=>"label label-primary"} %>
+<%= link_to '   Editar', edit_backend_question_path(@question),{ :class=>"label label-primary"} %>
 </h3>
 
 
@@ -28,7 +28,7 @@
       <tr>
         <td><%= answer.title %></td>
         <td>
-          <%= link_to 'Eliminar', answer, {method: :delete, data: { confirm: 'Desea eliminar esta respuesta?' }, :class=>"btn btn-danger"}%>
+          <%= link_to 'Eliminar', [:backend, answer], {method: :delete, data: { confirm: 'Desea eliminar esta respuesta?' }, :class=>"btn btn-danger"}%>
         </td>
       </tr>
     <% end %>
@@ -37,7 +37,7 @@
 
 
 
-<%= link_to 'Volver al test', '/tests/'+@question.test_id.to_s, {:class => "btn btn-success btn-sm"}%>
+<%= link_to 'Volver al test', backend_test_path(@question.test_id.to_s), {:class => "btn btn-success btn-sm"}%>
 
 
 <div class="modal fade" id="myModal" role="dialog">
@@ -49,7 +49,7 @@
         <h4 class="modal-title">Agregar opción de respuesta:</h4>
       </div>
       <div class="modal-body"> 
-        <%= form_for([@question, @question.answers.build]) do |f| %>
+        <%= form_for([:backend, @question, @question.answers.build]) do |f| %>
           <div class="form-group">
             <label class="control-label">Respuesta: </label>
             <%= f.text_area :title, {:class => "form-control"} %>

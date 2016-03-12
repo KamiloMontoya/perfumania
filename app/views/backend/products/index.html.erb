@@ -22,9 +22,9 @@
         <td><%= product.category_id %></td>
         <td><%= product.segment_id %></td>
         <td><%= image_tag product.image_path, {:height=>"60"} %></td>
-        <td><%= link_to 'Mostrar', product, { :class=>"btn btn-primary"}  %></td>
-        <td><%= link_to 'Editar', edit_product_path(product),{ :class=>"btn btn-primary"}  %></td>
-        <td><%= link_to 'Eliminar', product, {method: :delete, data: { confirm: '¿Está seguro?' }, :class=>"btn btn-primary"}%></td>
+        <td><%= link_to 'Mostrar', [:backend, product], { :class=>"btn btn-primary"}  %></td>
+        <td><%= link_to 'Editar', edit_backend_product_path(product),{ :class=>"btn btn-primary"}  %></td>
+        <td><%= link_to 'Eliminar', [:backend, product], {method: :delete, data: { confirm: '¿Está seguro?' }, :class=>"btn btn-primary"}%></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'Nuevo producto', new_product_path,{ :class=>"btn btn-success" } %>
+<%= link_to 'Nuevo producto', new_backend_product_path,{ :class=>"btn btn-success" } %>

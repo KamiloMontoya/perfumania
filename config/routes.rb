@@ -1,30 +1,38 @@
 Rails.application.routes.draw do
-  resources :products
-  resources :answers
-  resources :questions
-  resources :tests
+
+  namespace :backend do
+    
+    resources :products
+    resources :tests
+    resources :answers
+    resources :questions 
+
+    resources :questions do
+      resources :answers
+    end
+
+    resources :tests do
+      resources :questions
+    end
+
+    get '/test_preview/:id', to: 'tests#preview', as: 'test_preview'
+    post '/preview_proccess', to: 'tests#preview_proccess'
+
+    root 'welcome#index'
+    
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   resources :productos
-   root 'welcome#index'
-
-  resources :questions do
-    resources :answers
-  end
-
-  resources :tests do
-    resources :questions
-  end
+  
 
   # Example of regular route:
      # get 'productos/:id' => 'productos#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-  get '/test_preview/:id', to: 'tests#preview', as: 'test_preview'
-  post '/preview_proccess', to: 'tests#preview_proccess'
+  
 
 
   # Example resource route (maps HTTP verbs to controller actions automatically):

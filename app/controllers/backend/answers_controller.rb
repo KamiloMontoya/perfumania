@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class Backend::AnswersController < Backend::ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   # GET /answers
@@ -30,8 +30,8 @@ class AnswersController < ApplicationController
       if @answer.save
         puts answer_params;
         #format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
-        format.html { redirect_to "/questions/" + @answer.question_id.to_s, notice: 'Respuesta creada exitosamente.' }
-        format.json { render :show, status: :created, location: @answer }
+        format.html { redirect_to backend_question_path(@answer.question_id.to_s), notice: 'Respuesta creada exitosamente.' }
+        format.json { render :show, status: :created, location: backend_question_path(@answer.question_id.to_s) }
 
       else
         format.html { render :new }
@@ -45,11 +45,11 @@ class AnswersController < ApplicationController
   def update
     respond_to do |format|
       if @answer.update(answer_params)
-        format.html { redirect_to @answer, notice: 'Respuesta actuaizada.' }
-        format.json { render :show, status: :ok, location: @answer }
+        format.html { redirect_to [:backend, @answer], notice: 'Respuesta actuaizada.' }
+        format.json { render :show, status: :ok, location: [:backend, @answer] }
       else
         format.html { render :edit }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
+        format.json { render json: [:backend, @answer.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -60,7 +60,7 @@ class AnswersController < ApplicationController
     @answer.destroy
     respond_to do |format|
       #format.html { redirect_to answers_url, notice: 'Answer was successfully destroyed.' }
-      format.html { redirect_to "/questions/" + @answer.question_id.to_s, notice: 'Respuesta eliminada satisfactoriamente.' }
+      format.html { redirect_to backend_question_path(@answer.question_id.to_s), notice: 'Respuesta eliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

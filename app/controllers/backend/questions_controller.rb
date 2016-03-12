@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Backend::QuestionsController < Backend::ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   # GET /questions
@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
     respond_to do |format|
       if @question.save
         # format.html { redirect_to @question, notice: 'Question was successfully created.' } 
-        format.html { redirect_to "/tests/" + @question.test_id.to_s, notice: 'Pregunta Añadida.' }
+        format.html { redirect_to backend_test_path(@question.test_id.to_s), notice: 'Pregunta Añadida.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
@@ -44,11 +44,11 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Pregunta actualizada correctamente.' }
-        format.json { render :show, status: :ok, location: @question }
+        format.html { redirect_to [:backend, @question], notice: 'Pregunta actualizada correctamente.' }
+        format.json { render :show, status: :ok, location: [:backend, @question] }
       else
         format.html { render :edit }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+        format.json { render json: [:backend, @question.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -59,7 +59,7 @@ class QuestionsController < ApplicationController
     @question.destroy
     respond_to do |format|
       #format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
-      format.html { redirect_to "/tests/" + @question.test_id.to_s, notice: 'Pregunta eliminada satisfactoriamente.' }
+      format.html { redirect_to backend_test_path(@question.test_id.to_s), notice: 'Pregunta eliminada satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

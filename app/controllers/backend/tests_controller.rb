@@ -1,4 +1,4 @@
-class TestsController < ApplicationController
+class Backend::TestsController < Backend::ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
 
   # GET /tests
@@ -28,8 +28,8 @@ class TestsController < ApplicationController
 
     respond_to do |format|
       if @test.save
-        format.html { redirect_to '/tests', notice: 'Nuevo test, creado exitosamente.' }
-        format.json { render :show, status: :created, location: '/tests' }
+        format.html { redirect_to backend_tests_path, notice: 'Nuevo test, creado exitosamente.' }
+        format.json { render :show, status: :created, location: backend_tests_path }
       else
         format.html { render :new }
         format.json { render json: @test.errors, status: :unprocessable_entity }
@@ -42,11 +42,11 @@ class TestsController < ApplicationController
   def update
     respond_to do |format|
       if @test.update(test_params)
-        format.html { redirect_to @test, notice: 'Test actualizado exitosamente.' }
-        format.json { render :show, status: :ok, location: @test }
+        format.html { redirect_to [:backend, @test], notice: 'Test actualizado exitosamente.' }
+        format.json { render :show, status: :ok, location: [:backend, @test] }
       else
         format.html { render :edit }
-        format.json { render json: @test.errors, status: :unprocessable_entity }
+        format.json { render json: [:backend, @test.errors], status: :unprocessable_entity }
       end
     end
   end
@@ -56,7 +56,7 @@ class TestsController < ApplicationController
   def destroy
     @test.destroy
     respond_to do |format|
-      format.html { redirect_to tests_url, notice: 'Test eliminado.' }
+      format.html { redirect_to backend_tests_url, notice: 'Test eliminado.' }
       format.json { head :no_content }
     end
   end
@@ -88,11 +88,11 @@ class TestsController < ApplicationController
           actual_response.name = name
           actual_response.response = answ
           actual_response.save
-          redirect_to '/tests', notice: 'Gracias por contar con nosotros, sus respuestas fueron almacenadas correctamente'
+          redirect_to '/backend/tests', notice: 'Gracias por contar con nosotros, sus respuestas fueron almacenadas correctamente'
         else
           new_test = TestResponse.new(name: name, email: email, test_id: test_id, response: answ)
           new_test.save
-          redirect_to '/tests', notice: 'Gracias por contar con nosotros, sus respuestas fueron almacenadas correctamente'
+          redirect_to '/backend/tests', notice: 'Gracias por contar con nosotros, sus respuestas fueron almacenadas correctamente'
         end
        
      end
