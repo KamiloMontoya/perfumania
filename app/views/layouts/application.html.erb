@@ -30,6 +30,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Encuestas <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/tests">Administración de tests</a></li>
+            <% Test.all.each do |t| %>
+              <li><a href="/test_preview/<%= t.id %>"> <%= t.name %></a></li>
+            <% end %>
           </ul>
         </li>
         <li><a href="#">Nuestras Tiendas</a></li>
