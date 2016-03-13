@@ -16,5 +16,5 @@ Answer.create(title: "Rosa", question_id: 1)
 Answer.create(title: "Rojo", question_id: 1)
 
 Product.create(id: 1 ,name: "Bulgari", description: "Fragancia Bulgari", image_path: "/img/products/1.jpg", category_id: 1)
-Product.create(id: 2 ,name: "Hugo Boss", description: "Fragancia Hugo Boss", image_path: "/img/products/2.jpg", category_id: 1)
-Product.create(id: 3 ,name: "Bleu", description: "Fragancia Bleu de Chanel", image_path: "/img/products/3.jpg", category_id: 1)
+Product.create(id: 2 ,name: "Hugo Boss", description: "Fragancia Hugo Boss", image_path: "/img/products/2.jpeg", category_id: 1)
+Product.create(id: 3 ,name: "Bleu", description: "Fragancia Bleu de Chanel", image_path: "/img/products/3.jpeg", category_id: 1)

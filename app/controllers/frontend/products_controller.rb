@@ -5,7 +5,7 @@ class Frontend::ProductsController < Frontend::ApplicationController
 	# GET /products/{id} id = Category_id
   	# GET /products/1.json
 	def show
-		@category = params[:id]
+		@category = params[:id].to_i
 		@products = Product.where(category_id: @category)
 	end
 end
