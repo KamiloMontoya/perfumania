@@ -23,8 +23,11 @@ Rails.application.routes.draw do
   end
 
   root 'frontend/welcome#index'
+  
   namespace :frontend do
     root 'welcome#index'
+    get '/test_preview/:id', to: 'test#preview', as: 'test_preview'
+    post '/preview_proccess', to: 'test#preview_proccess'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

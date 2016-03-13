@@ -4,29 +4,29 @@
     <title>Perfumania</title>
     <meta charset="utf-8">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="site/img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/site/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
     <meta name = "format-detection" content = "telephone=no" />
     <meta name="description" content="Perfumania">
     <meta name="keywords" content="Perfumes">
     <meta name="author" content="Camilo y Diego">
-    <link rel="stylesheet" href="site/css/bootstrap.css" >
-    <link rel="stylesheet" href="site/css/style.css">
-    <link rel="stylesheet" href="site/css/camera.css">
+    <link rel="stylesheet" href="/site/css/bootstrap.css" >
+    <link rel="stylesheet" href="/site/css/style.css">
+    <link rel="stylesheet" href="/site/css/camera.css">
     
-  <script src="site/js/jquery.js"></script>
-    <script src="site/js/jquery-migrate-1.2.1.js"></script>
-    <script src="site/js/superfish.js"></script>
-    <script src="site/js/jquery.mobilemenu.js"></script>
-    <script src="site/js/jquery.easing.1.3.js"></script>
-    <script src="site/js/jquery.ui.totop.js"></script>
-    <script src="site/js/jquery.touchSwipe.min.js"></script>
-    <script src="site/js/jquery.equalheights.js"></script>
+  <script src="/site/js/jquery.js"></script>
+    <script src="/site/js/jquery-migrate-1.2.1.js"></script>
+    <script src="/site/js/superfish.js"></script>
+    <script src="/site/js/jquery.mobilemenu.js"></script>
+    <script src="/site/js/jquery.easing.1.3.js"></script>
+    <script src="/site/js/jquery.ui.totop.js"></script>
+    <script src="/site/js/jquery.touchSwipe.min.js"></script>
+    <script src="/site/js/jquery.equalheights.js"></script>
     
          
-    <script src='site/js/camera.js'></script>
+    <script src='/site/js/camera.js'></script>
     <!--[if (gt IE 9)|!(IE)]><!-->
-        <script src="site/js/jquery.mobile.customized.min.js"></script>
+        <script src="/site/js/jquery.mobile.customized.min.js"></script>
     <!--<![endif]-->
     
     <script>  
@@ -56,9 +56,9 @@
       </div>
       <div class="menuheader">
           <div class="container">
-            <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+            <nav class="navbar navbar-default tm_navbar" role="navigation">
                 <ul class="nav sf-menu">
-                  <li class="active"><a href="index.html">Inicio</a>
+                  <li class="active"><a href="/">Inicio</a>
                     <!-- <ul>
                       <li><img src="img/arrowup.png" alt=""><a href="#">info</a></li>
                       <li><a href="#">profile</a></li>
@@ -70,10 +70,17 @@
                       </li>
                     </ul> -->
                   </li>
-                  <li><a href="index-1.html">Productos</a></li>
-                  <li><a href="index-2.html">Articulos</a></li>
-                  <li><a href="index-3.html">Encuestas</a></li>
-                  <li><a href="index-4.html">Contactanos</a></li>
+                  <li><a href="">Productos</a></li>
+                  <li><a href="">Articulos</a></li>
+
+                  <li><a href="">Encuestas</a>
+                    <ul>
+                        <% Test.all.each do |t| %>
+                        <li><a href=<%= frontend_test_preview_path(t)%> > <%= t.name %></a></li>
+                        <% end %>
+                    </ul>
+                  </li>
+                  <li><a href="">Contactanos</a></li>
                 </ul>
             </nav>
           </div>
@@ -93,14 +100,14 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
                 <ul class="social_icons clearfix">
-                     <li><a href="#"><img src="site/img/follow_icon1.png" alt=""></a></li>
-                     <li><a href="#"><img src="site/img/follow_icon2.png" alt=""></a></li>
-                     <li><a href="#"><img src="site/img/follow_icon3.png" alt=""></a></li>
-                     <li><a href="#"><img src="site/img/follow_icon4.png" alt=""></a></li>
+                     <li><a href="#"><img src="/site/img/follow_icon1.png" alt=""></a></li>
+                     <li><a href="#"><img src="/site/img/follow_icon2.png" alt=""></a></li>
+                     <li><a href="#"><img src="/site/img/follow_icon3.png" alt=""></a></li>
+                     <li><a href="#"><img src="/site/img/follow_icon4.png" alt=""></a></li>
                 </ul>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="index.html"><img src="site/img/logofooter.png" alt=""></a>
+                <a class="smalllogo2 logo" href="index.html"><img src="/site/img/logofooter.png" alt=""></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
                 <p class="footerpriv">&copy; 2013 &bull; <a class="privacylink" href="index-5.html">Privacy policy</a>More  at <a rel="nofollow" href="http://www.templatemonster.com/category.php?category=0&type=1" target="_blank">TemplateMonster.com</a></p>
@@ -108,7 +115,7 @@
         </div>
     </div>
 </footer>
-<script src="site/js/bootstrap.min.js"></script>
-<script src="site/js/tm-scripts.js"></script>
+<script src="/site/js/bootstrap.min.js"></script>
+<script src="/site/js/tm-scripts.js"></script>
 </body>
 </html>
