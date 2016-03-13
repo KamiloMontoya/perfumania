@@ -1,0 +1,26 @@
+
+<div class="row_3">
+    <div class="container">
+    <% if @category == 1 %>
+    <h2> Fragancias Masculinas</h2>
+    <% else %>
+    <h2> Fragancias Femeninas</h2>
+    <% end %>
+        <div class="row">
+        <% @products.each do |product| %>
+            <ul class="list3">
+                <li class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="box4">
+                        <figure><img src="<%= product.image_path %>" alt=""></figure>
+                        <div class="info1 maxheight">
+                            <p class="list3title1"><%= product.name %></p>
+                            <p class="list3title2"><%= product.description %></p>
+                            <a href="#" class="btn-link btn-link1">Ver<span></span></a>
+                        </div>
+                    </div>
+                </li> 
+            </ul>
+            <% end %>
+        </div>
+    </div>
+</div>
