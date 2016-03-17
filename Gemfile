@@ -51,6 +51,7 @@ group :development do
 end
 
 
-# CAmilo gay
-# Diego aspero
+# Gemas para Google Maps
+gem 'underscore-rails'
+gem 'gmaps4rails'
 

@@ -52,5 +52,7 @@ Integrando Bootstrap
 Generando un módulo Scaffold:
 	rails generate scaffold Products name:string description:string category_id:integer segment_id:integer image_path:string
 
+GEMA DE GOOGLE MAPS
+	https://github.com/apneadiving/Google-Maps-for-Rails
 
 
