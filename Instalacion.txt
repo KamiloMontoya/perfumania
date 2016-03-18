@@ -46,13 +46,22 @@ Ejecución del Proyecto - Primera vez.
 5. Arrancar el Servidor
 	rails server
 
-Integrando Bootstrap
-	http://www.fotolinux.org/programacion/rubyonrails/integrando-bootstrap-en-rails/
-
 Generando un módulo Scaffold:
 	rails generate scaffold Products name:string description:string category_id:integer segment_id:integer image_path:string
 
+Integrando Bootstrap:
+	http://www.fotolinux.org/programacion/rubyonrails/integrando-bootstrap-en-rails/
+
 GEMA DE GOOGLE MAPS
 	https://github.com/apneadiving/Google-Maps-for-Rails
+
+Tutorial para Login con redes Sociales:
+	http://blog.desafiolatam.com/login-con-facebook-y-twitter-para-tu-proyecto-rails/
+
+Botones de Compartir en redes Sociales:
+	https://richonrails.com/articles/adding-social-sharing-buttons-to-your-rails-app
+
+Facebook JS_SDK
+https://developers.facebook.com/docs/javascript/quickstart/v2.5
 
 
