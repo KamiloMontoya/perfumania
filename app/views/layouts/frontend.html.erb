@@ -10,13 +10,13 @@
     <meta name="description" content="Perfumania">
     <meta name="keywords" content="Perfumes">
     <meta name="author" content="Camilo y Diego">
+
+    <%= javascript_include_tag 'front'%>
     <link rel="stylesheet" href="/site/css/bootstrap.css" >
     <link rel="stylesheet" href="/site/css/style.css">
     <link rel="stylesheet" href="/site/css/camera.css">
-
-    <%= javascript_include_tag 'application'%>
     
-  <script src="/site/js/jquery.js"></script>
+    <script src="/site/js/jquery.js"></script>
     <script src="/site/js/jquery-migrate-1.2.1.js"></script>
     <script src="/site/js/superfish.js"></script>
     <script src="/site/js/jquery.mobilemenu.js"></script>
@@ -33,9 +33,7 @@
     
     <script>  
         $(window).load( function(){ 
-            
-             jQuery('.camera_wrap').camera();  
-               
+             jQuery('.camera_wrap').camera();        
         });
     </script>
     
