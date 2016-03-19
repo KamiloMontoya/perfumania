@@ -50,6 +50,11 @@ group :development do
   gem 'spring'
 end
 
+#Autenticación y seguridad del backend
+gem 'devise'
+
+#Proteccion de claves para mailer	
+gem 'dotenv-rails'
 
 # Gemas para Google Maps
 gem 'underscore-rails'

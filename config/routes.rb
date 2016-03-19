@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+  root 'frontend/welcome#index'
+  devise_for :users, path: "auth"
+  
   namespace :backend do
-    
     resources :products
     resources :tests
     resources :answers
@@ -19,10 +21,7 @@ Rails.application.routes.draw do
     post '/preview_proccess', to: 'tests#preview_proccess'
 
     root 'welcome#index'
-    
   end
-
-  root 'frontend/welcome#index'
   
   namespace :frontend do
     root 'welcome#index'
@@ -34,7 +33,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+  # You c an have the root of your site routed with "root"
   
 
   # Example of regular route:

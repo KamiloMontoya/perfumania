@@ -55,6 +55,9 @@ Integrando Bootstrap:
 GEMA DE GOOGLE MAPS
 	https://github.com/apneadiving/Google-Maps-for-Rails
 
+CONFIGURAR MAILEER
+http://blog.desafiolatam.com/recuperar-contrasenas-con-devise-y-gmail/
+
 Tutorial para Login con redes Sociales:
 	http://blog.desafiolatam.com/login-con-facebook-y-twitter-para-tu-proyecto-rails/
 
