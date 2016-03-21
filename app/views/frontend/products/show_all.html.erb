@@ -3,11 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-sm-4">
-            <% if @category == 1 %>
-                <h1 class="wow fadeIn"> Fragancias Masculinas</h2>
-            <% else %>
-                <h1 class="wow fadeIn"> Fragancias Femeninas</h2>
-            <% end %>
+            <h1 class="wow fadeIn"> Fragancias</h2>
           </div>
           <div class="col-lg-8 col-sm-8">
             <ol class="breadcrumb pull-right">
@@ -16,17 +12,8 @@
                   Inicio
                 </a>
               </li>
-              <li>
-                <a href="/frontend/products_all">
-                  Nuestras Fragancias
-                </a>
-              </li>
               <li class="active">
-                <% if @category == 1 %>
-                  Fragancias Masculinas
-                <% else %>
-                   Fragancias Femeninas
-                <% end %>
+                  Nuestras Fragancias
               </li>
             </ol>
           </div>
@@ -37,26 +24,41 @@
     <div class="container career-inner">
     <div class="row">
         <div class="col-md-12 career-head">
-        <% if @category == 1 %>
-            <h1 class="wow fadeIn"> Fragancias Masculinas</h2>
-        <% else %>
-            <h1 class="wow fadeIn"> Fragancias Femeninas</h2>
-        <% end %>
+            <h1 class="wow fadeIn"> Nuestras Fragancias</h2>
         </div>
     </div>
     <hr>
     <div class="row">
 
-    <div class="col-md-2 col-md-offset-1">
+    <div class="col-md-2">
         <div class="candidate wow fadeInLeft">
+        Fragancias Maculinas
+        <hr>
             <ul id="list" class="list-unstyled">
                 <% @products.each do |product| %>
+                <% if product.category_id == 1 %>
                 <li id=<%= product.id %> onclick="modal_funt(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
                 <% end %>
+                <% end %>
             </ul>
-        </div>
-        <hr>     
+        </div>    
     </div>
+
+
+    <div class="col-md-2">
+        <div class="candidate wow fadeInLeft">
+        Fragancias Femenínas
+        <hr>
+            <ul id="list" class="list-unstyled">
+                <% @products.each do |product| %>
+                <% if product.category_id == 2 %>
+                <li id=<%= product.id %> onclick="modal_funt(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
+                <% end %>
+                <% end %>
+            </ul>
+        </div>    
+    </div>
+
     <div class="col-md-4">
         <div class="candidate wow fadeInRight">
             <div id="img-product">
@@ -66,7 +68,7 @@
             </div>
         </div>     
     </div>
-    <div class="col-md-5">
+    <div class="col-md-4">
         <div class="candidate wow fadeInRight">
             <% if @products.first %>
             <h1 id="name-product"><%= @products.first.name %></h1>
@@ -77,6 +79,8 @@
         </div>     
     </div>
 </div>
+
+<hr> 
 
 <%= render "frontend/partial/modal_product" %>
 
@@ -160,4 +164,5 @@
     };
 
     wow.init();
+    
 </script>

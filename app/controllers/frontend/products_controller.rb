@@ -9,6 +9,11 @@ class Frontend::ProductsController < Frontend::ApplicationController
 		@products = Product.where(category_id: @category)
 	end
 
+	def show_all
+		@products = Product.all
+		@categories = {1 => 'Fragancias Maculinas', 2 =>  'Fragancias Femeninas'} 
+	end
+
 	def product_detail
 		product = Product.find(params[:id])
 		

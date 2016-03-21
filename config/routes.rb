@@ -31,7 +31,9 @@ Rails.application.routes.draw do
 
     get '/product_detail/:id', to: 'products#product_detail', as: 'product_detail'
 
+
     resources :products
+    get '/products_all', to: 'products#show_all', as: 'products_all'
 
     get '/blog', to: 'blogs#index', as: 'blogs'
     get '/about', to: 'about#index', as: 'about'
