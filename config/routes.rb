@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     get '/test_preview/:id', to: 'test#preview', as: 'test_preview'
     post '/preview_proccess', to: 'test#preview_proccess'
 
+    get '/product_detail/:id', to: 'products#product_detail', as: 'product_detail'
+
     resources :products
   end
   # The priority is based upon order of creation: first created -> highest priority.
