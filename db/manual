@@ -1,0 +1,6 @@
+--Apagar servidor mysql.
+/etc/init.d/mysql stop
+sudo mysqld_safe --skip-grant-tables
+mysql -u root
+mysql> UPDATE mysql.user SET Password=PASSWORD('password') WHERE User='root';
+sudo /usr/local/mysql/support-files/mysql.server start
