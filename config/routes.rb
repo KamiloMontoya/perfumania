@@ -32,6 +32,10 @@ Rails.application.routes.draw do
     get '/product_detail/:id', to: 'products#product_detail', as: 'product_detail'
 
     resources :products
+
+    get '/blog', to: 'blogs#index', as: 'blogs'
+    get '/about', to: 'about#index', as: 'about'
+    get '/contact', to: 'contact#index', as: 'contact'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

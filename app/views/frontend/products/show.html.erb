@@ -1,4 +1,35 @@
-<div class="container career-inner">
+<!--breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <% if @category == 1 %>
+                <h1 class="wow fadeIn"> Fragancias Masculinas</h2>
+            <% else %>
+                <h1 class="wow fadeIn"> Fragancias Femeninas</h2>
+            <% end %>
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="/">
+                  Inicio
+                </a>
+              </li>
+              <li class="active">
+                <% if @category == 1 %>
+                  Fragancias Masculinas
+                <% else %>
+                   Fragancias Femeninas
+                <% end %>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container career-inner">
     <div class="row">
         <div class="col-md-12 career-head">
         <% if @category == 1 %>
