@@ -1,11 +1,13 @@
 class Backend::ProductsController < Backend::ApplicationController
 
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.all.order(top_position: :asc)
   end
 
   # GET /products/1
@@ -70,6 +72,6 @@ class Backend::ProductsController < Backend::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :category_id, :segment_id, :image_path, :image)
+      params.require(:product).permit(:name, :description, :category_id, :segment_id, :image, :top_position)
     end
 end

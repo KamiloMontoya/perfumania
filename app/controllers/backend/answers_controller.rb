@@ -1,5 +1,6 @@
 class Backend::AnswersController < Backend::ApplicationController
   before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /answers
   # GET /answers.json

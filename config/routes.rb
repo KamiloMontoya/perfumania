@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   root 'frontend/welcome#index'
-  devise_for :users, path: "auth"
-  
+  #devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => ''}
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+
   namespace :backend do
     resources :products
     resources :tests
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
     root 'welcome#index'
     get '/test_preview/:id', to: 'test#preview', as: 'test_preview'
     post '/preview_proccess', to: 'test#preview_proccess'
+
+    get '/product_detail/:id', to: 'products#product_detail', as: 'product_detail'
 
     resources :products
   end

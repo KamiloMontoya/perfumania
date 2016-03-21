@@ -8,4 +8,16 @@ class Frontend::ProductsController < Frontend::ApplicationController
 		@category = params[:id].to_i
 		@products = Product.where(category_id: @category)
 	end
+
+	def product_detail
+		product = Product.find(params[:id])
+		
+		respond_to do |format|
+	        format.json { render json: {"product" => product, 
+	        							"img_medium" => product.image.url(:medium), 
+	        							"img_thumb" => product.image.url(:thumb) }}
+	      end
+	end
+
+
 end

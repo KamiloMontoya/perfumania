@@ -2,13 +2,15 @@
 
 <h1>Listado de Productos</h1>
 
+<% categories = {1 => 'Fragancias Maculinas', 2 =>  'Fragancias Femeninas'} %>
+
 <table class="table table-hover table-bordered table-responsive" text-align="center">
   <thead>
     <tr>
-      <th class="text-center" >Nombre</th>
+      <th class="text-center">Nombre</th>
       <th class="text-center">Descripción</th>
       <th class="text-center">Categoria</th>
-      <th class="text-center">Segmento</th>
+      <th class="text-center">Top 10 Posición</th>
       <th class="text-center">Imagen</th>
       <th class="text-center" colspan="3"></th>
     </tr>
@@ -19,12 +21,12 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.category_id %></td>
-        <td><%= product.segment_id %></td>
-        <td><%= image_tag product.image_path, {:height=>"60"} %></td>
+        <td><%= categories[product.category_id] %></td>
+        <td><%= product.top_position %></td>
+        <td><%= image_tag(product.image.url(:thumb)) %></td>
         <td><%= link_to 'Mostrar', [:backend, product], { :class=>"btn btn-primary"}  %></td>
-        <td><%= link_to 'Editar', edit_backend_product_path(product),{ :class=>"btn btn-primary"}  %></td>
-        <td><%= link_to 'Eliminar', [:backend, product], {method: :delete, data: { confirm: '¿Está seguro?' }, :class=>"btn btn-primary"}%></td>
+        <td><%= link_to 'Editar', edit_backend_product_path(product),{ :class=>"btn btn-warning"}  %></td>
+        <td><%= link_to 'Eliminar', [:backend, product], {method: :delete, data: { confirm: '¿Está seguro?' }, :class=>"btn btn-danger" }%></td>
       </tr>
     <% end %>
   </tbody>
