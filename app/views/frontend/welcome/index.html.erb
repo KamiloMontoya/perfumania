@@ -161,13 +161,35 @@
   </div>
 </div>
 
-
+<%= render "frontend/partial/modal_product" %>
 <!--property start-->
 <div class="property gray-bg">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
-        <img src="/site/img/tab1.png" alt="">
+        <h1> Top 10 productos destacádos</h1>
+
+        <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
+        <ul id="list-top" class="list-unstyled">
+        <% @top_products.each do |product| %>
+          <li id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a><%= product.name %></a></li>
+        <% end %>
+        </ul> 
+        </div>
+
+        <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
+          <div id="top-img-product">
+                <% if @top_products.first %>
+                <%= image_tag(@top_products.first.image.url(:medium)) %>
+                <% end %>
+            </div>      
+        </div>
+        <hr>
+        <a href="javascript:;" class="btn btn-purchase">
+          Ver más
+        </a>
+
+        </div>
       </div>
       <div class="col-lg-6 col-sm-6 wow fadeInRight">
         <h1>
@@ -422,6 +444,36 @@
 
 
     <script>
+      $( "li" ).mouseover(function() {
+        var id = $( this ).attr("id");
+        $.ajax({
+           type: "GET",
+           url: "/frontend/product_detail/"+id,
+           dataType: "json",
+           success: function (data) {
+               $( "#top-img-product" ).html("");
+               $( "#top-img-product" ).append( '<img onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+           }
+       });
+      });
+      function modal_funt(id) {
+        $.ajax({
+           type: "GET",
+           url: "/frontend/product_detail/"+id,
+           dataType: "json",
+           success: function (data) {
+               $( ".modal-title" ).html("");
+               $( "#desc-product-modal" ).html("");
+               $( "#img-product-modal" ).html("");
+               
+               $( ".modal-title" ).append( data.product.name);
+               $( "#img-product-modal" ).append( "<img src=" + data.img_medium + ">");
+               $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");
+               $("#myModal").modal('toggle');
+           }
+         });
+      };
+
       $('a.info').tooltip();
 
       $(window).load(function() {

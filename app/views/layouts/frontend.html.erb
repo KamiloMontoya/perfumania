@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -75,18 +75,25 @@
                       </a>
                       <ul class="dropdown-menu">
                           <li>
-                              <a href="typography.html">Masculinas</a>
+                              <a href="/frontend/products/1">Masculinas</a>
                           </li>
                           <li>
-                              <a href="button.html">Femeninas</a>
+                              <a href="frontend/products/2">Femeninas</a>
                           </li>
                       </ul>
                   </li>
                   <li>
                       <a href="contact.html">Blog</a>
                   </li>
-                  <li>
-                      <a href="contact.html">Encuesta</a>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                      "dropdown" data-toggle="dropdown" href="#">Encuestas <i class="fa fa-angle-down"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                      <% Test.all.each do |t| %>
+                        <li><a href=<%= frontend_test_preview_path(t)%> > <%= t.name %></a></li>
+                      <% end %>
+                      </ul>
                   </li>
                   <li>
                       <a href="contact.html">Contactenos</a>
