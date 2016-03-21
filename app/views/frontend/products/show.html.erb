@@ -1,40 +1,42 @@
 <!--breadcrumbs start-->
-    <div class="breadcrumbs">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 col-sm-4">
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-4">
+        <% if @category == 1 %>
+            <h1 class="wow fadeIn"> Fragancias Masculinas</h2>
+        <% else %>
+            <h1 class="wow fadeIn"> Fragancias Femeninas</h2>
+        <% end %>
+      </div>
+      <div class="col-lg-8 col-sm-8">
+        <ol class="breadcrumb pull-right">
+          <li>
+            <a href="/">
+              Inicio
+            </a>
+          </li>
+          <li>
+            <a href="/frontend/products_all">
+              Nuestras Fragancias
+            </a>
+          </li>
+          <li class="active">
             <% if @category == 1 %>
-                <h1 class="wow fadeIn"> Fragancias Masculinas</h2>
+              Fragancias Masculinas
             <% else %>
-                <h1 class="wow fadeIn"> Fragancias Femeninas</h2>
+               Fragancias Femeninas
             <% end %>
-          </div>
-          <div class="col-lg-8 col-sm-8">
-            <ol class="breadcrumb pull-right">
-              <li>
-                <a href="/">
-                  Inicio
-                </a>
-              </li>
-              <li>
-                <a href="/frontend/products_all">
-                  Nuestras Fragancias
-                </a>
-              </li>
-              <li class="active">
-                <% if @category == 1 %>
-                  Fragancias Masculinas
-                <% else %>
-                   Fragancias Femeninas
-                <% end %>
-              </li>
-            </ol>
-          </div>
-        </div>
+          </li>
+        </ol>
       </div>
     </div>
+  </div>
+</div>
+    
+<!-- <div class="property gray-bg"> -->
 
-    <div class="container career-inner">
+  <div class="container career-inner">
     <div class="row">
         <div class="col-md-12 career-head">
         <% if @category == 1 %>
@@ -57,7 +59,7 @@
         </div>
         <hr>     
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3 col-md-offset-1">
         <div class="candidate wow fadeInRight">
             <div id="img-product">
                 <% if @products.first %>
@@ -76,7 +78,9 @@
              <% end %>   
         </div>     
     </div>
-</div>
+  </div>
+<!-- </div> -->
+
 
 <%= render "frontend/partial/modal_product" %>
 
