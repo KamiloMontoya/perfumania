@@ -1,127 +1,353 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>Perfumania</title>
-    <meta charset="utf-8">    
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/site/img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" />
-    <meta name = "format-detection" content = "telephone=no" />
-    <meta name="description" content="Perfumania">
-    <meta name="keywords" content="Perfumes">
-    <meta name="author" content="Camilo y Diego">
+    <meta name="description" content="Developed By M Abdur Rokib Promy">
+    <meta name="author" content="cosmic">
+    <meta name="keywords" content="Bootstrap 3, Template, Theme, Responsive, Corporate, Business">
+    <link rel="shortcut icon" href="/site/img/favicon.png">
 
-    <%= javascript_include_tag 'front'%>
-    <link rel="stylesheet" href="/site/css/bootstrap.css" >
-    <link rel="stylesheet" href="/site/css/style.css">
-    <link rel="stylesheet" href="/site/css/camera.css">
-    
-    <script src="/site/js/jquery.js"></script>
-    <script src="/site/js/jquery-migrate-1.2.1.js"></script>
-    <script src="/site/js/superfish.js"></script>
-    <script src="/site/js/jquery.mobilemenu.js"></script>
-    <script src="/site/js/jquery.easing.1.3.js"></script>
-    <script src="/site/js/jquery.ui.totop.js"></script>
-    <script src="/site/js/jquery.touchSwipe.min.js"></script>
-    <script src="/site/js/jquery.equalheights.js"></script>
-    
-         
-    <script src='/site/js/camera.js'></script>
-    <!--[if (gt IE 9)|!(IE)]><!-->
-        <script src="/site/js/jquery.mobile.customized.min.js"></script>
-    <!--<![endif]-->
-    
-    <script>  
-        $(window).load( function(){ 
-             jQuery('.camera_wrap').camera();        
-        });
+    <title>
+      Acme | Home
+    </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/site/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/site/css/theme.css" rel="stylesheet">
+    <link href="/site/css/bootstrap-reset.css" rel="stylesheet">
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet">-->
+
+    <!--external css-->
+    <link href="/site/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/site/css/flexslider.css"/>
+    <link href="/site/assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/site/css/animate.css">
+    <link rel="stylesheet" href="/site/assets/owlcarousel/owl.carousel.css">
+    <link rel="stylesheet" href="/site/assets/owlcarousel/owl.theme.css">
+
+    <link href="/site/css/superfish.css" rel="stylesheet" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="/site/css/component.css">
+    <link href="/site/css/style_main.css" rel="stylesheet">
+    <link href="/site/css/style-responsive.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css" />
+    <script type="text/javascript" src="/site/js/parallax-slider/modernizr.custom.28468.js">
     </script>
-    
-    
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
-    <div style='text-align:center'><a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." /></a></div>  
-    <link rel="stylesheet" href="assets/tm/css/tm_docs.css" type="text/css" media="screen">
-    <script src="assets/assets/js/html5shiv.js"></script> 
-    <script src="assets/assets/js/respond.min.js"></script>
-  <![endif]-->
-</head>
+    <script src="js/html5shiv.js">
+    </script>
+    <script src="js/respond.min.js">
+    </script>
+    <![endif]-->
+        <%= javascript_include_tag 'front'%>
+  </head>
 
-<body>
-<!--==============================header=================================-->
-<header id="header">
-      <div class="container">
-        <h1 class="">
-        <img alt="Perfumaía"  width="500" height="100" src="/site/img/logo.png"></h1>
-      </div>
-      <div class="menuheader">
-          <div class="container">
-            <nav class="navbar navbar-default tm_navbar" role="navigation">
-                <ul class="nav sf-menu">
-                  <li class="active"><a href="/">Inicio</a>
-                    <!-- <ul>
-                      <li><img src="img/arrowup.png" alt=""><a href="#">info</a></li>
-                      <li><a href="#">profile</a></li>
-                      <li><a class="last" href="#">news</a>
-                        <ul>
-                           <li><a href="#">fresh</a></li>
-                           <li><a class="last" href="#">archive</a></li>                       
-                        </ul>
-                      </li>
-                    </ul> -->
+  <body>
+    <!--header start-->
+    <header class="head-section">
+      <div class="navbar navbar-default navbar-static-top container">
+          <div class="navbar-header">
+              <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="index.html">A<span>cme</span></a>
+          </div>
+          <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                      "dropdown" data-toggle="dropdown" href="index.html">Home <i class="fa fa-angle-down"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="index.html">Home Parallax</a>
+                          </li>
+                          <li>
+                              <a href="index1.html">Home Seq-slider1</a>
+                          </li>
+                          <li>
+                              <a href="index2.html">Home Seq-slider2</a>
+                          </li>
+                      </ul>
                   </li>
-                  <li><a href="">Fragancias</a>
-                    <ul>
-                      <li><a href=<%= frontend_product_path('1')%> > Masculinas</a></li>
-                      <li><a href=<%= frontend_product_path('2')%> > Femenínas</a></li>
-                    </ul>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                      "dropdown" data-toggle="dropdown" href="#">Feature <i class="fa fa-angle-down"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="typography.html">Typography</a>
+                          </li>
+                          <li>
+                              <a href="button.html">Buttons</a>
+                          </li>
+                          <li>
+                              <a href="form.html">Form</a>
+                          </li>
+                          <li>
+                              <a href="table.html">Table</a>
+                          </li>
+                          <li class="dropdown-submenu">
+                              <a href="#" tabindex="-1">More options</a>
+                              <ul class="dropdown-menu">
+                                  <li>
+                                      <a href="#" tabindex="-1">Second level</a>
+                                  </li>
+                                  <li class="dropdown-submenu">
+                                      <a href="#">Even More..</a>
+                                      <ul class="dropdown-menu">
+                                          <li>
+                                              <a href="#">3rd level</a>
+                                          </li>
+                                          <li>
+                                              <a href="#">3rd level</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">Second level</a>
+                                  </li>
+                                  <li>
+                                      <a href="#">Second level</a>
+                                  </li>
+                              </ul>
+                          </li>
+                      </ul>
                   </li>
-                  <li><a href="">Articulos</a></li>
-
-                  <li><a href="">Encuestas</a>
-                    <ul>
-                        <% Test.all.each do |t| %>
-                        <li><a href=<%= frontend_test_preview_path(t)%> > <%= t.name %></a></li>
-                        <% end %>
-                    </ul>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                      "dropdown" data-toggle="dropdown" href="#">Pages <i class="fa fa-angle-down"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="about.html">About</a>
+                          </li>
+                          <li>
+                              <a href="404.html">404 page</a>
+                          </li>
+                          <li>
+                              <a href="career.html">career</a>
+                          </li>
+                          <li>
+                              <a href="login.html">Login</a>
+                          </li>
+                          <li>
+                              <a href="registration.html">Registration</a>
+                          </li>
+                          <li>
+                              <a href="faq.html">FAQ</a>
+                          </li>
+                          <li class="dropdown-submenu">
+                              <a href="#" tabindex="-1">Pricing table</a>
+                              <ul class="dropdown-menu">
+                                  <li class="dropdown-submenu"></li>
+                                  <li>
+                                      <a href="price-table-one.html">Pricing table one</a>
+                                  </li>
+                                  <li>
+                                      <a href="price-table-two.html">Pricing table two</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a href="service.html">Service</a>
+                          </li>
+                          <li>
+                              <a href="terms.html">Terms & Condition</a>
+                          </li>
+                          <li>
+                              <a href="privacy.html">Privacy policy</a>
+                          </li>
+                      </ul>
                   </li>
-                  <li><a href="">Contactanos</a></li>
-                </ul>
-            </nav>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                      "dropdown" data-toggle="dropdown" href="#">Portfolio <i class="fa fa-angle-down"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="portfolio-3-col.html">Portfolio 3 column</a>
+                          </li>
+                          <li>
+                              <a href="portfolio-4-col.html">Portfolio 4 column</a>
+                          </li>
+                          <li>
+                              <a href="portfolio-single-image.html">Portfolio Single Image</a>
+                          </li>
+                          <li>
+                              <a href="portfolio-single-video.html">Portfolio Single Video</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
+                      "dropdown" data-toggle="dropdown" href="#">Blog <i class="fa fa-angle-down"></i>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li>
+                              <a href="blog.html">Blog</a>
+                          </li>
+                          <li>
+                              <a href="blog-two-col.html">Blog two column</a>
+                          </li>
+                          <li>
+                              <a href="blog-detail.html">Blog Single Image</a>
+                          </li>
+                          <li>
+                              <a href="blog-detail-video.html">Blog single video</a>
+                          </li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a href="contact.html">Contact</a>
+                  </li>
+                  <li><input class="form-control search" placeholder=" Search" type="text"></li>
+              </ul>
           </div>
       </div>
-</header>
+    </header>
+    <!--header end-->
+
+    <%= yield %>
 
 
-<!--==============================content=================================-->
-<div id="content">
-<%= yield %>
-</div>
-    
-<!--==============================footer=================================-->
-<footer>
-    <div class="container">
+    <!--container end-->
+
+    <!--footer start-->
+    <footer class="footer">
+      <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <ul class="social_icons clearfix">
-                     <li><a href="#"><img src="/site/img/follow_icon1.png" alt=""></a></li>
-                     <li><a href="#"><img src="/site/img/follow_icon2.png" alt=""></a></li>
-                     <li><a href="#"><img src="/site/img/follow_icon3.png" alt=""></a></li>
-                     <li><a href="#"><img src="/site/img/follow_icon4.png" alt=""></a></li>
-                </ul>
+          <div class="col-lg-3 col-sm-3 address wow fadeInUp" data-wow-duration="2s" data-wow-delay=".1s">
+            <h1>
+              contact info
+            </h1>
+            <address>
+              <p><i class="fa fa-home pr-10"></i>Address: No.XXXXXX street</p>
+              <p><i class="fa fa-globe pr-10"></i>Mars city, Country </p>
+              <p><i class="fa fa-mobile pr-10"></i>Mobile : (123) 456-7890 </p>
+              <p><i class="fa fa-phone pr-10"></i>Phone : (123) 456-7890 </p>
+              <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="javascript:;">support@example.com</a></p>
+            </address>
+          </div>
+          <div class="col-lg-3 col-sm-3 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".3s">
+            <h1>latest tweet</h1>
+              <div class="tweet-box">
+                <i class="fa fa-twitter"></i>
+                <em>
+                  Please follow
+                  <a href="javascript:;">@example</a>
+                  for all future updates of us!
+                  <a href="javascript:;">twitter.com/acme</a>
+                </em>
+              </div>
+              <div class="tweet-box">
+                <i class="fa fa-twitter"></i>
+                <em>
+                  Please follow
+                  <a href="javascript:;">@example</a>
+                  for all future updates of us!
+                  <a href="javascript:;">twitter.com/acme</a>
+                </em>
+              </div>
+              <div class="tweet-box">
+                <i class="fa fa-twitter"></i>
+                <em>
+                  Please follow
+                  <a href="javascript:;">@example</a>
+                  for all future updates of us!
+                  <a href="javascript:;">twitter.com/acme</a>
+                </em>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="page-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".5s">
+              <h1>
+                Our Company
+              </h1>
+              <ul class="page-footer-list">
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="about.html">About Us</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="faq.html">Support</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="service.html">Service</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="privacy-policy.html">Privacy Policy</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="career.html">We are Hiring</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-right"></i>
+                  <a href="terms.html">Term & condition</a>
+                </li>
+              </ul>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="index.html">
-                <!-- <img src="/site/img/logofooter.png" alt=""> -->
-                <img alt="Perfumaía"  width="500" height="70" src="/site/img/logo.png">
-                </a>
+          </div>
+          <div class="col-lg-3 col-sm-3">
+            <div class="text-footer wow fadeInUp" data-wow-duration="2s" data-wow-delay=".7s">
+              <h1>
+                Text Widget
+              </h1>
+              <p>
+                This is a text widget.Lorem ipsum dolor sit amet.
+                This is a text widget.Lorem ipsum dolor sit amet.
+              </p>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <!-- <p class="footerpriv">&copy; 2013 &bull; <a class="privacylink" href="index-5.html">Privacy policy</a>More  at <a rel="nofollow" href="http://www.templatemonster.com/category.php?category=0&type=1" target="_blank">TemplateMonster.com</a></p> -->
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end -->
+    <!--small footer start -->
+    <footer class="footer-small">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 pull-right">
+                    <ul class="social-link-footer list-unstyled">
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".1s"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".2s"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".3s"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".4s"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".5s"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".6s"><a href="#"><i class="fa fa-skype"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".7s"><a href="#"><i class="fa fa-github"></i></a></li>
+                        <li class="wow flipInX" data-wow-duration="2s" data-wow-delay=".8s"><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                  <div class="copyright">
+                    <p>&copy; Copyright - Acme Theme by cosmic.</p>
+                  </div>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<script src="/site/js/bootstrap.min.js"></script>
-<script src="/site/js/tm-scripts.js"></script>
-</body>
+    </footer>
+    <!--small footer end-->
+
+    <!-- js placed at the end of the document so the pages load faster
+<script src="js/jquery.js">
+</script>
+-->
+ 
+   
+  </body>
 </html>
