@@ -22,7 +22,7 @@
 
 <p>
   <strong>Imagen:</strong>
-  <%= image_tag @product.image_path %>
+  <%= image_tag(@product.image.url(:thumb)) %>
 </p>
 
 <%= link_to 'Editar', edit_backend_product_path(@product) %> |

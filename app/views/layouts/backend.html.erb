@@ -41,7 +41,6 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-           Signed in as <%= current_user.email %>. Not you?
            <%= link_to "Sign out", destroy_user_session_path %>       
         </li>
       <% else %>
