@@ -55,6 +55,7 @@ gem 'paperclip', '~> 4.1'
 
 #Autenticación y seguridad del backend
 gem 'devise'
+gem 'devise-i18n-views'
 
 #Proteccion de claves para mailer	
 gem 'dotenv-rails'

@@ -1,5 +1,6 @@
 class Backend::TestsController < Backend::ApplicationController
   before_action :set_test, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /tests
   # GET /tests.json
