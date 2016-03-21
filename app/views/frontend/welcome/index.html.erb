@@ -123,7 +123,7 @@
                 <div class="item view view-tenth">
                   <img src="/site/img/works/mujer.jpg" alt="Mujer">
                   <div class="mask">
-                    <a href="frontend/products/1" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Femeninas">
+                    <a href="frontend/products/2" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Femeninas">
                       <i class="fa fa-link">
                       </i>
                     </a>
@@ -359,6 +359,8 @@
   <div class="col-lg-6">
     <!--testimonial start-->
     <div class="about-testimonial boxed-style about-flexslider ">
+    <h2>Encuentra tu tienda más cercana </h2>
+      <hr>
       <section class="slider wow fadeInRight">
         <div id="map" style='height: 250px;'></div>
       </section>
@@ -480,16 +482,11 @@
       {
         "lat": 4.60971,
         "lng": -74.08175,
-        "picture": {
-          "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
-          "width":  22,
-          "height": 22
-        },
-        "infowindow": "hello!"
+        "infowindow": "Cra XXX # YY-ZZ, Bogotá"
       }
     ]);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
-    handler.getMap().setZoom(13);
+    handler.getMap().setZoom(7);
   });
 </script>
