@@ -25,8 +25,8 @@
         <td><%= product.top_position %></td>
         <td><%= image_tag(product.image.url(:thumb)) %></td>
         <td><%= link_to 'Mostrar', [:backend, product], { :class=>"btn btn-primary"}  %></td>
-        <td><%= link_to 'Editar', edit_backend_product_path(product),{ :class=>"btn btn-primary"}  %></td>
-        <td><%= link_to 'Eliminar', [:backend, product], {method: :delete, data: { confirm: '¿Está seguro?' }, :class=>"btn btn-primary"}%></td>
+        <td><%= link_to 'Editar', edit_backend_product_path(product),{ :class=>"btn btn-warning"}  %></td>
+        <td><%= link_to 'Eliminar', [:backend, product], {method: :delete, data: { confirm: '¿Está seguro?' }, :class=>"btn btn-danger" }%></td>
       </tr>
     <% end %>
   </tbody>
