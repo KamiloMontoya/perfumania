@@ -98,11 +98,11 @@
 	line-height: 30px;
 	width: 120px;
 	text-align: center;
-	background: #48cfad;
+	background: #7D9EDC ;
 	margin-left: -8%;
 }
 .da-slide .da-link:hover{
-	background: rgba(72, 207, 173, 0.80);
+	background: #BCD4FF;
 }
 .da-dots{
 	width: 100%;

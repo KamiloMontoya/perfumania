@@ -19,11 +19,11 @@ a:focus {
     outline: none;
 }
 ::selection {
-    background: #48cfad;
+    background: #7D9EDC;
     color: #fff;
 }
 ::-moz-selection {
-    background: #48cfad;
+    background: #7D9EDC;
     color: #fff;
 }
 h1,
@@ -36,7 +36,7 @@ h6 {
     /*font-family: 'Open Sans', sans-serif;*/
 }
 a { color: #444e67 }
-a:hover { color: #48cfad }
+a:hover { color: #7D9EDC }
 p { line-height: 22px }
 /*header*/
 .head-section { border-bottom: 1px solid #eee }
@@ -52,7 +52,7 @@ p { line-height: 22px }
     margin-top: 30px;
     padding: 0;
 }
-.navbar-brand span { color: #48cfad }
+.navbar-brand span { color: #7D9EDC }
 .head-section .navbar-collapse  ul.navbar-nav {
     float: right;
     margin-right: 0;
@@ -76,7 +76,7 @@ ul.dropdown-menu { border: none }
 .head-section .nav li.active ul.dropdown-menu li a:hover,
 .head-section .nav li.active ul.dropdown-menu li.active a {
     color: #fff;
-    background-color: #48cfad;
+    background-color: #7D9EDC;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -87,7 +87,7 @@ ul.dropdown-menu { border: none }
 .head-section .navbar-default .navbar-nav > .open > a:hover,
 .head-section .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: #48cfad;
+    background-color: #7D9EDC;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -1458,9 +1458,9 @@ ul.page-footer-list li i { padding-right: 10px }
     margin-bottom: 30px;
 }
 .property hr { border-color: #dfdcdf }
-.property i { color: #48cfad }
+.property i { color: #7D9EDC }
 a.btn-purchase {
-    background: #475168;
+    background: #7D9EDC;
     color: #fff;
     text-transform: uppercase;
     border-radius: 4px;
@@ -1475,7 +1475,7 @@ a.btn-purchase {
 }
 a.btn-purchase:hover,
 a.btn-purchase:focus {
-    background: #48cfad;
+    background: #BCD4FF;
     color: #fff;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -2562,7 +2562,7 @@ p { text-align: left }
     transition: all .3s ease;
 }
 .btn.btn-info {
-    background-color: #37bc9b;
+    background-color: #BCD4FF;
     border: none;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -2573,7 +2573,7 @@ p { text-align: left }
 .btn.btn-info:hover,
 .btn.btn-info:active,
 .btn.btn-info.hover {
-    background-color: #48cfad;
+    background-color: #7D9EDC;
     border: none;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
