@@ -180,7 +180,7 @@
       <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
         <div id="top-img-product">
               <% if @top_products.first %>
-              <%= image_tag(@top_products.first.image.url(:medium)) %>
+              <%= image_tag(@top_products.first.image.url(:medium), width: "240", height: "240") %>
               <% end %>
           </div>      
       </div>
@@ -321,7 +321,7 @@
        dataType: "json",
        success: function (data) {
            $( "#top-img-product" ).html("");
-           $( "#top-img-product" ).append( '<img onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+           $( "#top-img-product" ).append( '<img width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
        }
    });
   });
@@ -336,7 +336,7 @@
            $( "#img-product-modal" ).html("");
            
            $( ".modal-title" ).append( data.product.name);
-           $( "#img-product-modal" ).append( "<img src=" + data.img_medium + ">");
+           $( "#img-product-modal" ).append( '<img  width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
            $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");
            $("#myModal").modal('toggle');
        }

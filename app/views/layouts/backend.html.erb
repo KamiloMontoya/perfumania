@@ -33,9 +33,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Encuestas <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href=<%= backend_tests_path%> >Administración de tests</a></li>
-            <% Test.all.each do |t| %>
-              <li><a href=<%= backend_test_preview_path(t)%> > <%= t.name %></a></li>
-            <% end %>
+            
           </ul>
         </li>
       </ul>

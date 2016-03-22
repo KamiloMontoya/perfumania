@@ -64,7 +64,7 @@
         <div class="candidate wow fadeInRight">
             <div id="img-product">
                 <% if @products.first %>
-                <%= image_tag(@products.first.image.url(:medium)) %>
+                <%= image_tag(@products.first.image.url(:medium), width: "240", height: "240") %>
                 <% end %>
             </div>
         </div>     
@@ -132,7 +132,7 @@
                $( "#img-product" ).html("");
                $( "#desc-product" ).html("");
                $( "#name-product" ).html("");
-               $( "#img-product" ).append( '<img onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+               $( "#img-product" ).append( '<img  width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
                $( "#name-product" ).append(data.product.name);
                $( "#desc-product" ).append( "<p>" + data.product.description + "</p>");
            }
@@ -158,7 +158,7 @@
                $( "#img-product-modal" ).html("");
                
                $( ".modal-title" ).append( data.product.name);
-               $( "#img-product-modal" ).append( "<img src=" + data.img_medium + ">");
+               $( "#img-product-modal" ).append('<img width="240" height="240" src=' + data.img_medium + '>');
                $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");
                $("#myModal").modal('toggle');
            }
