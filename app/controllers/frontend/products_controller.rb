@@ -6,11 +6,11 @@ class Frontend::ProductsController < Frontend::ApplicationController
   	# GET /products/1.json
 	def show
 		@category = params[:id].to_i
-		@products = Product.where(category_id: @category)
+		@products = Product.where(category_id: @category).order(top_position: :asc)
 	end
 
 	def show_all
-		@products = Product.all
+		@products = Product.all.order(top_position: :asc)
 		@categories = {1 => 'Fragancias Maculinas', 2 =>  'Fragancias Femeninas'} 
 	end
 
