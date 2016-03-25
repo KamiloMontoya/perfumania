@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
-	#attr_accessible :image_path, :description, :name, :category_id, :segment_id
+	belongs_to :category
+	belongs_to :note
+
  	has_attached_file :image, :styles => { :medium => "440x440>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
   	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
@@ -9,6 +11,8 @@ class Product < ActiveRecord::Base
 	    	where("name LIKE '%#{search[:name]}%' OR description LIKE '%#{search[:name]}%'")
 		elsif search[:category].present?
 			where("category_id = ?", search[:category])
+		elsif search[:note].present?
+			where("note_id = ?", search[:note])
 		else
 		    #scoped
 		end

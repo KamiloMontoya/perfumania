@@ -1,0 +1,50 @@
+
+<h1>Listado de Categorías   
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#newModal">Nueva Categoría </button>
+</h1>
+
+<hr>
+
+<table class="table table-hover table-bordered table-responsive" text-align="center" >
+  <thead>
+    <tr>
+      <th class="text-center">Nombre</th>
+      <th class="text-center" colspan="3">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.name %></td>
+        <td><%= link_to 'Editar', edit_backend_category_path(category), {:class=>"btn btn-warning bt-sm" } %></td>
+        <td><%= link_to 'Eliminar', [:backend, category], {method: :delete, data: { confirm: 'Desea Eliminar esta categoría?' },  :class=>"btn btn-danger bt-sm" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @categories, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
+
+<!-- Modal para nueva categoría -->
+<div class="modal fade" id="newModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Nueva Categoría:</h4>
+      </div>
+      <div class="modal-body"> 
+       <%= form_for([:backend, Category.new],{:class => "form-horizontal" }) do |f| %>
+          <div class="form-group">
+            <label class="control-label">Nombre: </label>
+            <%= f.text_field :name, {:class => "form-control"} %>
+          </div> 
+          <div class="form-group">
+              <%= f.submit 'Agregar', :class => "btn btn-success"%>
+          </div>       
+        <% end %>        
+      </div>
+    </div>
+  </div>
+</div>

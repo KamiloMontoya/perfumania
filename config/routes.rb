@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  
   root 'frontend/welcome#index'
   #devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => ''}
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
     resources :tests
     resources :answers
     resources :questions 
+    resources :categories
+    resources :notes
 
     resources :questions do
       resources :answers
