@@ -50,7 +50,8 @@ group :development do
   gem 'spring'
 end
 
-#Paper Clip  http://www.peoplecancode.com/es/paths/4/tutorials/25
+#Paper Clip, Para gguardar las imágenes de los productos
+## http://www.peoplecancode.com/es/paths/4/tutorials/25
 gem 'paperclip', '~> 4.1'
 
 #Autenticación y seguridad del backend
@@ -63,4 +64,8 @@ gem 'dotenv-rails'
 # Gemas para Google Maps
 gem 'underscore-rails'
 gem 'gmaps4rails'
+
+#paginación
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
 

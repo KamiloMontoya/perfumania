@@ -7,7 +7,21 @@ class Backend::ProductsController < Backend::ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all.order(top_position: :asc)
+
+    #Se arma un hash con todos los filtros
+    search_array = {}
+    if (params[:filter_name] && params[:filter_name].to_s != '')
+       search_array[:name] = params[:filter_name]
+    elsif (params[:filter_categories] && params[:filter_categories].to_s != '')
+      search_array[:category] = params[:filter_categories]
+     
+    end
+
+    if search_array.length == 0
+      @products = Product.order(top_position: :asc).page(params[:page]).per(5)
+    else
+      @products = Product.order(top_position: :asc).page(params[:page]).per(5).search( search_array )
+    end
   end
 
   # GET /products/1

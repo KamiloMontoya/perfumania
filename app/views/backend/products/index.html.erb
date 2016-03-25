@@ -1,8 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listado de Productos</h1>
+<h1>Listado de Productos 
+<%= link_to 'Nuevo producto', new_backend_product_path,{ :class=>"btn btn-success"} %>
+</h1>
+<p id="notice"><%= notice %></p>
 
-<% categories = {1 => 'Fragancias Maculinas', 2 =>  'Fragancias Femeninas'} %>
+<% categories = {'Seleccione Una' => '','Fragancias Maculinas' => 1, 'Fragancias Femeninas' => 2} %>
+
+<hr>
+<!-- Filtros -->
+<%= form_tag({:controller => "products", :action => "index"}, :method => :get, :class => "form-inline") do %>
+    <div class="form-group">
+      <label> Producto: </label>
+      <%= text_field_tag "filter_name", params[:filter_name], {:placeholder => 'Nombre o descripción', :class => "form-control"} %>
+    </div>
+    <div class="form-group">
+      <label> Categoría: </label>
+     <!--  select("post", "person_id", Person.all.collect {|p| [ p.name, p.id ] }, { include_blank: true }) -->
+      <%= select_tag("filter_categories", options_for_select(categories, selected: params[:filter_categories]),{ :class => 'form-control' }) %>
+    </div>
+
+    <div class="form-group">
+      <%= submit_tag "Buscar", :name => nil %> 
+      <%= link_to 'Restablecer', backend_products_path %>
+    </div>
+<% end %>
+<hr>
+
 
 <table class="table table-hover table-bordered table-responsive" text-align="center">
   <thead>
@@ -21,7 +45,7 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= categories[product.category_id] %></td>
+        <td><%= product.category_id %></td>
         <td><%= product.top_position %></td>
         <td><%= image_tag(product.image.url(:thumb)) %></td>
         <td><%= link_to 'Mostrar', [:backend, product], { :class=>"btn btn-primary"}  %></td>
@@ -32,6 +56,7 @@
   </tbody>
 </table>
 
+<%= paginate @products, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
 <br>
 
-<%= link_to 'Nuevo producto', new_backend_product_path,{ :class=>"btn btn-success" } %>
+
