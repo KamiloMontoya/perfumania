@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325153453) do
+ActiveRecord::Schema.define(version: 20160325162700) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "title",       limit: 65535
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20160325153453) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.integer  "note_id",            limit: 4
+    t.string   "video_path",         limit: 255
   end
 
   create_table "questions", force: :cascade do |t|

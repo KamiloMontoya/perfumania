@@ -92,6 +92,6 @@ class Backend::ProductsController < Backend::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :category_id, :segment_id, :image, :top_position, :note_id)
+      params.require(:product).permit(:name, :description, :category_id, :segment_id, :image, :top_position, :note_id, :video_path)
     end
 end

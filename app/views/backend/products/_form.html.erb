@@ -21,11 +21,19 @@
   </div><br>
   <div class="field">
     <%= f.label :Categoria%><br>
-    <%= f.select :category_id, {'Fragancias Maculinas' => 1, 'Fragancias Femeninas' => 2}, {},{:class => "form-control"}  %>
+    <%= f.select :note_id, Category.all.collect {|n| [ n.name, n.id ] }, {},{:class => "form-control"}  %>
+  </div><br>
+  <div class="field">
+   <label>Nota Olfativa</label><br>
+    <%= f.select :category_id, Note.all.collect {|n| [ n.name, n.id ] }, {},{:class => "form-control"}  %>
   </div><br>
   <div class="field">
     <%= f.label :top_position %><br>
     <%= f.select :top_position, 1...20,{}, :class => 'form-control' %>
+  </div><br>
+  <div class="field">
+    <label>Url de Video</label><br>
+    <%= f.text_field :video_path, :class => 'form-control' %>
   </div><br>
   <div class="field">
     <%= f.label :Imagen %><br>
