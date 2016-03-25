@@ -14,3 +14,7 @@ Answer.create(title: "Blanco", question_id: 1)
 Answer.create(title: "Azul", question_id: 1)
 Answer.create(title: "Rosa", question_id: 1)
 Answer.create(title: "Rojo", question_id: 1)
+
+Category.create(name: "Fragancias Maculinas")
+Category.create(name: "Fragancias Femeninas")
+Category.create(name: "Otras Productos")

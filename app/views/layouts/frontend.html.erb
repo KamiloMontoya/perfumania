@@ -102,15 +102,13 @@
                   </li>
                   <li class="dropdown">
                       <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
-                      "dropdown" data-toggle="dropdown" href="/frontend/products_all">Fragancias <i class="fa fa-angle-down"></i>
+                      "dropdown" data-toggle="dropdown" href="/frontend/products_all">Nuestos productos <i class="fa fa-angle-down"></i>
                       </a>
                       <ul class="dropdown-menu">
-                          <li>
-                              <a href="/frontend/products/1">Masculinas</a>
-                          </li>
-                          <li>
-                              <a href="frontend/products/2">Femeninas</a>
-                          </li>
+                          <li> <a href="/frontend/products_all">Todos</a></li>
+                          <% Category.all.each do |category| %>
+                          <li> <a href="/frontend/products/<%= category.id%>"><%= category.name %></a></li>
+                          <% end %>
                       </ul>
                   </li>
                   <li>

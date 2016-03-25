@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-sm-4">
-        <h1 class="wow fadeIn"> Fragancias</h2>
+        <h1 class="wow fadeIn"> Nuestros Productos</h2>
       </div>
       <div class="col-lg-8 col-sm-8">
         <ol class="breadcrumb pull-right">
@@ -13,7 +13,7 @@
             </a>
           </li>
           <li class="active">
-              Nuestras Fragancias
+              Nuestros Productos
           </li>
         </ol>
       </div>
@@ -22,44 +22,37 @@
 </div>
 
 <!-- <div class="property gray-bg"> -->
-  <div class="container career-inner">
+  <div class="container">
     <div class="row">
         <div class="col-md-12 career-head">
-            <h1 class="wow fadeIn"> Nuestras Fragancias</h2>
+            <h1 class="wow fadeIn"> Nuestros Productos</h2>
         </div>
     </div>
     <hr>
     <div class="row">
 
-    <div class="col-md-2">
-        <div class="candidate wow fadeInLeft">
-        Fragancias Maculinas
-        <hr>
+    <div class="row text-center">
+      <% Category.all.each do |category| %>
+        <div class="col-md-2">
+          <div class="candidate wow fadeInLeft">
+            <%= category.name %>
+            <hr>
             <ul id="list" class="list-unstyled">
-                <% @products.each do |product| %>
-                <% if product.category_id == 1 %>
-                <li id=<%= product.id %> onclick="modal_funt(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
-                <% end %>
-                <% end %>
-            </ul>
-        </div>    
-    </div>
+                  <% @products.each do |product| %>
+                  <% if product.category_id == category.id %>
+                  <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
+                  <% end %>
+                  <% end %>
+              </ul>
+          </div>    
+      </div>
 
+      <% end %>
+    </div>  
 
-    <div class="col-md-2">
-        <div class="candidate wow fadeInLeft">
-        Fragancias Femenínas
-        <hr>
-            <ul id="list" class="list-unstyled">
-                <% @products.each do |product| %>
-                <% if product.category_id == 2 %>
-                <li id=<%= product.id %> onclick="modal_funt(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
-                <% end %>
-                <% end %>
-            </ul>
-        </div>    
-    </div>
+    <hr>
 
+    <div class="row">
     <div class="col-md-3 col-md-offset-1">
         <div class="candidate wow fadeInRight">
             <div id="img-product">
@@ -69,7 +62,7 @@
             </div>
         </div>     
     </div>
-    <div class="col-md-4">
+    <div class="col-md-8">
         <div class="candidate wow fadeInRight">
             <% if @products.first %>
             <h1 id="name-product"><%= @products.first.name %></h1>
@@ -80,14 +73,15 @@
         </div>     
     </div>
   </div>
+  </div>
 <!-- </div> -->
 
 <hr> 
 
-<%= render "frontend/partial/modal_product" %>
 
 <!-- Baner Fragancias -->
-<div class="container">
+<div class="bg-lg">
+  <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-8  col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2  recent">
             <h3>Productos relacionados</h3>
@@ -107,19 +101,35 @@
             </div>
         </div>
     </div>
-        <!--recent work end-->
+    <!--recent work end-->
+  </div>
 </div>
-
+<%= render "frontend/partial/modal_product" %>
+<!-- 
 
 <script src="/site/js/jquery.js"></script>  
 <script src="/site/js/bootstrap.min.js"></script> 
 <script src="/site/js/wow.min.js"></script>
 <script src="/site/assets/owlcarousel/owl.carousel.js"></script>
 
+ -->
 
 <script>
     $("#owl-demo").owlCarousel({
-            items : 4
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                },
+                1000:{
+                    items:5
+                }
+            }
         });
 
     $( "li" ).mouseover(function() {
