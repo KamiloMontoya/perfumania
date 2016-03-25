@@ -7,14 +7,14 @@ class Backend::ProductsController < Backend::ApplicationController
   # GET /products
   # GET /products.json
   def index
-
     #Se arma un hash con todos los filtros
     search_array = {}
     if (params[:filter_name] && params[:filter_name].to_s != '')
        search_array[:name] = params[:filter_name]
     elsif (params[:filter_categories] && params[:filter_categories].to_s != '')
-      search_array[:category] = params[:filter_categories]
-     
+      search_array[:category] = params[:filter_categories] 
+    elsif (params[:filter_notes] && params[:filter_notes].to_s != '')
+      search_array[:note] = params[:filter_notes] 
     end
 
     if search_array.length == 0
@@ -22,6 +22,12 @@ class Backend::ProductsController < Backend::ApplicationController
     else
       @products = Product.order(top_position: :asc).page(params[:page]).per(5).search( search_array )
     end
+
+    @notes = Note.all.collect {|n| [ n.name, n.id ] }
+    @notes << ['Seleccione Una','']
+    
+    @categories = Category.all.collect {|n| [ n.name, n.id ] }
+    @categories << ['Seleccione Una','']
   end
 
   # GET /products/1
@@ -86,6 +92,6 @@ class Backend::ProductsController < Backend::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :category_id, :segment_id, :image, :top_position)
+      params.require(:product).permit(:name, :description, :category_id, :segment_id, :image, :top_position, :note_id)
     end
 end
