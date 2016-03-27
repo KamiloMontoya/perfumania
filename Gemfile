@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'sprockets-rails', '2.3.3'
 
+gem 'pg'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -39,14 +42,11 @@ gem 'sprockets-rails', '2.3.3'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'sqlite3'
-  gem 'mysql2'
+
 end
 
 #integrando Postgres
-group :production do
-  gem 'pg', '~> 0.18.4'
-end   
+  
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -78,3 +78,4 @@ gem 'bootstrap-kaminari-views'
 #geroku
 gem 'heroku'
 
+gem 'rails_12factor', group: :production

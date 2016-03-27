@@ -67,4 +67,8 @@ Botones de Compartir en redes Sociales:
 Facebook JS_SDK
 https://developers.facebook.com/docs/javascript/quickstart/v2.5
 
-
+HEROKU
+https://devcenter.heroku.com/articles/getting-started-with-rails4
+http://lobotuerto.com/blog/2012/08/30/como-instalar-postgresql-en-ubuntu/
+sudo apt-get install postgresql postgresql-client postgresql-contrib libpq-dev
+sudo service postgresql start
