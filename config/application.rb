@@ -39,5 +39,7 @@ module Perfumania
 
 
     config.active_record.raise_in_transactional_callbacks = true
+    #enable the asset pipeline
+    config.assets.enable = true
   end
 end
