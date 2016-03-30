@@ -80,3 +80,6 @@ gem 'bootstrap-kaminari-views'
 gem 'heroku'
 
 gem 'rails_12factor', group: :production
+
+gem 'twitter'
+
