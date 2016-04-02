@@ -1,4 +1,3 @@
-
 <!-- Sequence Modern Slider -->
 <div id="da-slider" class="da-slider">
   <% Product.all.order(top_position: :asc).limit(3).each do |product| %>
@@ -26,140 +25,140 @@
     </div>
   <% end %>
 
-<nav class="da-arrows">
-  <span class="da-arrows-prev">
-  </span>
-  <span class="da-arrows-next">
-  </span>
-</nav>
+  <nav class="da-arrows">
+    <span class="da-arrows-prev">
+    </span>
+    <span class="da-arrows-next">
+    </span>
+  </nav>
 </div>
 
 
 <div class="container">
-<div class="row mar-b-50">
-  <div class="col-md-12">
-    <div class="text-center feature-head wow fadeInDown">
-      <h1 class="">
-        Disfruta lo mejor de PerfumaniaShop...
-      </h1>
-   
-      <!-- <div class="col-md-offset-4"> -->
-      <div class="bg-lg">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 recent">
-               <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/hombre.jpg" alt="Hombre">
-                  <div class="mask">
-                    <a href="frontend/products/1" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Masculinas">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+  <div class="row mar-b-50">
+    <div class="col-md-12">
+      <div class="text-center feature-head wow fadeInDown">
+        <h1 class="">
+          Disfruta lo mejor de PerfumaniaShop...
+        </h1>
+     
+        <!-- <div class="col-md-offset-4"> -->
+        <div class="bg-lg">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 recent">
+                 <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/hombre.jpg" alt="Hombre">
+                    <div class="mask">
+                      <a href="frontend/products/1" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Masculinas">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/mujer.jpg" alt="Mujer">
-                  <div class="mask">
-                    <a href="frontend/products/2" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Femeninas">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/mujer.jpg" alt="Mujer">
+                    <div class="mask">
+                      <a href="frontend/products/2" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Femeninas">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/dia.jpg" alt="Día">
-                  <div class="mask">
-                    <a href="/frontend/products_all" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias para el día">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/dia.jpg" alt="Día">
+                    <div class="mask">
+                      <a href="/frontend/products_all" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias para el día">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/noche.jpg" alt="Noche">
-                  <div class="mask">
-                    <a href="/frontend/products_all" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias para la noche">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/noche.jpg" alt="Noche">
+                    <div class="mask">
+                      <a href="/frontend/products_all" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias para la noche">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <!--recent work end-->
         </div>
-        <!--recent work end-->
-      </div>
 
-   </div>
+     </div>
 
-      <!-- </div> -->
+        <!-- </div> -->
+    </div>
   </div>
-</div>
 </div>
 
 <%= render "frontend/partial/modal_product" %>
 <!--property start-->
 <div class="property gray-bg">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
-      <h1> Top 10 productos destacádos</h1>
-
-      <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
-      <ul id="list-top" class="list-unstyled">
-      <% @top_products.each do |product| %>
-        <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a><%= product.name %></a></li>
-      <% end %>
-      </ul> 
-      </div>
-
+  <div class="container">
+    <div class="row">
       <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
-        <div id="top-img-product">
-              <% if @top_products.first %>
-              <%= image_tag(@top_products.first.image.url(:medium), width: "240", height: "240") %>
-              <% end %>
-          </div>      
+        <h1> Top 10 productos destacádos</h1>
+
+        <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
+        <ul id="list-top" class="list-unstyled">
+        <% @top_products.each do |product| %>
+          <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a><%= product.name %></a></li>
+        <% end %>
+        </ul> 
+        </div>
+
+        <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
+          <div id="top-img-product">
+                <% if @top_products.first %>
+                <%= image_tag(@top_products.first.image.url(:medium), width: "240", height: "240") %>
+                <% end %>
+            </div>      
+        </div>
+        <hr>
+        <a href="/frontend/products_all" class="btn btn-purchase">
+          Todas nuestras fragancias
+        </a>
       </div>
-      <hr>
-      <a href="/frontend/products_all" class="btn btn-purchase">
-        Todas nuestras fragancias
-      </a>
-    </div>
-    <div class="col-lg-6 col-sm-6 col-md-6 wow fadeInRight">
-      <h1>
-        BLOG
-      </h1>
-      <hr>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        ¡El olor tiene un poder mágico!
-        Habitualmente, consideramos como verdadero aquello que podemos ver, sentir y tocar… pero un poco más relegado tenemos aquello que podemos oler..
-      </p>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        Las cosas no suceden porque sí, del mismo modo que no elegimos un perfume de moda sin motivo. Nuestra personalidad se refleja en la fraganciaque escogemos, al igual que el momento que estamos viviendo. Aquí te ofrecemos las claves para saber qué perfume usar según tu personalidad.
-      </p>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        A la mayoría de las mujeres nos fascina usar perfume ya que nos da un aire distinto, refuerza nuestra personalidad y nos hace sentirnos más seguras y atractivas.
-      </p>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        El mundo de la perfumería evoluciona constantemente, y las fragancias aparecen y desaparecen del mercado con  cierta facilidad según las modas. Pese a ello, existe un reducido número de perfumes con muchos años de historia a sus espaldas que siguen siendo plenamente vigentes hoy en día. Repasamos algunos de los perfumes masculinos que ha conseguido mantenerse en lo más alto pese al paso del tiempo. Aunque algunos de ellos se han visto mejorados con versiones más modernas, pueden presumir de seguir manteniendo la esencia con la que nacieron.
-      </p>
-      <hr>
-      <a href="javascript:;" class="btn btn-purchase">
-        Ver más
-      </a>
+      <div class="col-lg-6 col-sm-6 col-md-6 wow fadeInRight">
+        <h1>
+          BLOG
+        </h1>
+        <hr>
+        <p>
+          <i class="fa fa-check fa-lg pr-10">
+          </i>
+          ¡El olor tiene un poder mágico!
+          Habitualmente, consideramos como verdadero aquello que podemos ver, sentir y tocar… pero un poco más relegado tenemos aquello que podemos oler..
+        </p>
+        <p>
+          <i class="fa fa-check fa-lg pr-10">
+          </i>
+          Las cosas no suceden porque sí, del mismo modo que no elegimos un perfume de moda sin motivo. Nuestra personalidad se refleja en la fraganciaque escogemos, al igual que el momento que estamos viviendo. Aquí te ofrecemos las claves para saber qué perfume usar según tu personalidad.
+        </p>
+        <p>
+          <i class="fa fa-check fa-lg pr-10">
+          </i>
+          A la mayoría de las mujeres nos fascina usar perfume ya que nos da un aire distinto, refuerza nuestra personalidad y nos hace sentirnos más seguras y atractivas.
+        </p>
+        <p>
+          <i class="fa fa-check fa-lg pr-10">
+          </i>
+          El mundo de la perfumería evoluciona constantemente, y las fragancias aparecen y desaparecen del mercado con  cierta facilidad según las modas. Pese a ello, existe un reducido número de perfumes con muchos años de historia a sus espaldas que siguen siendo plenamente vigentes hoy en día. Repasamos algunos de los perfumes masculinos que ha conseguido mantenerse en lo más alto pese al paso del tiempo. Aunque algunos de ellos se han visto mejorados con versiones más modernas, pueden presumir de seguir manteniendo la esencia con la que nacieron.
+        </p>
+        <hr>
+        <a href="javascript:;" class="btn btn-purchase">
+          Ver más
+        </a>
+      </div>
     </div>
   </div>
-</div>
 </div>
 <!--property end-->
 
@@ -247,10 +246,7 @@
     });
 
   });
-
-
-</script>
-<script>
+  
   $( "li" ).mouseover(function() {
     var id = $( this ).attr("id");
     $.ajax({

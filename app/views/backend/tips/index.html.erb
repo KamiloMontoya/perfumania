@@ -1,0 +1,53 @@
+<hr>
+<h1>Listado de Tips
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#newModal">Nuevo Tip </button>
+</h1>
+
+<hr>
+
+<table class="table table-hover table-bordered table-responsive" text-align="center">
+  <thead>
+    <tr>
+      <th class="text-center" >Descripcíon</th>
+      <th class="text-center" colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tips.each do |tip| %>
+      <tr>
+        <td><%= tip.description %></td>
+        <td><%= link_to 'Editar', edit_backend_tip_path(tip), {:class=>"btn btn-warning"} %></td>
+        <td><%= link_to 'Eliminar', [:backend, tip], {method: :delete, data: { confirm: 'Desea eliminar éste tip?' }, :class=>"btn btn-danger" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @tips, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
+
+<br>
+
+<!-- Modal para nuevo Tip -->
+<div class="modal fade" id="newModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Nuevo Tip:</h4>
+      </div>
+      <div class="modal-body"> 
+       <%= form_for([:backend, Tip.new],{:class => "form-horizontal" }) do |f| %>
+          <div class="form-group">
+            <label class="control-label">Descripción: </label>
+            <%= f.text_area :description, {:class => "form-control", :rows => "6"} %>
+          </div> 
+          <div class="form-group">
+              <%= f.submit 'Agregar', :class => "btn btn-success"%>
+          </div>       
+        <% end %>        
+      </div>
+    </div>
+  </div>
+</div>
