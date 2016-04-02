@@ -105,7 +105,7 @@
         <div class="col-lg-6 col-sm-6 col-md-6">
           <ul id="list-top" class="list-unstyled">
           <% @top_products.each do |product| %>
-            <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a><%= product.name %></a></li>
+            <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a></i><%= product.name %></a></li>
           <% end %>
           </ul> 
         </div>
