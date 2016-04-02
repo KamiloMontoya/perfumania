@@ -40,38 +40,56 @@
 
     <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css?v=20150321" />
 
+    <style type="text/css">
+      ul.scroll-menu {
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -moz-overflow-scrolling: touch;
+        -ms-overflow-scrolling: touch;
+        -o-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        margin: 0;
+        border-left: none;
+        border-right: none;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        -ms-border-radius: 0 !important;
+        -o-border-radius: 0 !important;
+        border-radius: 0 !important;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none;
+    }
+</style>
     <%= javascript_include_tag 'front'%>
+    <script src="/site/js/jquery.js"></script>
     
-    <script type="text/javascript" src="/site/js/parallax-slider/modernizr.custom.28468.js">
-    </script>
+    <script type="text/javascript" src="/site/js/parallax-slider/modernizr.custom.28468.js"> </script>
 
 
-   <script src="/site/js/jquery-1.8.3.min.js">
-    </script>
-    <script src="/site/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript" src="/site/js/hover-dropdown.js">
-    </script>
-    <script defer src="/site/js/jquery.flexslider.js">
-    </script>
-    <script type="text/javascript" src="/site/assets/bxslider/jquery.bxslider.js">
-    </script>
-
-    <script type="text/javascript" src="/site/js/jquery.parallax-1.1.3.js">
-    </script>
-    <script src="/site/js/wow.min.js">
-    </script>
-    <script src="/site/assets/owlcarousel/owl.carousel.js">
-    </script>
-
-    <script src="/site/js/jquery.easing.min.js">
-    </script>
-    <script src="/site/js/link-hover.js">
-    </script>
-    <script src="/site/js/superfish.js">
-    </script>
-    <script type="text/javascript" src="/site/js/parallax-slider/jquery.cslider.js">
-    </script>
+    <script src="/site/js/jquery-1.8.3.min.js"> </script>
+    <script src="/site/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/site/js/hover-dropdown.js"> </script>
+    <script defer src="/site/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="/site/assets/bxslider/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="/site/js/jquery.parallax-1.1.3.js"> </script>
+    <script src="/site/js/wow.min.js"></script>
+    <script src="/site/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="/site/js/jquery.easing.min.js">  </script>
+    <script src="/site/js/link-hover.js">  </script>
+    <script src="/site/js/superfish.js"> </script>
+    <script type="text/javascript" src="/site/js/parallax-slider/jquery.cslider.js"></script>
+    <script type="text/javascript" src="/site/js/jquery.quicksearch.js"></script>
+    <!--common script for all pages-->
+    <script src="/site/js/common-scripts.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -130,13 +148,37 @@
                   <li>
                       <a href="/frontend/contact">Contactenos</a>
                   </li>
-                  <li><input class="form-control search" placeholder=" Search" type="text"></li>
+                  <li><!-- <input id="id_search_list" class="form-control search" placeholder=" Search" type="text"></li> -->
+
+
+              <!--     <div class="dropdown"> -->
+                    <input class="form-control search" id="id_search_list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <ul id="list_search_products" class="dropdown-menu scroll-menu">
+
+                     <% Product.order(name: :asc).each do |product| %>
+                      <li  id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" >
+                        <a> <%= product.name %> </a>
+                      </li>
+                      <!-- <li role="separator" class="divider"></li> -->
+                      <% end %>
+                      <!-- <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Separated link</a></li> -->
+                    </ul>
+                 <!--  </div> -->
+
               </ul>
           </div>
+     
       </div>
     </header>
     <!--header end-->
 
+    <!-- Buscador de Porductos -->
+
+    <%= render "frontend/partial/modal_product" %>
 
 
     <%= yield %>
@@ -222,24 +264,21 @@
     </footer>
     <!--small footer end-->
 
-    <!-- js placed at the end of the document so the pages load faster
-<script src="js/jquery.js">
-</script>
--->
-
  <script type="text/javascript">
-  $(function() {
+  //Inicializando el buscador de productos
+  var qs = $('input#id_search_list').quicksearch('ul#list_search_products li');
 
+  $(function() {
     $('#da-slider').cslider({
       autoplay    : true,
       bgincrement : 100
     });
-
   });
 
-     $( "li" ).mouseover(function() {
+   $( "li" ).mouseover(function() {
+      if( $( this ).attr("id")){
         var id = $( this ).attr("id");
-        $.ajax({
+          $.ajax({
            type: "GET",
            url: "/frontend/product_detail/"+id,
            dataType: "json",
@@ -252,32 +291,32 @@
                $( "#desc-product" ).append(  "<p>" + data.product.description + "</p>"+
                 '<iframe width="240" height="200" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
            }
-       });
-    });
-    function modal_funt(id) {
-        $.ajax({
-           type: "GET",
-           url: "/frontend/product_detail/"+id,
-           dataType: "json",
-           success: function (data) {
-               $( ".modal-title" ).html("");
-               $( "#desc-product-modal" ).html("");
-               $( "#img-product-modal" ).html("");
-               
-               $( ".modal-title" ).append( data.product.name);
-               $( "#img-product-modal" ).append('<img width="200" height="200" src=' + data.img_medium + '>');
-               $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
-                '<iframe width="240" height="200" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
-               $("#myModal").modal('toggle');
-           }
-       });
-    };
+        });
+      };    
+  });
+  function modal_funt(id) {
+      $.ajax({
+         type: "GET",
+         url: "/frontend/product_detail/"+id,
+         dataType: "json",
+         success: function (data) {
+             $( ".modal-title" ).html("");
+             $( "#desc-product-modal" ).html("");
+             $( "#img-product-modal" ).html("");
+             
+             $( ".modal-title" ).append( data.product.name);
+             $( "#img-product-modal" ).append('<img width="200" height="200" src=' + data.img_medium + '>');
+             $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
+              '<iframe width="240" height="200" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
+             $("#myModal").modal('toggle');
+         }
+     });
+  };
 
 </script>
-<!--common script for all pages-->
-<script src="/site/js/common-scripts.js">
-</script>
 
+
+  
 
  
    
