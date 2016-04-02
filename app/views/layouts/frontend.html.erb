@@ -41,34 +41,36 @@
     <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css?v=20150321" />
 
     <style type="text/css">
-      ul.scroll-menu {
-        position: relative;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        -moz-overflow-scrolling: touch;
-        -ms-overflow-scrolling: touch;
-        -o-overflow-scrolling: touch;
-        overflow-scrolling: touch;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100%;
-        height: auto;
-        max-height: 200px;
-        margin: 0;
-        border-left: none;
-        border-right: none;
-        -webkit-border-radius: 0 !important;
-        -moz-border-radius: 0 !important;
-        -ms-border-radius: 0 !important;
-        -o-border-radius: 0 !important;
-        border-radius: 0 !important;
-        -webkit-box-shadow: none;
-        -moz-box-shadow: none;
-        -ms-box-shadow: none;
-        -o-box-shadow: none;
-        box-shadow: none;
-    }
-</style>
+        ul.scroll-menu {
+          position: relative;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          -moz-overflow-scrolling: touch;
+          -ms-overflow-scrolling: touch;
+          -o-overflow-scrolling: touch;
+          overflow-scrolling: touch;
+          top: 0 !important;
+          left: 0 !important;
+          width: 95%;
+          height: auto;
+          max-height: 200px;
+          margin: 10px;
+          border-style: dotted;
+          border-width: 1px;
+         /* border-left: thick double #A29A9A ;
+          border-right: thick double #A29A9A ;*/
+          -webkit-border-radius: 0 !important;
+          -moz-border-radius: 0 !important;
+          -ms-border-radius: 0 !important;
+          -o-border-radius: 0 !important;
+          border-radius: 0 !important;
+          -webkit-box-shadow: none;
+          -moz-box-shadow: none;
+          -ms-box-shadow: none;
+          -o-box-shadow: none;
+          box-shadow: none;
+        }
+    </style>
     <%= javascript_include_tag 'front'%>
     <script src="/site/js/jquery.js"></script>
     
@@ -150,7 +152,6 @@
                   </li>
                   <li><!-- <input id="id_search_list" class="form-control search" placeholder=" Search" type="text"></li> -->
 
-
               <!--     <div class="dropdown"> -->
                     <input class="form-control search" id="id_search_list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <ul id="list_search_products" class="dropdown-menu scroll-menu">
@@ -159,13 +160,7 @@
                       <li  id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" >
                         <a> <%= product.name %> </a>
                       </li>
-                      <!-- <li role="separator" class="divider"></li> -->
                       <% end %>
-                      <!-- <li><a href="#">Action</a></li>
-                      <li><a href="#">Another action</a></li>
-                      <li><a href="#">Something else here</a></li>
-                      <li role="separator" class="divider"></li>
-                      <li><a href="#">Separated link</a></li> -->
                     </ul>
                  <!--  </div> -->
 
