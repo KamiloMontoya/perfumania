@@ -231,36 +231,7 @@
     });
 
   });
-  
-  $( "li" ).mouseover(function() {
-    var id = $( this ).attr("id");
-    $.ajax({
-       type: "GET",
-       url: "/frontend/product_detail/"+id,
-       dataType: "json",
-       success: function (data) {
-           $( "#top-img-product" ).html("");
-           $( "#top-img-product" ).append( '<img width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
-       }
-   });
-  });
-  function modal_funt(id) {
-    $.ajax({
-       type: "GET",
-       url: "/frontend/product_detail/"+id,
-       dataType: "json",
-       success: function (data) {
-           $( ".modal-title" ).html("");
-           $( "#desc-product-modal" ).html("");
-           $( "#img-product-modal" ).html("");
-           
-           $( ".modal-title" ).append( data.product.name);
-           $( "#img-product-modal" ).append( '<img  width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
-           $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");
-           $("#myModal").modal('toggle');
-       }
-     });
-  };
+
 
   $('a.info').tooltip();
 

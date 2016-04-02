@@ -60,8 +60,9 @@
             <h1 id="name-product"><%= @products.first.name %></h1>
             <div id="desc-product">  
                 <p><%= @products.first.description %></p>  
-            </div> 
-             <% end %>   
+                <iframe width="240" height="200" src="https://www.youtube.com/embed/<%=@products.first.video_path.gsub(/.*?v=/, '')%>" frameborder="0" ></iframe> 
+             </div> 
+             <% end %> 
         </div>     
     </div>
   </div>
@@ -121,22 +122,7 @@
             }
         });
 
-    $( "li" ).mouseover(function() {
-        var id = $( this ).attr("id");
-        $.ajax({
-           type: "GET",
-           url: "/frontend/product_detail/"+id,
-           dataType: "json",
-           success: function (data) {
-               $( "#img-product" ).html("");
-               $( "#desc-product" ).html("");
-               $( "#name-product" ).html("");
-               $( "#img-product" ).append( '<img  width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
-               $( "#name-product" ).append(data.product.name);
-               $( "#desc-product" ).append( "<p>" + data.product.description + "</p>");
-           }
-       });
-    });
+
 
     wow = new WOW(
       {
@@ -145,24 +131,6 @@
         offset:       0          // default
       }
     );
-
-    function modal_funt(id) {
-        $.ajax({
-           type: "GET",
-           url: "/frontend/product_detail/"+id,
-           dataType: "json",
-           success: function (data) {
-               $( ".modal-title" ).html("");
-               $( "#desc-product-modal" ).html("");
-               $( "#img-product-modal" ).html("");
-               
-               $( ".modal-title" ).append( data.product.name);
-               $( "#img-product-modal" ).append( '<img width="240" height="240" src=' + data.img_medium + '>');
-               $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");
-               $("#myModal").modal('toggle');
-           }
-       });
-    };
 
     wow.init();
 </script>

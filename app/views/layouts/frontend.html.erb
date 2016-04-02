@@ -236,6 +236,43 @@
     });
 
   });
+
+     $( "li" ).mouseover(function() {
+        var id = $( this ).attr("id");
+        $.ajax({
+           type: "GET",
+           url: "/frontend/product_detail/"+id,
+           dataType: "json",
+           success: function (data) {
+               $( "#img-product" ).html("");
+               $( "#desc-product" ).html("");
+               $( "#name-product" ).html("");
+               $( "#img-product" ).append( '<img  width="240" height="200" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+               $( "#name-product" ).append(data.product.name);
+               $( "#desc-product" ).append(  "<p>" + data.product.description + "</p>"+
+                '<iframe width="240" height="200" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
+           }
+       });
+    });
+    function modal_funt(id) {
+        $.ajax({
+           type: "GET",
+           url: "/frontend/product_detail/"+id,
+           dataType: "json",
+           success: function (data) {
+               $( ".modal-title" ).html("");
+               $( "#desc-product-modal" ).html("");
+               $( "#img-product-modal" ).html("");
+               
+               $( ".modal-title" ).append( data.product.name);
+               $( "#img-product-modal" ).append('<img width="200" height="200" src=' + data.img_medium + '>');
+               $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
+                '<iframe width="240" height="200" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
+               $("#myModal").modal('toggle');
+           }
+       });
+    };
+
 </script>
 <!--common script for all pages-->
 <script src="/site/js/common-scripts.js">
