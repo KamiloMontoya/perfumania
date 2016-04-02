@@ -4,10 +4,10 @@
     <div class="da-slide">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="col-lg-6 col-md-6 col-sm-6">
               <h2>
-              <i>Perfumania Shop inspirada en</i>
-                </br>
+              <i>Perfumania Shop</i></br>
+              <i>inspirada en</i></br>
               <i> <%= product.name %></i>
               </h2>
               <p>
@@ -16,34 +16,31 @@
               <a href="/frontend/products/<%=product.category_id %>" class="btn btn-info btn-lg da-link">
                 Ver más
               </a>
-              <div class="da-img">
-                <%= image_tag(product.image.url(:medium), width: "400", height: "450") %>
-              </div>
-          </div>
+            </div>
+            <div class="da-img col-lg-6 col-md-6 col-sm-6">
+              <%= image_tag(product.image.url(:medium), width: "390", height: "440") %>
+            </div>
         </div>
       </div>
     </div>
   <% end %>
 
   <nav class="da-arrows">
-    <span class="da-arrows-prev">
-    </span>
-    <span class="da-arrows-next">
-    </span>
+    <span class="da-arrows-prev"></span>
+    <span class="da-arrows-next"></span>
   </nav>
 </div>
 
 
-<div class="container">
+<div class="container-fluid">
   <div class="row mar-b-50">
     <div class="col-md-12">
       <div class="text-center feature-head wow fadeInDown">
         <h1 class="">
-          Disfruta lo mejor de PerfumaniaShop...
+          Disfruta lo mejor de Perfumania Shop...
         </h1>
      
         <!-- <div class="col-md-offset-4"> -->
-        <div class="bg-lg">
           <div class="container">
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 recent">
@@ -86,7 +83,6 @@
                   </div>
                 </div>
               </div>
-            </div>
           </div>
           <!--recent work end-->
         </div>
@@ -101,32 +97,30 @@
 
 <!--property start-->
 <div class="property gray-bg">
-  <div class="container">
     <div class="row">
       <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
         <h1> Top 10 productos destacádos</h1>
+        <hr>
 
-        <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
-        <ul id="list-top" class="list-unstyled">
-        <% @top_products.each do |product| %>
-          <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a><%= product.name %></a></li>
-        <% end %>
-        </ul> 
+        <div class="col-lg-6 col-sm-6 col-md-6">
+          <ul id="list-top" class="list-unstyled">
+          <% @top_products.each do |product| %>
+            <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a><%= product.name %></a></li>
+          <% end %>
+          </ul> 
         </div>
-
-        <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
-          <div id="top-img-product">
+        <div class="col-lg-6 col-sm-6 col-md-6">
+          <div id="img-product">
                 <% if @top_products.first %>
-                <%= image_tag(@top_products.first.image.url(:medium), width: "240", height: "240") %>
+                <%= image_tag(@top_products.first.image.url(:medium), width: "100%", height: "100%") %>
                 <% end %>
             </div>      
         </div>
-        <hr>
-        <a href="/frontend/products_all" class="btn btn-purchase">
+      <!--   <hr> <a href="/frontend/products_all" class="btn btn-purchase">
           Todas nuestras fragancias
-        </a>
+        </a> -->
       </div>
-      <div class="col-lg-6 col-sm-6 col-md-6 wow fadeInRight">
+      <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInRight">
         <h1>
           Tips
         </h1>
@@ -140,63 +134,56 @@
            </a>
         </p>
         <% end%>
-        <hr>
         <a href=<%= url_for(frontend_tips_path) %> class="btn btn-purchase">
           Ver todos los tips
         </a>
       </div>
     </div>
-  </div>
+
 </div>
 <!--property end-->
-
 <div class="container">
-
-<div class="row mar-b-60">
-  <div class="col-lg-6 col-md-6 col-sm-6 ">
-    <!--tab start-->
-    <!-- Caja de Comentarios Facebook -->
-
-    <!-- Comentarios en facebook -->
-    <div class="about-testimonial boxed-style about-flexslider ">
-
-        <h2> <a target="_blank" href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks"><img src="/site/img/facebook_logo.png"  height="35" width="35"></img> </a>  Encuentranos en facebook </h2>
-        <!-- Boton Me gusta facebook -->
-        <iframe 
-          src="http://www.facebook.com/plugins/like.php?app_id=1098117230210261&amp;href=https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" 
-          scrolling="no" 
-          frameborder="0" 
-          style="border:none; overflow:hidden; width:80px; height:21px;" 
-          allowTransparency="true">
-        </iframe>
-
-
-          <div class="fb-comments" data-href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks" data-numposts="5"></div>
-
-          <div id="fb-root" class="col-lg-6" ></div>
-          <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1098117230210261";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script>
-          </div>
-
-    </div>
+  <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6">
-      <!--testimonial start-->
-      <div class="about-testimonial boxed-style about-flexslider ">
+      <div class="slider wow fadeInLeft">
+        <!--tab start-->
+          <!-- Comentarios en facebook -->
+              <h2> <a target="_blank" href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks"><img src="/site/img/facebook_logo.png"  height="35" width="35"></img> </a>  Encuentranos en facebook </h2>
+              <!-- Boton Me gusta facebook -->
+              <iframe 
+                src="http://www.facebook.com/plugins/like.php?app_id=1098117230210261&amp;href=https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks;send=false&amp;layout=button_count&amp;width=50&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" 
+                scrolling="no" 
+                frameborder="0" 
+                style="border:none; overflow:hidden; width:80px; height:21px;" 
+                allowTransparency="true">
+              </iframe>
+              <div class="fb-comments" data-href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks" data-numposts="5"></div>
+
+              <div id="fb-root" class="col-lg-6" ></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1098117230210261";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+         </div>
+      </div>
+      
+    <!--Google maps start-->
+    <div class="col-lg-6 col-md-6 col-sm-6">
       <h2>Encuentra tu tienda más cercana </h2>
         <hr>
-        <section class="slider wow fadeInRight">
-          <div id="map" style='height: 250px;'></div>
-        </section>
+        <div class="slider wow fadeInRight map_container">
+            <div id="map" class="map_canvas"></div>
+        </div>
+          <!-- <div id="map" style='height: 250px;'></div> -->
     </div>
-    <!--testimonial end-->
-  </div>
+    <!--Google MAps end-->
+  
   </div>
 </div>
+<hr>
 
 
   <!--recent work start-->
@@ -211,9 +198,7 @@
     });
 
   });
-</script>
 
-<script type="text/javascript">
   jQuery(document).ready(function() {
 
 
@@ -232,9 +217,6 @@
 
   });
 
-
-  $('a.info').tooltip();
-
   $(window).load(function() {
     $('.flexslider').flexslider({
       animation: "slide",
@@ -243,23 +225,6 @@
       }
     });
   });
-
-  $(document).ready(function() {
-
-    $("#owl-demo").owlCarousel({
-
-      items : 4
-
-    });
-
-  });
-
-  jQuery(document).ready(function(){
-    jQuery('ul.superfish').superfish();
-  });
-
-  new WOW().init();
-
 
 </script>
 

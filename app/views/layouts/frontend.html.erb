@@ -35,42 +35,11 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="/site/css/component.css">
-    <link href="/site/css/style_main.css?v=20150321" rel="stylesheet">
+    <link href="/site/css/style_main.css?v=20150411" rel="stylesheet">
     <link href="/site/css/style-responsive.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css?v=20150321" />
 
-    <style type="text/css">
-        ul.scroll-menu {
-          position: relative;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          -moz-overflow-scrolling: touch;
-          -ms-overflow-scrolling: touch;
-          -o-overflow-scrolling: touch;
-          overflow-scrolling: touch;
-          top: 0 !important;
-          left: 0 !important;
-          width: 95%;
-          height: auto;
-          max-height: 200px;
-          margin: 10px;
-          border-style: dotted;
-          border-width: 1px;
-         /* border-left: thick double #A29A9A ;
-          border-right: thick double #A29A9A ;*/
-          -webkit-border-radius: 0 !important;
-          -moz-border-radius: 0 !important;
-          -ms-border-radius: 0 !important;
-          -o-border-radius: 0 !important;
-          border-radius: 0 !important;
-          -webkit-box-shadow: none;
-          -moz-box-shadow: none;
-          -ms-box-shadow: none;
-          -o-box-shadow: none;
-          box-shadow: none;
-        }
-    </style>
     <%= javascript_include_tag 'front'%>
     <script src="/site/js/jquery.js"></script>
     
@@ -171,16 +140,8 @@
     </header>
     <!--header end-->
 
-    <!-- Buscador de Porductos -->
-
     <%= render "frontend/partial/modal_product" %>
-
-
     <%= yield %>
-
-
-
-    <!--container end-->
 
     <!--footer start-->
     <footer class="footer">
@@ -270,7 +231,20 @@
     });
   });
 
+  $(document).ready(function() {
+    $("#owl-demo").owlCarousel({
+      items : 4
+    });
+  });
+
+  jQuery(document).ready(function(){
+    jQuery('ul.superfish').superfish();
+  });
+
+ $('a.info').tooltip();
+
    $( "li" ).mouseover(function() {
+    console.log('ACA'+$( this ).attr("id"));
       if( $( this ).attr("id")){
         var id = $( this ).attr("id");
           $.ajax({
@@ -281,10 +255,10 @@
                $( "#img-product" ).html("");
                $( "#desc-product" ).html("");
                $( "#name-product" ).html("");
-               $( "#img-product" ).append( '<img  width="240" height="200" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+               $( "#img-product" ).append( '<img  width="100%" height="100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
                $( "#name-product" ).append(data.product.name);
                $( "#desc-product" ).append(  "<p>" + data.product.description + "</p>"+
-                '<iframe width="240" height="200" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
+                '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
            }
         });
       };    
@@ -300,20 +274,18 @@
              $( "#img-product-modal" ).html("");
              
              $( ".modal-title" ).append( data.product.name);
-             $( "#img-product-modal" ).append('<img width="200" height="200" src=' + data.img_medium + '>');
+             $( "#img-product-modal" ).append('<img width="100%" height="100%" src=' + data.img_medium + '>');
              $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
-              '<iframe width="240" height="200" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
+              '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" ></iframe> ');
              $("#myModal").modal('toggle');
          }
      });
   };
 
+
+  new WOW().init();
+
 </script>
-
-
-  
-
- 
    
   </body>
 </html>
