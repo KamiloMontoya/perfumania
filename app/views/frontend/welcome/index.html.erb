@@ -1,77 +1,30 @@
 
 <!-- Sequence Modern Slider -->
 <div id="da-slider" class="da-slider">
-
-      <div class="da-slide">
+  <% Product.all.order(top_position: :asc).limit(3).each do |product| %>
+    <div class="da-slide">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12">
               <h2>
-                <i>Perfumania Shop inspirada en</i>
-                  <br />
-                <i>HUGO BOSS</i>
+              <i>Perfumania Shop inspirada en</i>
+                </br>
+              <i> <%= product.name %></i>
               </h2>
               <p>
-                <i>Boss Bottled Intense de Hugo Boss es una fragancia de la familia olfativa Amaderada Especiada para Hombres. Esta fragrancia es nueva. Boss Bottled Intense se lanzó en 2015. Las Notas de Salida son manzana, flor de azahar del naranjo y bergamota; las Notas de Corazón son geranio, canela, clavos de olor, lavanda y cardamomo; las Notas de Fondo son sándalo, cedro, vetiver, vainilla y cumarina.</i>
+                <i><%= product.description %></i>
               </p>
-              <a href="/frontend/products_all" class="btn btn-info btn-lg da-link">
+              <a href="/frontend/products/<%=product.category_id %>" class="btn btn-info btn-lg da-link">
                 Ver más
               </a>
-            <div class="da-img">
-          <img src="/site/img/parallax-slider/images/107.png" alt="Hugo Boss" />
+              <div class="da-img">
+                <%= image_tag(product.image.url(:medium), width: "400", height: "450") %>
+              </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-      <div class="da-slide">
-      <div class="container">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-  <h2>
-    <i>Perfumania Shop inspirada en</i>
-    <br />
-    <i>CHANEL N° 5</i>
-  </h2>
-  <p>
-    <i>Chanel No 5 Eau de Toilette de Chanel es una fragancia de la familia olfativa Floral Aldehídica para Mujeres. Chanel No 5 Eau de Toilette se lanzó en 1921. La Nariz detrás de esta fragrancia es Ernest Beaux. Las Notas de Salida son neroli, ylang-ylang, bergamota, limón de Amalfi (lima de Amalfi) y aldehídos; las Notas de Corazón son iris , jazmín, raíz de lirio, rosa y lirio de los valles (muguete); las Notas de Fondo son vetiver, almizcle, sándalo, pachulí, musgo de roble, ámbar, vainilla y algalia (civet).</i>
-  </p>
-  <a href="/frontend/products_all" class="btn btn-info btn-lg da-link">
-    Ver más
-  </a>
-  <div class="da-img">
-    <img src="/site/img/parallax-slider/images/102.png" alt="Chanel" />
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-
-<div class="da-slide">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <h2>
-        <i>Perfumania Shop inspirada en</i>
-        <br />
-        <i>CAROLINA HERRERA</i>
-      </h2>
-      <p>
-        <i>212 VIP Men Wild Party de Carolina Herrera es una fragancia de la familia olfativa Amaderada Especiada para Hombres. Esta fragrancia es nueva. 212 VIP Men Wild Party se lanzó en 2016. La Nota de Salida es pimienta negra; la Nota de Corazón es hojas de violeta; la Nota de Fondo es notas amaderadas.</i>
-      </p>
-      <a href="/frontend/products_all" class="btn btn-info btn-lg da-link">
-        Ver más
-      </a>
-      <div class="da-img">
-        <img src="/site/img/parallax-slider/images/109.png" alt="Carolina Herrera" />
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+  <% end %>
 
 <nav class="da-arrows">
   <span class="da-arrows-prev">
