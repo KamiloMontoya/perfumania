@@ -28,7 +28,10 @@
 
     <!--container start-->
     <div class="container">
-
+    
+    <% if notice %>
+    <p id="notice" class="alert alert-success" role="alert" ><%= notice %></p>
+    <% end %>
 
       <div class="row">
         <div class="col-lg-5 col-sm-5 address">
@@ -80,36 +83,41 @@
             Trabaja con nosotros, dejanos tus datos y te llamamos
           </h4>
           <div class="contact-form">
-            <form role="form">
-              <div class="form-group">
-                <label for="name">
-                  Nombre
-                </label>
-                <input type="text" placeholder="" id="name" class="form-control">
+            
+          <%= form_tag(frontend_contact_proccess_path, :method => "post", :class => "form-horizontal") do %>
+
+            <div class="form-group">
+            <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-8 col-md-8 col-sm-8">
+              <%= label_tag "name", "Nombres y Apellidos", {} %>
+              <%= text_field_tag "name", "", {required: "required", :class => "form-control"}  %>
               </div>
-              <div class="form-group">
-                <label for="email">
-                  Email
-                </label>
-                <input type="text" placeholder="" id="email" class="form-control">
+            </div>
+
+            <div class="field form-group">
+              <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-8 col-md-8 col-sm-8">
+              <%= label_tag "email", "Correo Electrónico" %>
+              <%= email_field_tag "email", "", {required: "required", :class => "form-control"}%>
               </div>
-              <div class="form-group">
-                <label for="phone">
-                  Teléfono
-                </label>
-                <input type="text" id="phone" class="form-control">
+            </div>
+
+            <div class="form-group">
+            <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-8 col-md-8 col-sm-8">
+              <%= label_tag "phone", "Teléfono", {} %>
+              <%= text_field_tag "phone", "", {required: "required", :class => "form-control"}  %>
               </div>
-              <div class="form-group">
-                <label for="phone">
-                  Mensaje
-                </label>
-                <textarea placeholder="" rows="5" class="form-control">
-                </textarea>
+            </div>
+
+            <div class="form-group">
+            <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-8 col-md-8 col-sm-8">
+              <%= label_tag "message", "Mensaje", {} %>
+              <%= text_area_tag "message", "", {required: "required", :class => "form-control", :rows => "5"}  %>
               </div>
-              <button class="btn btn-info" type="submit">
-                Enviar
-              </button>
-            </form>
+            </div>
+              
+              <%= submit_tag "Enviar", id: "submit", name: "submit", class: "form_submit btn btn-success col-lg-offset-1 col-md-offset-1 col-sm-offset-1", disabled: false, disable_with: "Por favor espere..." %>
+
+            <% end %>
+
 
           </div>
         </div>
