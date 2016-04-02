@@ -8,6 +8,7 @@
 <table class="table table-hover table-bordered table-responsive" text-align="center">
   <thead>
     <tr>
+      <th class="text-center" >Nombre</th>
       <th class="text-center" >Descripcíon</th>
       <th class="text-center" colspan="3"></th>
     </tr>
@@ -16,6 +17,7 @@
   <tbody>
     <% @tips.each do |tip| %>
       <tr>
+        <td><%= tip.name %></td>
         <td><%= tip.description %></td>
         <td><%= link_to 'Editar', edit_backend_tip_path(tip), {:class=>"btn btn-warning"} %></td>
         <td><%= link_to 'Eliminar', [:backend, tip], {method: :delete, data: { confirm: 'Desea eliminar éste tip?' }, :class=>"btn btn-danger" } %></td>
@@ -39,6 +41,10 @@
       </div>
       <div class="modal-body"> 
        <%= form_for([:backend, Tip.new],{:class => "form-horizontal" }) do |f| %>
+          <div class="form-group">
+            <label class="control-label">Nombre: </label>
+            <%= f.text_field :description, {:class => "form-control"} %>
+          </div> 
           <div class="form-group">
             <label class="control-label">Descripción: </label>
             <%= f.text_area :description, {:class => "form-control", :rows => "6"} %>

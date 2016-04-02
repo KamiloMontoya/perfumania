@@ -69,6 +69,6 @@ class Backend::TipsController < Backend::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tip_params
-      params.require(:tip).permit(:description)
+      params.require(:tip).permit(:description, :name)
     end
 end
