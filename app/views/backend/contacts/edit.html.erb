@@ -1,6 +1,4 @@
-<h1>Editing Contact</h1>
+<h1>Contacto - <%= @contact.name%> <%= link_to 'Eliminar', [:backend, @contact], { method: :delete, data: { confirm: 'Desea eliminar este registro?' }, :class=>"btn btn-danger"}  %> </h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @contact %> |
-<%= link_to 'Back', contacts_path %>
