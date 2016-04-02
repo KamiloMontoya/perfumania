@@ -128,33 +128,21 @@
       </div>
       <div class="col-lg-6 col-sm-6 col-md-6 wow fadeInRight">
         <h1>
-          BLOG
+          Tips
         </h1>
         <hr>
+        <% Tip.all.limit(10).each do |tip|%>
         <p>
+          <a href="<%=url_for(frontend_tips_path)%>/#tip-<%=tip.id%>">
           <i class="fa fa-check fa-lg pr-10">
           </i>
-          ¡El olor tiene un poder mágico!
-          Habitualmente, consideramos como verdadero aquello que podemos ver, sentir y tocar… pero un poco más relegado tenemos aquello que podemos oler..
+           <%= tip.name %>..
+           </a>
         </p>
-        <p>
-          <i class="fa fa-check fa-lg pr-10">
-          </i>
-          Las cosas no suceden porque sí, del mismo modo que no elegimos un perfume de moda sin motivo. Nuestra personalidad se refleja en la fraganciaque escogemos, al igual que el momento que estamos viviendo. Aquí te ofrecemos las claves para saber qué perfume usar según tu personalidad.
-        </p>
-        <p>
-          <i class="fa fa-check fa-lg pr-10">
-          </i>
-          A la mayoría de las mujeres nos fascina usar perfume ya que nos da un aire distinto, refuerza nuestra personalidad y nos hace sentirnos más seguras y atractivas.
-        </p>
-        <p>
-          <i class="fa fa-check fa-lg pr-10">
-          </i>
-          El mundo de la perfumería evoluciona constantemente, y las fragancias aparecen y desaparecen del mercado con  cierta facilidad según las modas. Pese a ello, existe un reducido número de perfumes con muchos años de historia a sus espaldas que siguen siendo plenamente vigentes hoy en día. Repasamos algunos de los perfumes masculinos que ha conseguido mantenerse en lo más alto pese al paso del tiempo. Aunque algunos de ellos se han visto mejorados con versiones más modernas, pueden presumir de seguir manteniendo la esencia con la que nacieron.
-        </p>
+        <% end%>
         <hr>
-        <a href="javascript:;" class="btn btn-purchase">
-          Ver más
+        <a href=<%= url_for(frontend_tips_path) %> class="btn btn-purchase">
+          Ver todos los tips
         </a>
       </div>
     </div>
@@ -223,9 +211,6 @@
     });
 
   });
-</script>
-<!--common script for all pages-->
-<script src="/site/js/common-scripts.js">
 </script>
 
 <script type="text/javascript">

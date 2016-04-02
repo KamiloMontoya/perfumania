@@ -41,6 +41,7 @@ Rails.application.routes.draw do
     get '/products_all', to: 'products#show_all', as: 'products_all'
 
     get '/blog', to: 'blogs#index', as: 'blogs'
+    get '/tips', to: 'tips#index', as: 'tips'
     get '/about', to: 'about#index', as: 'about'
     get '/contact', to: 'contact#index', as: 'contact'
   end
