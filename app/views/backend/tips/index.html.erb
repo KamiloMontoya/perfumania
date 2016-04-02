@@ -43,7 +43,7 @@
        <%= form_for([:backend, Tip.new],{:class => "form-horizontal" }) do |f| %>
           <div class="form-group">
             <label class="control-label">Nombre: </label>
-            <%= f.text_field :description, {:class => "form-control"} %>
+            <%= f.text_field :name, {:class => "form-control"} %>
           </div> 
           <div class="form-group">
             <label class="control-label">Descripción: </label>
