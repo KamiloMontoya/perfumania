@@ -1,6 +1,6 @@
 <!-- BANNER -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row mar-b-50">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="slider-wrapper">
         <div class="responisve-container">
@@ -9,16 +9,16 @@
                <% Product.all.order(top_position: :asc).limit(3).each do |product| %>
                   <div class="slide"> 
                   <h1    style="color:white"
-                      data-position="10,40" data-in="top" data-step="1"  data-ease-in="easeOutBounce">Perfumanía Shop <br> Inspirada en ... </h1>
+                      data-position="20,80" data-in="top" data-step="1"  data-ease-in="easeOutBounce">Perfumanía Shop <br> Inspirada en ... </h1>
                                   
                   <h2 style="color:white"
-                      data-position="110,40" data-in="right" data-step="2" ><%= product.name %></h2>
+                      data-position="130,80" data-in="right" data-step="2" ><%= product.name %></h2>
 
-                  <a data-position="240,40" data-in="right" data-step="2"  href="/frontend/products/<%=product.category_id %>" class="btn btn-info btn-lg da-link">
+                  <a data-position="270,80" data-in="right" data-step="2"  href="/frontend/products/<%=product.category_id %>" class="btn btn-info btn-lg da-link">
                     Ver más
                   </a> 
                   <img  src=<%= product.image.url(:medium) %> data-step="2"
-                      data-position="50,500" data-in="left" data-out="fade">
+                      data-position="50,600" data-in="left" data-out="fade">
                 </div>
              <% end %>   
           </div>
