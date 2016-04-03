@@ -42,6 +42,12 @@
             
           </ul>
         </li>
+        <li class="dropdown">
+          <a href=<%= backend_tips_path%> > Tips </a>
+        </li>
+        <li class="dropdown">
+          <a href=<%= backend_contacts_path%> > Contactos </a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -49,6 +55,7 @@
         </li>
       <% else %>
       <ul class="nav navbar-nav navbar-right">
+        
         <li>    
            <%= link_to "Login", new_user_session_path %>
         </li>
