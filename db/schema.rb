@@ -11,75 +11,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325162700) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20160402063851) do
 
   create_table "answers", force: :cascade do |t|
-    t.text     "title"
-    t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "title",       limit: 65535
+    t.integer  "question_id", limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "categories", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "name",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name",         limit: 255
+    t.string   "email",        limit: 255
+    t.string   "phone",        limit: 255
+    t.text     "message",      limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "read_contact", limit: 1
   end
 
   create_table "notes", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "productos", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "text"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.text     "name",       limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "products", force: :cascade do |t|
     t.string   "name",               limit: 255
-    t.text     "description"
-    t.integer  "category_id"
-    t.integer  "segment_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.integer  "top_position"
+    t.text     "description",        limit: 65535
+    t.integer  "category_id",        limit: 4
+    t.integer  "segment_id",         limit: 4
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "top_position",       limit: 4
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size"
+    t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.integer  "note_id"
+    t.integer  "note_id",            limit: 4
     t.string   "video_path",         limit: 255
   end
 
   create_table "questions", force: :cascade do |t|
-    t.text     "title"
-    t.integer  "type_question_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "test_id"
+    t.text     "title",            limit: 65535
+    t.integer  "type_question_id", limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.integer  "test_id",          limit: 4
   end
 
   create_table "test_responses", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "email",      limit: 255
-    t.integer  "test_id"
-    t.binary   "response"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "test_id",    limit: 4
+    t.binary   "response",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "tests", force: :cascade do |t|
-    t.text     "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.text     "name",        limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "description", limit: 255
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "name",        limit: 255
   end
 
   create_table "users", force: :cascade do |t|
@@ -88,7 +95,7 @@ ActiveRecord::Schema.define(version: 20160325162700) do
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255

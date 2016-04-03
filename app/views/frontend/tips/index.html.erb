@@ -1,0 +1,66 @@
+<!-- breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <h1>
+              Nuestos Tips
+            </h1>
+          </div>
+          <div class="col-lg-8  col-md-4 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="/">
+                  Inicio
+                </a>
+              </li>
+              </li>
+              <li class="active">
+                Tips
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+    <div class="container">
+      <div class="row">
+        <!--blog start-->
+        <div class="col-lg-11">
+          <div class="blog-item">
+            <div class="row">
+              <!-- <div class="col-lg-4 col-sm-4">
+                <ul>
+                 
+                </ul>
+              </div>
+              <div class="col-lg-8 col-sm-8">
+                  <img src="/site/img/blog.jpg" height="300" width="200" float="left" alt=""/>
+              </div>
+            </div> -->
+          <% @tips.each do |tip|%>
+            <div class="row">
+              <div class="col-lg-4 col-sm-4 text-right">
+                <div class="author">
+                  <h1 id="tip-<%=tip.id %>"> <a><%= tip.name %> </a> </h1>
+                </div>
+                
+              </div>
+              <div class="col-lg-8 col-sm-8">
+                <p>
+                  <%= tip.description %>
+                </p>     
+              </div>
+            </div>
+            <hr>          
+          <% end%>
+       </div>   
+       </div>
+
+      </div>
+
+    </div>
+    <!--container end

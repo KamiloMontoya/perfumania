@@ -35,43 +35,32 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="/site/css/component.css">
-    <link href="/site/css/style_main.css?v=20150321" rel="stylesheet">
+    <link href="/site/css/style_main.css?v=20150411" rel="stylesheet">
     <link href="/site/css/style-responsive.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css?v=20150321" />
+    <link rel="stylesheet" href="/site/css/fractionslider/fractionslider.css">
 
     <%= javascript_include_tag 'front'%>
+    <script src="/site/js/jquery.js"></script>
     
-    <script type="text/javascript" src="/site/js/parallax-slider/modernizr.custom.28468.js">
-    </script>
-
-
-   <script src="/site/js/jquery-1.8.3.min.js">
-    </script>
-    <script src="/site/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript" src="/site/js/hover-dropdown.js">
-    </script>
-    <script defer src="/site/js/jquery.flexslider.js">
-    </script>
-    <script type="text/javascript" src="/site/assets/bxslider/jquery.bxslider.js">
-    </script>
-
-    <script type="text/javascript" src="/site/js/jquery.parallax-1.1.3.js">
-    </script>
-    <script src="/site/js/wow.min.js">
-    </script>
-    <script src="/site/assets/owlcarousel/owl.carousel.js">
-    </script>
-
-    <script src="/site/js/jquery.easing.min.js">
-    </script>
-    <script src="/site/js/link-hover.js">
-    </script>
-    <script src="/site/js/superfish.js">
-    </script>
-    <script type="text/javascript" src="/site/js/parallax-slider/jquery.cslider.js">
-    </script>
+    <script type="text/javascript" src="/site/js/parallax-slider/modernizr.custom.28468.js"> </script>
+    <script src="/site/js/jquery-1.8.3.min.js"> </script>
+    <script src="/site/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/site/js/hover-dropdown.js"> </script>
+    <script defer src="/site/js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="/site/assets/bxslider/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="/site/js/jquery.parallax-1.1.3.js"> </script>
+    <script src="/site/js/wow.min.js"></script>
+    <script src="/site/assets/owlcarousel/owl.carousel.js"></script>
+    <script src="/site/js/jquery.easing.min.js">  </script>
+    <script src="/site/js/link-hover.js">  </script>
+    <script src="/site/js/superfish.js"> </script>
+    <script type="text/javascript" src="/site/js/parallax-slider/jquery.cslider.js"></script>
+    <script type="text/javascript" src="/site/js/jquery.quicksearch.js"></script>
+    <script src="/site/js/fractionslider/jquery.fractionslider.js" type="text/javascript" charset="utf-8"></script>
+    <!--common script for all pages-->
+    <script src="/site/js/common-scripts.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -114,6 +103,9 @@
                   <li>
                       <a href="/frontend/blog">Blog</a>
                   </li>
+                  <li>
+                      <a href="/frontend/tips">Tips</a>
+                  </li>
                   <li class="dropdown">
                       <a class="dropdown-toggle" data-close-others="false" data-delay="0" data-hover=
                       "dropdown" data-toggle="dropdown" href="#">Encuestas <i class="fa fa-angle-down"></i>
@@ -127,20 +119,29 @@
                   <li>
                       <a href="/frontend/contact">Contactenos</a>
                   </li>
-                  <li><input class="form-control search" placeholder=" Search" type="text"></li>
+                  <li><!-- <input id="id_search_list" class="form-control search" placeholder=" Search" type="text"></li> -->
+
+              <!--     <div class="dropdown"> -->
+                    <input class="form-control search" id="id_search_list" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <ul id="list_search_products" class="dropdown-menu scroll-menu">
+
+                     <% Product.order(name: :asc).each do |product| %>
+                      <li  id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" >
+                        <a> <%= product.name %> </a>
+                      </li>
+                      <% end %>
+                    </ul>
+                 <!--  </div> -->
+
               </ul>
           </div>
+     
       </div>
     </header>
     <!--header end-->
 
-
-
+    <%= render "frontend/partial/modal_product" %>
     <%= yield %>
-
-
-
-    <!--container end-->
 
     <!--footer start-->
     <footer class="footer">
@@ -223,11 +224,65 @@
     </footer>
     <!--small footer end-->
 
-    <!-- js placed at the end of the document so the pages load faster
-<script src="js/jquery.js">
+ <script type="text/javascript">
+  //Inicializando el buscador de productos
+  var qs = $('input#id_search_list').quicksearch('ul#list_search_products li');
+
+  $(document).ready(function() {
+    $("#owl-demo").owlCarousel({
+      items : 4
+    });
+  });
+
+  jQuery(document).ready(function(){
+    jQuery('ul.superfish').superfish();
+  });
+
+ $('a.info').tooltip();
+
+   $( "li" ).mouseover(function() {
+    console.log('ACA'+$( this ).attr("id"));
+      if( $( this ).attr("id")){
+        var id = $( this ).attr("id");
+          $.ajax({
+           type: "GET",
+           url: "/frontend/product_detail/"+id,
+           dataType: "json",
+           success: function (data) {
+               $( "#img-product" ).html("");
+               $( "#desc-product" ).html("");
+               $( "#name-product" ).html("");
+               $( "#img-product" ).append( '<img  width="100%" height="100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+               $( "#name-product" ).append(data.product.name);
+               $( "#desc-product" ).append(  "<p>" + data.product.description + "</p>"+
+                '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
+           }
+        });
+      };    
+  });
+  function modal_funt(id) {
+      $.ajax({
+         type: "GET",
+         url: "/frontend/product_detail/"+id,
+         dataType: "json",
+         success: function (data) {
+             $( ".modal-title" ).html("");
+             $( "#desc-product-modal" ).html("");
+             $( "#img-product-modal" ).html("");
+             
+             $( ".modal-title" ).append( data.product.name);
+             $( "#img-product-modal" ).append('<img width="100%" height="100%" src=' + data.img_medium + '>');
+             $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
+              '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
+             $("#myModal").modal('toggle');
+         }
+     });
+  };
+
+
+  new WOW().init();
+
 </script>
--->
- 
    
   </body>
 </html>

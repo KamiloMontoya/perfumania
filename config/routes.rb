@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   
+  resources :contacts
+  resources :tips
   root 'frontend/welcome#index'
   #devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => ''}
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
     resources :questions 
     resources :categories
     resources :notes
+    resources :tips
+    resources :contacts
 
     resources :questions do
       resources :answers
@@ -39,8 +43,10 @@ Rails.application.routes.draw do
     get '/products_all', to: 'products#show_all', as: 'products_all'
 
     get '/blog', to: 'blogs#index', as: 'blogs'
+    get '/tips', to: 'tips#index', as: 'tips'
     get '/about', to: 'about#index', as: 'about'
     get '/contact', to: 'contact#index', as: 'contact'
+    post '/contact_proccess', to: 'contact#contact_proccess'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

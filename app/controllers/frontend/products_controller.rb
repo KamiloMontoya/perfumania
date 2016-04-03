@@ -20,7 +20,8 @@ class Frontend::ProductsController < Frontend::ApplicationController
 		respond_to do |format|
 	        format.json { render json: {"product" => product, 
 	        							"img_medium" => product.image.url(:medium), 
-	        							"img_thumb" => product.image.url(:thumb) }}
+	        							"img_thumb" => product.image.url(:thumb),
+	        							"video_id" => product.video_path ? product.video_path.gsub(/.*?v=/, '') : '' }}
 	      end
 	end
 

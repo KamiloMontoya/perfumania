@@ -1,9 +1,6 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listado de Productos 
 <%= link_to 'Nuevo producto', new_backend_product_path,{ :class=>"btn btn-success"} %>
 </h1>
-<p id="notice"><%= notice %></p>
 
 <% categories = {'Seleccione Una' => '','Fragancias Maculinas' => 1, 'Fragancias Femeninas' => 2} %>
 
@@ -47,8 +44,13 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
+<<<<<<< HEAD
         <td><%= product.name %></td>
         <td><%= product.description %></td>
+=======
+        <td><%= product.name.encode("UTF-8", :invalid=>:replace, :replace=>" ") %></td>
+        <td><%= product.description.encode("UTF-8", :invalid=>:replace, :replace=>" ") %></td>
+>>>>>>> origin/master
         <td><%= product.category.name %></td>
         <td><%= product.note.name %></td>
         <td><%= product.top_position %></td>

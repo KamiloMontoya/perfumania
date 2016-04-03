@@ -1,0 +1,55 @@
+<%= form_for([:backend, @contact]) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <hr>
+  <div class="form-group field">
+    <%= f.label :name %>: <%= @contact.name %>
+    <div style="display: none"> 
+      <%= f.text_area :name, {:class => "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group field">
+    <%= f.label :email %>: <%= @contact.email %>
+    <div style="display: none"> 
+      <%= f.text_area :email, {:class => "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group field">
+    <%= f.label :phone %>: <%= @contact.phone %>
+    <div style="display: none"> 
+      <%= f.text_area :phone, {:class => "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group field">
+    <%= f.label :message %>: <%= @contact.message %>
+    <div style="display: none"> 
+      <%= f.text_area :message, {:class => "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group field">
+    <%= f.label :creado %>: <%= @contact.created_at %>
+  </div>
+   <div class="form-group field">
+    <%= f.label :actualizado %>: <%= @contact.updated_at %>
+  </div>
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :read_contact%> Marcar como leído
+    </label>
+  </div>
+
+  <div class="actions form-group">
+    <%= link_to 'Volver al listado', backend_contacts_path, :class => "btn btn-info bt-sm" %> | 
+    <%= f.submit 'Guardar', :class => "btn btn-success bt-sm" %>
+  </div>
+
+<% end %>
