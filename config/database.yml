@@ -10,10 +10,10 @@ development:
   database: perfumania_dev
   port: 5433
   pool: 5
-  username: diego
-  password: DaMs*9205
-  # username: camilo
-  # password: Teamo0725
+  # username: diego
+  # password: DaMs*9205
+  username: camilo
+  password: Teamo0725
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -25,10 +25,10 @@ test:
   database: perfumania_test
   port: 5433
   pool: 5
-  # username: camilo
-  # password: Teamo0725
-  username: diego
-  password: DaMs*9205
+  username: camilo
+  password: Teamo0725
+  # username: diego
+  # password: DaMs*9205
   host: localhost
   
 production:
@@ -37,10 +37,10 @@ production:
   database: perfumania
   port: 5433
   pool: 5
-  username: diego
-  password: DaMs*9205
-  # username: camilo
-  # password: Teamo0725
+  # username: diego
+  # password: DaMs*9205
+  username: camilo
+  password: Teamo0725
   host: localhost
 
 
