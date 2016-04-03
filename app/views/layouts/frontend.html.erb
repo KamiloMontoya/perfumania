@@ -39,13 +39,12 @@
     <link href="/site/css/style-responsive.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css?v=20150321" />
+    <link rel="stylesheet" href="/site/css/fractionslider/fractionslider.css">
 
     <%= javascript_include_tag 'front'%>
     <script src="/site/js/jquery.js"></script>
     
     <script type="text/javascript" src="/site/js/parallax-slider/modernizr.custom.28468.js"> </script>
-
-
     <script src="/site/js/jquery-1.8.3.min.js"> </script>
     <script src="/site/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/site/js/hover-dropdown.js"> </script>
@@ -59,6 +58,7 @@
     <script src="/site/js/superfish.js"> </script>
     <script type="text/javascript" src="/site/js/parallax-slider/jquery.cslider.js"></script>
     <script type="text/javascript" src="/site/js/jquery.quicksearch.js"></script>
+    <script src="/site/js/fractionslider/jquery.fractionslider.js" type="text/javascript" charset="utf-8"></script>
     <!--common script for all pages-->
     <script src="/site/js/common-scripts.js"></script>
 
@@ -223,13 +223,6 @@
  <script type="text/javascript">
   //Inicializando el buscador de productos
   var qs = $('input#id_search_list').quicksearch('ul#list_search_products li');
-
-  $(function() {
-    $('#da-slider').cslider({
-      autoplay    : true,
-      bgincrement : 100
-    });
-  });
 
   $(document).ready(function() {
     $("#owl-demo").owlCarousel({

@@ -3022,3 +3022,85 @@ ul.scroll-menu {
 .map_container .map_canvas{
     background: #ccc;
 }
+
+.fb_iframe_widget,
+.fb_iframe_widget span,
+.fb_iframe_widget span iframe[style] {
+  min-width: 100% !important;
+  width: 100% !important;
+}
+
+/* SLIDER STYLES */
+   
+
+.slider-wrapper{
+    position:relative;
+    overflow:hidden;
+    
+    width:100%;
+    height:100%;
+    
+   /* margin:200px auto;*/
+    background: url(/site/css/fractionslider/images/main-bg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border:1px solid #000;
+    box-shadow:0 3px 5px #666;
+}
+.slider{
+    width:100%; 
+    height:100%;
+    margin:0 auto;    
+}
+
+
+
+@media only screen and (min-width: 1000px){
+    .slider{
+        width:1000px;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+    .slider{
+        width:1440px;
+    }
+}
+
+/* ELEMENT STYLES */
+
+/*p{
+    position:absolute;
+    top:-200px;
+    
+    z-index:8000;
+    padding:1% 3%;
+    
+    font-size:24px;
+    line-height:100%
+    color:#fff;
+    white-space: nowrap;
+    text-transform:uppercase;
+}*/
+
+.claim{
+    line-height:100%
+}   
+
+.teaser{
+    padding:0.5% 1.5%;
+    font-size:14px;
+     line-height:100%
+}
+
+.small{
+    width:250px;
+   padding-left:0; padding-right:0px;
+    text-align:center;
+}
+
+.light-green{background:#95C542;}
+.green{background:#7CB761}
+.orange{background:#EF7D00}
+.turky{background:#348E8A}
+.white{background:#fff; color:#333}
