@@ -21,5 +21,9 @@ Category.create(id: 3, name: "Otras Productos")
 
 #Usuario por defecto perfumaniashop@gmail.com, passw: perfumania2016*
 
-User.create(id: 1, email: 'perfumaniashop@gmail.com', encrypted_password: "$2a$10$w0nmKirV8W127vEVBLMsr.rheq1kJJDBwV0uOZcMOMFLVihYNGqdq" )
-
+user = User.new(
+  :email                 => "perfumaniashop@gmail.com",
+  :password              => "perfumania2016*",
+  :password_confirmation => "perfumania2016*"
+)
+user.save!
