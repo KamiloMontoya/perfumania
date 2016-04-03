@@ -3035,7 +3035,6 @@ ul.scroll-menu {
 
 .slider-wrapper{
     position:relative;
-    z-index:0;
     overflow:hidden;
     
     width:100%;
@@ -3049,8 +3048,6 @@ ul.scroll-menu {
     box-shadow:0 3px 5px #666;
 }
 .slider{
-    position:relative;
-    z-index:0;
     width:100%; 
     height:100%;
     margin:0 auto;    
