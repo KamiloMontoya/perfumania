@@ -44,13 +44,8 @@
   <tbody>
     <% @products.each do |product| %>
       <tr>
-<<<<<<< HEAD
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-=======
         <td><%= product.name.encode("UTF-8", :invalid=>:replace, :replace=>" ") %></td>
         <td><%= product.description.encode("UTF-8", :invalid=>:replace, :replace=>" ") %></td>
->>>>>>> origin/master
         <td><%= product.category.name %></td>
         <td><%= product.note.name %></td>
         <td><%= product.top_position %></td>
