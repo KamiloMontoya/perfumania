@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :contacts
   resources :tips
   root 'frontend/welcome#index'
-  #devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => ''}
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :sign_up => ''}
+  #devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
 
   namespace :backend do
     resources :products
