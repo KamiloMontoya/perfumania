@@ -16,3 +16,7 @@
 !/log/.keep
 /tmp
 .env
+
+#Ignorar cambios en Imagenes
+/public/system/*
+/config/database.yml
