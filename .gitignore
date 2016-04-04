@@ -20,5 +20,5 @@
 #sdsdsa
 #Ignorar cambios en Imagenes
 public/system/**/*
-/config/database.yml
+config/database.yml
 
