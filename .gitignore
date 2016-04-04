@@ -19,6 +19,6 @@
 
 #sdsdsa
 #Ignorar cambios en Imagenes
-/public/system/**/*
+public/system/**/*
 /config/database.yml
 
