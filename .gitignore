@@ -18,6 +18,6 @@
 .env
 
 #Ignorar cambios en Imagenes
-/public/system/products/
+/public/system
 /config/database.yml
 
