@@ -21,4 +21,4 @@
 #Ignorar cambios en Imagenes
 public/system/**/*
 config/database.yml
-
+config/dropbox.yml

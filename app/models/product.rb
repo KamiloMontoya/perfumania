@@ -2,9 +2,19 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :note
 
- 	has_attached_file :image, 
-					  :styles => { :medium => "440x440>", :thumb => "100x100#" },## NO BORRAR 
-					  :default_url => "/images/:style/missing.png"
+ 	#has_attached_file :image, 
+	#				  :styles => { :medium => "440x440>", :thumb => "100x100#" },## NO BORRAR 
+	#				  :default_url => "/images/:style/missing.png"
+
+	has_attached_file :image, 
+					  :storage => :dropbox,
+					  :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+					  :styles => { :medium => "440x440>", :thumb => "100x100#" },
+					  dropbox_options: {
+     				  environment: ENV["RACK_ENV"],
+     				  path: proc{|style| "#{style}/#{id}_#{avatar.original_filename}"}
+   					  }## NO BORRAR 
+					  
 
 	# #Ejemplo Dropbox
 	# has_attached_file :storage => :dropbox,

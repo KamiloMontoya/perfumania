@@ -31,6 +31,9 @@ gem 'sprockets-rails', '2.3.3'
 
 gem 'pg'
 
+#gema para integrar dropbox
+gem 'paperclip-dropbox'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
