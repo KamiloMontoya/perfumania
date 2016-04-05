@@ -6,6 +6,15 @@ class Product < ActiveRecord::Base
 					  :styles => { :medium => "440x440>", :thumb => "100x100#" },## NO BORRAR 
 					  :default_url => "/images/:style/missing.png"
 
+	# #Ejemplo Dropbox
+	# has_attached_file :storage => :dropbox,
+	# 				    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
+	# 				    :styles => { :medium => "300x300" },
+	# 				    :dropbox_options => {
+	# 				      :path => proc { |style| "#{style}/#{id}_#{avatar.original_filename}" }
+	# 				    }
+
+
   	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 
