@@ -2,7 +2,10 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :note
 
- 	has_attached_file :image, :styles => { :medium => "440x440>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
+ 	has_attached_file :image, 
+					  :styles => { :medium => "440x440>", :thumb => "100x100#" },## NO BORRAR 
+					  :default_url => "/images/:style/missing.png"
+
   	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 
