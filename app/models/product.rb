@@ -10,10 +10,10 @@ class Product < ActiveRecord::Base
 					  :storage => :dropbox,
 					  :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
 					  :styles => { :medium => "440x440>", :thumb => "100x100#" },
-					  dropbox_options: {
-     				  environment: ENV["RACK_ENV"],
-     				  path: proc{|style| "#{style}/#{id}_#{avatar.original_filename}"}
-   					  }## NO BORRAR 
+					  :dropbox_options => {
+					  :path => proc { |style| "#{style}/#{id}_#{image.original_filename}"}
+					  }
+					  validates_presence_of :image
 					  
 
 	# #Ejemplo Dropbox
