@@ -275,6 +275,14 @@
              $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
               '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
              $("#myModal").modal('toggle');
+
+              $( "#img-product" ).html("");
+               $( "#desc-product" ).html("");
+               $( "#name-product" ).html("");
+               $( "#img-product" ).append( '<img  width="100%" height="100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+               $( "#name-product" ).append(data.product.name);
+               $( "#desc-product" ).append(  "<p>" + data.product.description + "</p>"+
+                '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
          }
      });
   };
