@@ -41,26 +41,27 @@
                   <img src="/site/img/blog.jpg" height="300" width="200" float="left" alt=""/>
               </div>
             </div> -->
-          <% @tips.each do |tip|%>
-            <div class="row">
-              <div class="col-lg-4 col-lg-4 col-sm-4 text-right">
-                <div class="author">
-                  <h1 id="tip-<%=tip.id %>"> <a><%= tip.name %> </a> </h1>
+            <% @tips.each do |tip|%>
+              <div class="row">
+                <div class="col-lg-4 col-lg-4 col-sm-4 text-right">
+                  <div class="author">
+                    <h1 id="tip-<%=tip.id %>"> <a><%= tip.name %> </a> </h1>
+                  </div>
+                  
                 </div>
-                
+                <div class="col-lg-8 col-lg-8 col-sm-8">
+                  <p>
+                    <%= tip.description %>
+                  </p>     
+                </div>
               </div>
-              <div class="col-lg-8 col-lg-8 col-sm-8">
-                <p>
-                  <%= tip.description %>
-                </p>     
-              </div>
-            </div>
-            <hr>          
-          <% end%>
-       </div>   
-       </div>
+              <hr>          
+              <% end%>
+            </div>   
+          </div>
+
+        </div>
 
       </div>
-
-    </div>
+    </div>  
     <!--container end
