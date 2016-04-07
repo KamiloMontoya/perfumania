@@ -1,280 +1,198 @@
+<!-- BANNER -->
+<div class="container-fluid">
+  <div class="row mar-b-50">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="slider-wrapper">
+        <div class="responisve-container">
+          <div class="slider">
+            <div class="fs_loader"></div>
+               <% Product.all.order(top_position: :asc).limit(3).each do |product| %>
+                  <div class="slide"> 
+                  <h1    style="color:white"
+                      data-position="20,80" data-in="top" data-step="1"  data-ease-in="easeOutBounce">Perfumanía Shop <br> Inspirada en ... </h1>
+                                  
+                  <h2 style="color:white"
+                      data-position="130,80" data-in="right" data-step="2" ><%= product.name %></h2>
 
-<!-- Sequence Modern Slider -->
-<div id="da-slider" class="da-slider">
-
-      <div class="da-slide">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12 col-sm-12">
-              <h2>
-                <i>Perfumania Shop inspirada en</i>
-                  <br />
-                <i>HUGO BOSS</i>
-              </h2>
-              <p>
-                <i>Boss Bottled Intense de Hugo Boss es una fragancia de la familia olfativa Amaderada Especiada para Hombres. Esta fragrancia es nueva. Boss Bottled Intense se lanzó en 2015. Las Notas de Salida son manzana, flor de azahar del naranjo y bergamota; las Notas de Corazón son geranio, canela, clavos de olor, lavanda y cardamomo; las Notas de Fondo son sándalo, cedro, vetiver, vainilla y cumarina.</i>
-              </p>
-              <a href="/frontend/products_all" class="btn btn-info btn-lg da-link">
-                Ver más
-              </a>
-            <div class="da-img">
-          <img src="/site/img/parallax-slider/images/107.png" alt="Hugo Boss" />
+                  <a data-position="270,80" data-in="right" data-step="2"  href="/frontend/products/<%=product.category_id %>" class="btn btn-info btn-lg da-link">
+                    Ver más
+                  </a> 
+                  <img  src=<%= product.image.url(:medium) %> data-step="2"
+                      data-position="50,600" data-in="left" data-out="fade">
+                </div>
+             <% end %>   
+          </div>
         </div>
       </div>
-    </div>
+   </div>
   </div>
-</div>
 
-
-      <div class="da-slide">
-      <div class="container">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-  <h2>
-    <i>Perfumania Shop inspirada en</i>
-    <br />
-    <i>CHANEL N° 5</i>
-  </h2>
-  <p>
-    <i>Chanel No 5 Eau de Toilette de Chanel es una fragancia de la familia olfativa Floral Aldehídica para Mujeres. Chanel No 5 Eau de Toilette se lanzó en 1921. La Nariz detrás de esta fragrancia es Ernest Beaux. Las Notas de Salida son neroli, ylang-ylang, bergamota, limón de Amalfi (lima de Amalfi) y aldehídos; las Notas de Corazón son iris , jazmín, raíz de lirio, rosa y lirio de los valles (muguete); las Notas de Fondo son vetiver, almizcle, sándalo, pachulí, musgo de roble, ámbar, vainilla y algalia (civet).</i>
-  </p>
-  <a href="/frontend/products_all" class="btn btn-info btn-lg da-link">
-    Ver más
-  </a>
-  <div class="da-img">
-    <img src="/site/img/parallax-slider/images/102.png" alt="Chanel" />
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-
-<div class="da-slide">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <h2>
-        <i>Perfumania Shop inspirada en</i>
-        <br />
-        <i>CAROLINA HERRERA</i>
-      </h2>
-      <p>
-        <i>212 VIP Men Wild Party de Carolina Herrera es una fragancia de la familia olfativa Amaderada Especiada para Hombres. Esta fragrancia es nueva. 212 VIP Men Wild Party se lanzó en 2016. La Nota de Salida es pimienta negra; la Nota de Corazón es hojas de violeta; la Nota de Fondo es notas amaderadas.</i>
-      </p>
-      <a href="/frontend/products_all" class="btn btn-info btn-lg da-link">
-        Ver más
-      </a>
-      <div class="da-img">
-        <img src="/site/img/parallax-slider/images/109.png" alt="Carolina Herrera" />
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-<nav class="da-arrows">
-  <span class="da-arrows-prev">
-  </span>
-  <span class="da-arrows-next">
-  </span>
-</nav>
-</div>
-
-
-<div class="container">
-<div class="row mar-b-50">
-  <div class="col-md-12">
-    <div class="text-center feature-head wow fadeInDown">
-      <h1 class="">
-        Disfruta lo mejor de PerfumaniaShop...
-      </h1>
-   
-      <!-- <div class="col-md-offset-4"> -->
-      <div class="bg-lg">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 recent">
-               <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/hombre.jpg" alt="Hombre">
-                  <div class="mask">
-                    <a href="frontend/products/1" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Masculinas">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+  <div class="row mar-b-50">
+    <div class="col-md-12">
+      <div class="text-center feature-head wow fadeInDown">
+        <h1 class="">
+          Disfruta lo mejor de Perfumania Shop...
+        </h1>
+     
+        <!-- <div class="col-md-offset-4"> -->
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 recent">
+                 <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/hombre.jpg" alt="Hombre">
+                    <div class="mask">
+                      <a href="frontend/products/1" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Masculinas">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/mujer.jpg" alt="Mujer">
-                  <div class="mask">
-                    <a href="frontend/products/2" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Femeninas">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/mujer.jpg" alt="Mujer">
+                    <div class="mask">
+                      <a href="frontend/products/2" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias Femeninas">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/dia.jpg" alt="Día">
-                  <div class="mask">
-                    <a href="/frontend/products_all" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias para el día">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/dia.jpg" alt="Día">
+                    <div class="mask">
+                      <a href="/frontend/products/3" class="info" data-toggle="tooltip" data-placement="top" title="otros Productos">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div class="item view view-tenth">
-                  <img src="/site/img/works/noche.jpg" alt="Noche">
-                  <div class="mask">
-                    <a href="/frontend/products_all" class="info" data-toggle="tooltip" data-placement="top" title="Fragancias para la noche">
-                      <i class="fa fa-link">
-                      </i>
-                    </a>
+                  <div class="item view view-tenth">
+                    <img src="/site/img/works/noche.jpg" alt="Noche">
+                    <div class="mask">
+                      <a href="/frontend/tips" class="info" data-toggle="tooltip" data-placement="top" title="Tips">
+                        <i class="fa fa-link">
+                        </i>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
-        </div>
-        <!--recent work end-->
-      </div>
-
-   </div>
-
-      <!-- </div> -->
-  </div>
-</div>
-</div>
-
-<%= render "frontend/partial/modal_product" %>
-<!--property start-->
-<div class="property gray-bg">
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
-      <h1> Top 10 productos destacádos</h1>
-
-      <div class="col-lg-6 col-sm-6 text-center wow fadeInLeft">
-      <ul id="list-top" class="list-unstyled">
-      <% @top_products.each do |product| %>
-        <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a><%= product.name %></a></li>
-      <% end %>
-      </ul> 
-      </div>
-
-      <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
-        <div id="top-img-product">
-              <% if @top_products.first %>
-              <%= image_tag(@top_products.first.image.url(:medium), width: "240", height: "240") %>
-              <% end %>
-          </div>      
-      </div>
-      <hr>
-      <a href="/frontend/products_all" class="btn btn-purchase">
-        Todas nuestras fragancias
-      </a>
-    </div>
-    <div class="col-lg-6 col-sm-6 col-md-6 wow fadeInRight">
-      <h1>
-        BLOG
-      </h1>
-      <hr>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        ¡El olor tiene un poder mágico!
-        Habitualmente, consideramos como verdadero aquello que podemos ver, sentir y tocar… pero un poco más relegado tenemos aquello que podemos oler..
-      </p>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        Las cosas no suceden porque sí, del mismo modo que no elegimos un perfume de moda sin motivo. Nuestra personalidad se refleja en la fraganciaque escogemos, al igual que el momento que estamos viviendo. Aquí te ofrecemos las claves para saber qué perfume usar según tu personalidad.
-      </p>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        A la mayoría de las mujeres nos fascina usar perfume ya que nos da un aire distinto, refuerza nuestra personalidad y nos hace sentirnos más seguras y atractivas.
-      </p>
-      <p>
-        <i class="fa fa-check fa-lg pr-10">
-        </i>
-        El mundo de la perfumería evoluciona constantemente, y las fragancias aparecen y desaparecen del mercado con  cierta facilidad según las modas. Pese a ello, existe un reducido número de perfumes con muchos años de historia a sus espaldas que siguen siendo plenamente vigentes hoy en día. Repasamos algunos de los perfumes masculinos que ha conseguido mantenerse en lo más alto pese al paso del tiempo. Aunque algunos de ellos se han visto mejorados con versiones más modernas, pueden presumir de seguir manteniendo la esencia con la que nacieron.
-      </p>
-      <hr>
-      <a href="javascript:;" class="btn btn-purchase">
-        Ver más
-      </a>
-    </div>
-  </div>
-</div>
-</div>
-<!--property end-->
-
-<div class="container">
-
-<div class="row mar-b-60">
-  <div class="col-lg-6 col-md-6 col-sm-6 ">
-    <!--tab start-->
-    <!-- Caja de Comentarios Facebook -->
-
-    <!-- Comentarios en facebook -->
-    <div class="about-testimonial boxed-style about-flexslider ">
-
-        <h2> <a target="_blank" href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks"><img src="/site/img/facebook_logo.png"  height="35" width="35"></img> </a>  Encuentranos en facebook </h2>
-        <!-- Boton Me gusta facebook -->
-
-        <div class="fb-like" data-href="https://www.facebook.com/Perfumaniashop-1573549602960642/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-
-
-        <div class="fb-comments" data-href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks" data-numposts="5"></div>
-
-        <div id="fb-root" class="col-lg-6" ></div>
-          <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1098117230210261";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script>
+          <!--recent work end-->
         </div>
 
+     </div>
+
+        <!-- </div> -->
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-6">
-      <!--testimonial start-->
-      <div class="about-testimonial boxed-style about-flexslider ">
-      <h2>Encuentra tu tienda más cercana </h2>
-        <hr>
-        <section class="slider wow fadeInRight">
-          <div id="map" style='height: 250px;'></div>
-        </section>
-    </div>
-    <!--testimonial end-->
   </div>
+
+  <!--property start-->
+  <div class="property gray-bg">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInLeft">
+          <h1> Top 10 productos destacádos</h1>
+          <hr>
+
+          <div class="col-lg-6 col-sm-6 col-md-6">
+            <ul id="list-top" class="list-unstyled">
+            <% @top_products.each do |product| %>
+              <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a></i><%= product.name %></a></li>
+            <% end %>
+            </ul> 
+          </div>
+          <div class="col-lg-6 col-sm-6 col-md-6">
+            <div id="img-product">
+                  <% if @top_products.first %>
+                  <%= image_tag(@top_products.first.image.url(:medium), width: "100%", height: "100%") %>
+                  <% end %>
+              </div>      
+          </div>
+        <!--   <hr> <a href="/frontend/products_all" class="btn btn-purchase">
+            Todas nuestras fragancias
+          </a> -->
+        </div>
+        <div class="col-lg-6 col-sm-6 col-md-6 text-center wow fadeInRight">
+          <h1>
+            Tips
+          </h1>
+          <hr>
+          <% Tip.all.limit(10).each do |tip|%>
+          <p>
+            <a href="<%=url_for(frontend_tips_path)%>/#tip-<%=tip.id%>">
+            <i class="fa fa-check fa-lg pr-10">
+            </i>
+             <%= tip.name %>..
+             </a>
+          </p>
+          <% end%>
+          <a href=<%= url_for(frontend_tips_path) %> class="btn btn-purchase">
+            Ver todos los tips
+          </a>
+        </div>
+      </div>
+
+  </div>
+  <!--property end-->
+
+  <div class="row mar-b-50">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInLeft">
+          <!-- Comentarios en facebook -->
+              <h2> <a target="_blank" href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks"><img src="/site/img/facebook_logo.png"  height="35" width="35"></img> </a>  Encuentranos en facebook </h2>
+              <!-- Boton Me gusta facebook -->
+
+              <div class="fb-like" data-href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+              
+              <div class="fb-comments" data-numposts="10" data-width="100%" data-colorscheme="light" data-href="https://www.facebook.com/Perfumaniashop-1573549602960642/?ref=bookmarks"></div>
+
+              <div id="fb-root" class="" ></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5&appId=1098117230210261";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+        </div>  
+        <!--Google maps start-->
+        <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInRight">
+          <h2>Encuentra tu tienda más cercana </h2>
+            <hr>
+            <div class="map_container">
+                <div id="map" class="map_canvas"></div>
+            </div>
+              <!-- <div id="map" style='height: 250px;'></div> -->
+        </div>
+        <!--Google MAps end-->
+      </div>
   </div>
 </div>
+<hr>
 
 
   <!--recent work start-->
 
-
- <script type="text/javascript">
-  $(function() {
-
-    $('#da-slider').cslider({
-      autoplay    : true,
-      bgincrement : 100
-    });
-
-  });
-</script>
-<!--common script for all pages-->
-<script src="/site/js/common-scripts.js">
-</script>
-
 <script type="text/javascript">
+  
+  $(window).load(function(){
+    $('.slider').fractionSlider({
+      'fullWidth':      true,
+      'controls':       true, 
+      'pager':        true,
+      'responsive':       true,
+      'dimensions':       "1000,400",
+        'increase':       false,
+      'pauseOnHover':     true
+    });
+    $('.flexslider').flexslider({
+      animation: "slide",
+      start: function(slider) {
+        $('body').removeClass('loading');
+      }
+    });
+  });
   jQuery(document).ready(function() {
-
-
     $('.bxslider1').bxSlider({
       minSlides: 5,
       maxSlides: 6,
@@ -287,70 +205,7 @@
       nextText: 'Onward →',
       prevText: '← Go back'
     });
-
   });
-
-
-</script>
-<script>
-  $( "li" ).mouseover(function() {
-    var id = $( this ).attr("id");
-    $.ajax({
-       type: "GET",
-       url: "/frontend/product_detail/"+id,
-       dataType: "json",
-       success: function (data) {
-           $( "#top-img-product" ).html("");
-           $( "#top-img-product" ).append( '<img width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
-       }
-   });
-  });
-  function modal_funt(id) {
-    $.ajax({
-       type: "GET",
-       url: "/frontend/product_detail/"+id,
-       dataType: "json",
-       success: function (data) {
-           $( ".modal-title" ).html("");
-           $( "#desc-product-modal" ).html("");
-           $( "#img-product-modal" ).html("");
-           
-           $( ".modal-title" ).append( data.product.name);
-           $( "#img-product-modal" ).append( '<img  width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
-           $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");
-           $("#myModal").modal('toggle');
-       }
-     });
-  };
-
-  $('a.info').tooltip();
-
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-      animation: "slide",
-      start: function(slider) {
-        $('body').removeClass('loading');
-      }
-    });
-  });
-
-  $(document).ready(function() {
-
-    $("#owl-demo").owlCarousel({
-
-      items : 4
-
-    });
-
-  });
-
-  jQuery(document).ready(function(){
-    jQuery('ul.superfish').superfish();
-  });
-
-  new WOW().init();
-
-
 </script>
 
 

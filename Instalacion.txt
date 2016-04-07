@@ -75,3 +75,5 @@ sudo service postgresql start
 
 Para agregar Tweets
 https://dev.twitter.com/web/embedded-timelines#customization
+
+rake dropbox:authorize APP_KEY sjj5da7c1alasjo APP_SECRET=6o8626u4u1cl1t3 ACCES_TYPE=app_folder

@@ -49,7 +49,7 @@
         <div class="candidate wow fadeInRight">
             <div id="img-product">
                 <% if @products.first %>
-                <%= image_tag(@products.first.image.url(:medium), width: "240", height: "240") %>
+                <%= image_tag(@products.first.image.url(:medium), width: "100%", height: "100%") %>
                 <% end %>
             </div>
         </div>     
@@ -60,8 +60,9 @@
             <h1 id="name-product"><%= @products.first.name %></h1>
             <div id="desc-product">  
                 <p><%= @products.first.description %></p>  
-            </div> 
-             <% end %>   
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<%=@products.first.video_path.gsub(/.*?v=/, '')%>" frameborder="0" allowfullscreen></iframe> 
+             </div> 
+             <% end %> 
         </div>     
     </div>
   </div>
@@ -94,7 +95,6 @@
           <!--recent work end-->
   </div>
 </div>
-<%= render "frontend/partial/modal_product" %>
 
 <!-- 
 <script src="/site/js/jquery.js"></script>  
@@ -121,22 +121,7 @@
             }
         });
 
-    $( "li" ).mouseover(function() {
-        var id = $( this ).attr("id");
-        $.ajax({
-           type: "GET",
-           url: "/frontend/product_detail/"+id,
-           dataType: "json",
-           success: function (data) {
-               $( "#img-product" ).html("");
-               $( "#desc-product" ).html("");
-               $( "#name-product" ).html("");
-               $( "#img-product" ).append( '<img  width="240" height="240" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
-               $( "#name-product" ).append(data.product.name);
-               $( "#desc-product" ).append( "<p>" + data.product.description + "</p>");
-           }
-       });
-    });
+
 
     wow = new WOW(
       {
@@ -145,24 +130,6 @@
         offset:       0          // default
       }
     );
-
-    function modal_funt(id) {
-        $.ajax({
-           type: "GET",
-           url: "/frontend/product_detail/"+id,
-           dataType: "json",
-           success: function (data) {
-               $( ".modal-title" ).html("");
-               $( "#desc-product-modal" ).html("");
-               $( "#img-product-modal" ).html("");
-               
-               $( ".modal-title" ).append( data.product.name);
-               $( "#img-product-modal" ).append( '<img width="240" height="240" src=' + data.img_medium + '>');
-               $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");
-               $("#myModal").modal('toggle');
-           }
-       });
-    };
 
     wow.init();
 </script>

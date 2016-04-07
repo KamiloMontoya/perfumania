@@ -1,0 +1,4 @@
+<h1>Contacto - <%= @contact.name%> <%= link_to 'Eliminar', [:backend, @contact], { method: :delete, data: { confirm: 'Desea eliminar este registro?' }, :class=>"btn btn-danger"}  %> </h1>
+
+<%= render 'form' %>
+

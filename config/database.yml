@@ -39,8 +39,8 @@ production:
   pool: 5
   username: diego
   password: DaMs*9205
-  # username: camilo
-  # password: Teamo0725
+  #username: camilo
+  #password: Teamo0725
   host: localhost
 
 

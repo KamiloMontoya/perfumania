@@ -47,11 +47,13 @@ class Backend::ProductsController < Backend::ApplicationController
   # POST /products
   # POST /products.json
   def create
+    product_params[:name] = product_params[:name].encode("UTF-8", :invalid=>:replace, :replace=>" ")
+    product_params[:description] = product_params[:description].encode("UTF-8", :invalid=>:replace, :replace=>" ")
     @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to [:backend, @product], notice: 'Product was successfully created.' }
+        format.html { redirect_to backend_products_url, notice: 'Producto creado exitosamente.' }
         format.json { render :show, status: :created, location: [:backend, @product] }
       else
         format.html { render :new }
@@ -64,8 +66,11 @@ class Backend::ProductsController < Backend::ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
+      product_params[:name] = product_params[:name].encode("UTF-8", :invalid=>:replace, :replace=>" ")
+      product_params[:description] = product_params[:description].encode("UTF-8", :invalid=>:replace, :replace=>" ")
+    
       if @product.update(product_params)
-        format.html { redirect_to [:backend, @product], notice: 'Product was successfully updated.' }
+        format.html { redirect_to backend_products_url, notice: 'Producto actualizado.' }
         format.json { render :show, status: :ok, location: [:backend, @product] }
       else
         format.html { render :edit }
@@ -79,7 +84,7 @@ class Backend::ProductsController < Backend::ApplicationController
   def destroy
     @product.destroy
     respond_to do |format|
-      format.html { redirect_to backend_products_url, notice: 'Product was successfully destroyed.' }
+      format.html { redirect_to backend_products_url, notice: 'Producto eliminado.' }
       format.json { head :no_content }
     end
   end

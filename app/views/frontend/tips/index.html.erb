@@ -1,0 +1,84 @@
+<!-- breadcrumbs start-->
+    <div class="breadcrumbs">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <h1>
+              Nuestos Tips
+            </h1>
+          </div>
+          <div class="col-lg-8  col-md-4 col-sm-8">
+            <ol class="breadcrumb pull-right">
+              <li>
+                <a href="/">
+                  Inicio
+                </a>
+              </li>
+              </li>
+              <li class="active">
+                Tips
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--breadcrumbs end-->
+
+    <!--container start-->
+  
+    <!--container end-->
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11">
+          <div class="blog-item">
+            <div class="row">
+              <div class="col-lg-2 col-sm-2">
+                <div class="date-wrap">
+                  <span class="date">
+                    22
+                  </span>
+                  <span class="month">
+                    Marzo
+                  </span>
+                </div>
+              </div>
+              <div class="col-lg-10 col-sm-10">
+                <img src="/site/img/blog.jpg" height="300" width="200" float="left" alt=""/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-2 col-sm-2 text-right">
+                <div class="author">
+                  Por
+                  <a href="#">
+                    Perfumania
+                  </a>
+                </div>
+              </div>
+              <div>
+                <div class="col-lg-10 col-sm-10">
+                  <% @tips.each do |tip|%>
+                    <h1 id="tip-<%=tip.id %>">
+                      <a>
+                        <%= tip.name %>
+                      </a>
+                    </h1>
+                    <p>
+                      <%= tip.description %>
+                    </p>
+                  <% end%>  
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+       
+
+
+      </div>
+
+    </div>
+    <!--container end-->

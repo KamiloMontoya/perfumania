@@ -15,6 +15,15 @@ Answer.create(title: "Azul", question_id: 1)
 Answer.create(title: "Rosa", question_id: 1)
 Answer.create(title: "Rojo", question_id: 1)
 
-Category.create(name: "Fragancias Maculinas")
-Category.create(name: "Fragancias Femeninas")
-Category.create(name: "Otras Productos")
+Category.create(id: 1, name: "Fragancias Maculinas")
+Category.create(id: 2, name: "Fragancias Femeninas")
+Category.create(id: 3, name: "Otras Productos")
+
+#Usuario por defecto perfumaniashop@gmail.com, passw: perfumania2016*
+
+user = User.new(
+  :email                 => "perfumaniashop@gmail.com",
+  :password              => "perfumania2016*",
+  :password_confirmation => "perfumania2016*"
+)
+user.save!

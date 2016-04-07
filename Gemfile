@@ -31,6 +31,9 @@ gem 'sprockets-rails', '2.3.3'
 
 gem 'pg'
 
+#gema para integrar dropbox
+gem 'paperclip-dropbox'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -66,7 +69,7 @@ gem 'devise'
 gem 'devise-i18n-views'
 
 #Proteccion de claves para mailer	
-gem 'dotenv-rails'
+gem 'dotenv', '~> 0.1.0'
 
 # Gemas para Google Maps
 gem 'underscore-rails'
