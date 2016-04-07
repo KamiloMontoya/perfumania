@@ -27,11 +27,10 @@
 
     <!--container start-->
   
-    <!--container end
+    <!--container end-->
 
     <div class="container">
       <div class="row">
-        <!--blog start-->
         <div class="col-lg-11">
           <div class="blog-item">
             <div class="row">
@@ -44,14 +43,9 @@
                     Marzo
                   </span>
                 </div>
-
               </div>
               <div class="col-lg-10 col-sm-10">
-
-                
-                  <img src="/site/img/blog.jpg" height="300" width="200" float="left" alt=""/>
-                
-
+                <img src="/site/img/blog.jpg" height="300" width="200" float="left" alt=""/>
               </div>
             </div>
             <div class="row">
@@ -62,24 +56,29 @@
                     Perfumania
                   </a>
                 </div>
-                
               </div>
-              <% @tips.each do |tip|%>
-              <div class="col-lg-10 col-sm-10">
-
-                <h1>
-                  <a>
-                    <%= tip.name %>
-                  </a>
-                </h1>
-                <p>
-                <%= tip.description %>
-                </p>
-                
-              </div>
+              <div>
+                <div class="col-lg-10 col-sm-10">
+                  <% @tips.each do |tip|%>
+                    <h1 id="tip-<%=tip.id %>">
+                      <a>
+                        <%= tip.name %>e.
+                      </a>
+                    </h1>
+                    <p>
+                      <%= tip.description %>
+                    </p>
+                  <% end%>  
+                </div>
             </div>
           </div>
 
         </div>
 
+       
+
+
+      </div>
+
+    </div>
     <!--container end-->
