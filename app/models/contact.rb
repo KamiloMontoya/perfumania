@@ -5,7 +5,11 @@ class Contact < ActiveRecord::Base
 		elsif search[:email].present?
 			where("email LIKE '%#{search[:email]}%'")
 		elsif search[:read].present?
-			where("read_contact = ?", search[:read].to_i)
+			if search[:read] == 0
+				where("read_contact is not true" )
+			else
+				where("read_contact = ?", true )
+			end
 		else
 		    #scoped
 		end

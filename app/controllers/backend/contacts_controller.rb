@@ -12,7 +12,7 @@ class Backend::ContactsController < Backend::ApplicationController
     elsif (params[:filter_email] && params[:filter_email].to_s != '')
       search_array[:email] = params[:filter_email] 
     elsif (params[:filter_read] && params[:filter_read].to_s != '')
-      search_array[:read] = params[:filter_read].to_i 
+        search_array[:read] =  params[:filter_read].to_i
     end
 
     if search_array.length == 0
@@ -20,7 +20,6 @@ class Backend::ContactsController < Backend::ApplicationController
     else
       @contacts = Contact.all.page(params[:page]).order(updated_at: :asc).per(10).search( search_array )
     end
-
     
   end
 
