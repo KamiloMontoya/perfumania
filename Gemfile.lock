@@ -72,10 +72,7 @@ GEM
     devise-i18n-views (0.3.7)
     domain_name (0.5.20160310)
       unf (>= 0.0.5, < 1.0.0)
-    dotenv (2.1.0)
-    dotenv-rails (2.1.0)
-      dotenv (= 2.1.0)
-      railties (>= 4.0, < 5.1)
+    dotenv (0.1.1)
     dropbox-sdk (1.6.5)
       json
     equalizer (0.0.10)
@@ -255,7 +252,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n-views
-  dotenv-rails
+  dotenv (~> 0.1.0)
   gmaps4rails
   heroku
   jbuilder (~> 2.0)

@@ -69,7 +69,7 @@ gem 'devise'
 gem 'devise-i18n-views'
 
 #Proteccion de claves para mailer	
-gem 'dotenv-rails'
+gem 'dotenv', '~> 0.1.0'
 
 # Gemas para Google Maps
 gem 'underscore-rails'
