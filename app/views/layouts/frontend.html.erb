@@ -218,6 +218,7 @@
  <script type="text/javascript">
   //Inicializando el buscador de productos
   var qs = $('input#id_search_list').quicksearch('ul#list_search_products li');
+  function Wj(a){return"chrome-extension://"+a+"/cast_sender.js"}
 
   $(document).ready(function() {
     $("#owl-demo").owlCarousel({
@@ -252,6 +253,7 @@
   //     };    
   // });
   function modal_funt(id) {
+    $("#myModal").modal('toggle');
       $.ajax({
          type: "GET",
          url: "/frontend/product_detail/"+id,
@@ -265,7 +267,7 @@
              $( "#img-product-modal" ).append('<img width="100%" height="100%" src=' + data.img_medium + '>');
              $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
               '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
-             $("#myModal").modal('toggle');
+             
 
               $( "#img-product" ).html("");
                $( "#desc-product" ).html("");
@@ -273,7 +275,7 @@
                $( "#img-product" ).append( '<img  width="100%" height="100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
                $( "#name-product" ).append(data.product.name);
                $( "#desc-product" ).append(  "<p>" + data.product.description + "</p>"+
-                '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
+                '<iframe width="100%" height="100%" src="https://www.youtube.com/v/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
          }
      });
   };
