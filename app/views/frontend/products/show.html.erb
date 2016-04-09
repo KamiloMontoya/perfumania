@@ -81,15 +81,14 @@
               <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
 
               <% @products.each do |product| %>
-                  <div>
-                    <div class="item view view-tenth">   
-                     <a data-toggle="tooltip" data-placement="top" onclick="modal_funt(<%= product.id %>);" title=<%= product.name%>>
-                      <%= image_tag(product.image.url(:thumb))%>
+                <div class="item view view-tenth">
+                  <%= image_tag(product.image.url(:thumb))%>
+                  <div class="mask">
+                      <a class="info" data-toggle="tooltip" data-placement="top" onclick="modal_funt(<%= product.id %>);" title=<%= product.name%>>
+                      <i class="fa fa-link"></i>
                       </a>
-                    </div>
-                    <br>
-                    <a onclick="modal_funt(<%= product.id %>)" ><%= product.name%></a>
                   </div>
+                </div>
                <% end %>             
               </div>
           </div>
