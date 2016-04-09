@@ -37,10 +37,11 @@
               <div class="col-lg-2 col-sm-2">
                 <div class="date-wrap">
                   <span class="date">
-                    22
+                    <%= DateTime.now.strftime("%d") %>
                   </span>
                   <span class="month">
-                    Marzo
+                    <% month = ['Enero','Febrero','Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'] %>
+                    <%= month[(DateTime.now.strftime("%m").to_i - 1)] %>
                   </span>
                 </div>
               </div>
