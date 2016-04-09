@@ -18,9 +18,9 @@ class Backend::ProductsController < Backend::ApplicationController
     end
 
     if search_array.length == 0
-      @products = Product.order(top_position: :asc).page(params[:page]).per(5)
+      @products = Product.order(top_position: :asc).page(params[:page]).per(10)
     else
-      @products = Product.order(top_position: :asc).page(params[:page]).per(5).search( search_array )
+      @products = Product.order(top_position: :asc).page(params[:page]).per(10).search( search_array )
     end
 
     @notes = Note.all.collect {|n| [ n.name, n.id ] }

@@ -32,7 +32,7 @@
   <thead>
     <tr>
       <th class="text-center">Nombre</th>
-      <th class="text-center">Descripción</th>
+      
       <th class="text-center">Categoria</th>
       <th class="text-center">Nota olfativa</th>
       <th class="text-center">Top 10 Posición</th>
@@ -45,7 +45,7 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name.encode("UTF-8", :invalid=>:replace, :replace=>" ") %></td>
-        <td><%= product.description.encode("UTF-8", :invalid=>:replace, :replace=>" ") %></td>
+       
         <td><%= product.category.name %></td>
         <td><%= product.note.name %></td>
         <td><%= product.top_position %></td>

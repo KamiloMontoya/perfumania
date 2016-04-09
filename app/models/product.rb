@@ -14,6 +14,7 @@ class Product < ActiveRecord::Base
 					  :path => proc { |style| "#{style}/#{id}_#{image.original_filename}"}
 					  }
 					  validates_presence_of :image
+					  validates_attachment :image, content_type: {content_type: ["image/jpeg", "image/jpeg", "image/png", "image/gif"]}
 					  
 
 	# #Ejemplo Dropbox
