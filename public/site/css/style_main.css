@@ -2931,6 +2931,7 @@ p { text-align: left }
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
+    z-index: 100;
 }
 
 #back-to-top:hover {

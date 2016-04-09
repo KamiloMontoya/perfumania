@@ -518,27 +518,7 @@ body {
     padding-left: 28px;
 }
 
-.back-to-top {
-    display: none;
-    margin-top: 10px;
-    margin-left: 10px;
-    padding: 4px 10px;
-    font-size: 12px;
-    font-weight: 500;
-    color: #999;
-}
 
-.back-to-top:hover {
-    text-decoration: none;
-    color: #563d7c;
-}
-
-@media min-width768px {
-    .back-to-top {
-        display: block;
-    }
-
-}
 
 @media min-width992px {
     .bs-un-sidebar .nav>.active>ul {
@@ -1588,4 +1568,7 @@ h1[id] {
 
 .css .o,.css .o+.nt,.css .nt+.nt {
     color: #999;
+}
+
+
 }

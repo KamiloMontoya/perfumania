@@ -34,8 +34,8 @@
 
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" type="text/css" href="/site/css/component.css">
-    <link href="/site/css/style_main.css?v=20150411" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/site/css/component.css?v=2134">
+    <link href="/site/css/style_main.css?v=20150422" rel="stylesheet">
     <link href="/site/css/style-responsive.css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css?v=20150321" /> -->
@@ -58,10 +58,12 @@
     <script src="/site/js/link-hover.js">  </script>
     <script src="/site/js/superfish.js"> </script>
     <!-- <script type="text/javascript" src="/site/js/parallax-slider/jquery.cslider.js"></script> -->
+    <!--common script for all pages-->
+    <script src="/site/js/common-scripts.js?v=12412"></script>
+
     <script type="text/javascript" src="/site/js/jquery.quicksearch.js"></script>
     <script src="/site/js/fractionslider/jquery.fractionslider.js" type="text/javascript" charset="utf-8"></script>
-    <!--common script for all pages-->
-    <script src="/site/js/common-scripts.js"></script>
+    
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -131,9 +133,9 @@
       </div>
     </header>
     <!--header end-->
-
     <%= render "frontend/partial/modal_product" %>
     <%= yield %>
+    <i id="back-to-top" onclick="$('body,html').animate({scrollTop:0},600);"></i>
 
     <!--footer start-->
     <footer class="footer">
@@ -195,7 +197,6 @@
           </ul>
 
          </div>       
-
 
       </div>
     </footer>
