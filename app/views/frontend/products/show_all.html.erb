@@ -35,7 +35,7 @@
       <% Category.all.each do |category| %>
         <div class="col-md-4">
           <div class="candidate wow fadeInLeft">
-            <%= category.name %>
+            <a href="products/<%= category.id %>"><%= category.name %></a>
             <hr>
             <ul id="list" class="list-unstyled">
                   <% @products.each do |product| %>

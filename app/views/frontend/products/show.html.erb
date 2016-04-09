@@ -40,7 +40,7 @@
         <div class="candidate wow fadeInLeft">
             <ul id="list" class="list-unstyled">
                 <% @products.each do |product| %>
-                <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
+                <li style="cursor:pointer;" onclick="update_poduct_info(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
                 <% end %>
             </ul>
             <%= paginate @products, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
@@ -104,7 +104,7 @@
 
 <script>
    var changge_related_prod = true;
-  jQuery(document).ready(function(){
+   jQuery(document).ready(function(){
     console.log('READY');
         // $("#owl-productos").owlCarousel({
         //     loop:true,

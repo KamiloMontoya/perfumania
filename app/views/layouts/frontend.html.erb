@@ -234,33 +234,38 @@
    $( "li" ).mouseover(function() {
       if( $( this ).attr("id")){
           var id = $( this ).attr("id");
-          // $( "#img-product" ).html("");
-          // $('#img-product').html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');
-          $.ajax({
-           type: "GET",
-           url: "/frontend/product_detail/"+id,
-           dataType: "json",
-           success: function (data) {
-               $( "#img-product" ).html("");
-               $( "#desc-product" ).html("");
-               $( "#name-product" ).html("");
-               $( "#img-product" ).append( '<img   style="width: 250px" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
-               $( "#name-product" ).append(data.product.name);
-               if( data.video_id != ''){
-                  $( "#desc-product" ).append( "<p>" + data.product.description + "</p>"+
-                  '<iframe style="z-index: 100;" width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
-                }else{
-                  $( "#desc-product" ).append( "<p>" + data.product.description + "</p>");     
-               }
-
-               if (typeof(changge_related_prod) != 'undefined' && changge_related_prod != null){
-                 productos_relacionados(id);
-               }
-
-            }
-        });
+          update_poduct_info(id);
       };    
   });
+
+  function update_poduct_info(id){
+    // $( "#img-product" ).html("");
+    // $('#img-product').html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');
+    $.ajax({
+       type: "GET",
+       url: "/frontend/product_detail/"+id,
+       dataType: "json",
+       success: function (data) {
+           $( "#img-product" ).html("");
+           $( "#desc-product" ).html("");
+           $( "#name-product" ).html("");
+           $( "#img-product" ).append( '<img   style="width: 250px" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+           $( "#name-product" ).append(data.product.name);
+           if( data.video_id != ''){
+              $( "#desc-product" ).append( "<p>" + data.product.description + "</p>"+
+              '<iframe style="z-index: 100;" width="100%" height="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
+            }else{
+              $( "#desc-product" ).append( "<p>" + data.product.description + "</p>");     
+           }
+
+           if (typeof(changge_related_prod) != 'undefined' && changge_related_prod != null){
+             productos_relacionados(id);
+           }
+
+        }
+    });
+  }
+
   function productos_relacionados(id) {
     // $("#owl-productos").html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');  
     $.ajax({
