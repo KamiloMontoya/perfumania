@@ -37,6 +37,8 @@ Rails.application.routes.draw do
     post '/preview_proccess', to: 'test#preview_proccess'
 
     get '/product_detail/:id', to: 'products#product_detail', as: 'product_detail'
+    get '/product_related/:id', to: 'products#product_related', as: 'product_related'
+    
 
 
     resources :products

@@ -79,17 +79,16 @@
               <h3>Productos relacionados</h3>
               <p></p>
               <div id="owl-productos" class="owl-carousel owl-theme wow fadeIn">
-
-              <% @products.each do |product| %>
-                <div class="item view view-tenth">
-                  <%= image_tag(product.image.url(:thumb))%>
-                  <div class="mask">
-                      <a class="info" data-toggle="tooltip" data-placement="top" onclick="modal_funt(<%= product.id %>);" title=<%= product.name%>>
-                      <i class="fa fa-link"></i>
-                      </a>
-                  </div>
-                </div>
-               <% end %>             
+                  <% @products.each do |product| %>
+                    <div class="item view view-tenth">
+                      <%= image_tag(product.image.url(:thumb))%>
+                      <div class="mask">
+                          <a class="info" data-toggle="tooltip" data-placement="top" onclick="modal_funt(<%= product.id %>);" title=<%= product.name%>>
+                          <i class="fa fa-link"></i>
+                          </a>
+                      </div>
+                    </div>
+                   <% end %>     
               </div>
           </div>
       </div>
@@ -103,10 +102,10 @@
 <script src="/site/js/wow.min.js"></script>
 <script src="/site/assets/owlcarousel/owl.carousel.js"></script> -->
 
-
 <script>
- var changge_related_prod = true;
-jQuery(document).ready(function(){
+   var changge_related_prod = true;
+  jQuery(document).ready(function(){
+    console.log('READY');
         $("#owl-productos").owlCarousel({
             loop:true,
             nav:true,
@@ -124,15 +123,13 @@ jQuery(document).ready(function(){
         });
   });
 
+  wow = new WOW(
+    {
+      boxClass:     'wow',      // default
+      animateClass: 'animated', // default
+      offset:       0          // default
+    }
+  );
 
-
-    wow = new WOW(
-      {
-        boxClass:     'wow',      // default
-        animateClass: 'animated', // default
-        offset:       0          // default
-      }
-    );
-
-    wow.init();
+  wow.init();
 </script>

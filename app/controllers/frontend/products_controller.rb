@@ -25,5 +25,21 @@ class Frontend::ProductsController < Frontend::ApplicationController
 	      end
 	end
 
+	def product_related
+		product = Product.find(params[:id])
+
+		query = Product.where("note_id = ?", product.note_id).order(top_position: :asc).limit(5)
+		i = 0;
+		related_products = Hash.new 
+		query.each do |product|
+			related_products[i] = {'id' => product.id, 'name' => product.name, 'img_thumb_url' => product.image.url(:thumb)}
+			i = i+1
+		end		
+
+		respond_to do |format|
+	        format.json { render json: {"related_products" => related_products }}
+	      end
+	end
+
 
 end

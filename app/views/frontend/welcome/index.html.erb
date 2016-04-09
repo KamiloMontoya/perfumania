@@ -96,8 +96,8 @@
           <div class="col-lg-7 col-sm-7 col-md-7">
            
             <% @top_products.each do |product| %>
-              <p class="text-center" style="cursor:pointer;"  onclick="modal_funt(<%= product.id %>);" >
-                 <li  id=<%= product.id %> ><a><%= product.name %></a></li>
+              <p class="text-center" style="cursor:pointer;" >
+                 <li style="cursor:pointer;" id=<%= product.id%> onclick="modal_funt(<%= product.id %>);" ><a ><%= product.name %></a></li>
                  </p>
             <% end %>
             

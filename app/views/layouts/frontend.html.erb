@@ -235,7 +235,7 @@
       if( $( this ).attr("id")){
           var id = $( this ).attr("id");
           // $( "#img-product" ).html("");
-          // $('#img-product').html('<div><img src="/site/img/loading.gif"/></div>');
+          // $('#img-product').html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');
           $.ajax({
            type: "GET",
            url: "/frontend/product_detail/"+id,
@@ -253,7 +253,7 @@
                   $( "#desc-product" ).append( "<p>" + data.product.description + "</p>");     
                }
 
-               if (changge_related_prod == true){
+               if (typeof(changge_related_prod) != 'undefined' && changge_related_prod != null){
                  productos_relacionados(id);
                }
 
@@ -262,12 +262,38 @@
       };    
   });
   function productos_relacionados(id) {
-    console.log('Cambuando ');
+    // $("#owl-productos").html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');  
+    var owl = $('.owl-carousel');
+    var owlInstance = owl.data('owlCarousel');
+    $.ajax({
+         type: "GET",
+         url: "/frontend/product_related/"+id,
+         dataType: "json",
+         success: function (data) {
+            var products = data.related_products;
+            var template = "";
+            for (i in products){
+              template = template+
+                              '<div class="item view view-tenth">'+
+                                '<img src="'+products[i].img_thumb_url+'"></img>'+
+                                '<div class="mask">'+
+                                  '<a class="info" data-toggle="tooltip" data-placement="top" onclick="modal_funt('+products[i].id+');" title="'+products[i].name+'"><i class="fa fa-link"></i></a>'+
+                                '</div>'+
+                              '</div>';        
+            } 
+            $("#owl-productos").html('');
+            $("#owl-productos").html(template);
+            // if instance is existing
+            if(owlInstance != null){
+                owlInstance.reinit();
+           }
+         }
+     });
   }
 
   function modal_funt(id) {
     $("#myModal").modal('toggle');
-    $('#loading-modal').html('<div><img src="/site/img/loading.gif"/></div>');
+    $('#loading-modal').html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');
     $( "#desc-product-modal" ).html("");
     $( "#img-product-modal" ).html("");
     $( ".modal-title" ).html("");
