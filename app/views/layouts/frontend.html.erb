@@ -279,12 +279,16 @@
             var template = "";
             for (i in products){
               template = template+
-                              '<div class="item view view-tenth">'+
-                                '<img style="width: 240px; height: 240px" src="'+products[i].img_medium_url+'"></img>'+
-                                '<div class="mask">'+
-                                  '<a class="info" data-toggle="tooltip" data-placement="top" onclick="modal_funt('+products[i].id+');" title="'+products[i].name+'"><i class="fa fa-link"></i></a>'+
-                                '</div>'+
-                              '</div>';        
+                              // '<div class="item view view-tenth">'+
+                              //   '<img style="width: 240px; height: 240px" src="'+products[i].img_medium_url+'"></img>'+
+                              //   '<div class="mask">'+
+                              //     '<a class="info" data-toggle="tooltip" data-placement="top" onclick="modal_funt('+products[i].id+');" title="'+products[i].name+'"><i class="fa fa-link"></i></a>'+
+                              //   '</div>'+
+                              // '</div>'; 
+                               '<div class="item view view-tenth">'+
+                                '<a style="cursor:zoom-in;" class="" data-toggle="tooltip" data-placement="top" onclick="modal_funt('+products[i].id+');" title="'+products[i].name+'">'+
+                                '<img style="width: 240px; height: 240px" src="'+products[i].img_medium_url+'"></img></a>'+  
+                              '</div>';         
             } 
             $("#owl-productos").html('');
             $("#owl-productos").html(template);
