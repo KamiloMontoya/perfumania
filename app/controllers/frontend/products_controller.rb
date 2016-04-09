@@ -6,7 +6,7 @@ class Frontend::ProductsController < Frontend::ApplicationController
   	# GET /products/1.json
 	def show
 		@category = params[:id].to_i
-		@products = Product.where(category_id: @category).order(top_position: :asc).page(params[:page]).per(10)
+		@products = Product.where(category_id: @category).order(top_position: :asc).page(params[:page]).per(15)
 	end
 
 	def show_all
