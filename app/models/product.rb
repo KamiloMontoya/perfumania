@@ -2,10 +2,12 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :note
 
- 	#has_attached_file :image, 
-	#				  :styles => { :medium => "440x440>", :thumb => "100x100#" },## NO BORRAR 
-	#				  :default_url => "/images/:style/missing.png"
+	## CONFIGURACIÓN NORMAL PAPER CLIP
+ 	# has_attached_file :image, 
+		# 			  :styles => { :medium => "440x440>", :thumb => "100x100#" },## NO BORRAR 
+		# 			  :default_url => "/images/:style/missing.png"
 
+	# CONEXION CON DROPBOX
 	has_attached_file :image, 
 					  :storage => :dropbox,
 					  :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
@@ -13,21 +15,10 @@ class Product < ActiveRecord::Base
 					  :dropbox_options => {
 					  :path => proc { |style| "#{style}/#{id}_#{image.original_filename}"}
 					  }
-					  validates_presence_of :image
-					  validates_attachment :image, content_type: {content_type: ["image/jpeg", "image/jpeg", "image/png", "image/gif"]}
-					  
 
-	# #Ejemplo Dropbox
-	# has_attached_file :storage => :dropbox,
-	# 				    :dropbox_credentials => "#{Rails.root}/config/dropbox.yml",
-	# 				    :styles => { :medium => "300x300" },
-	# 				    :dropbox_options => {
-	# 				      :path => proc { |style| "#{style}/#{id}_#{avatar.original_filename}" }
-	# 				    }
-
-
-  	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
-
+	validates_presence_of :image
+	validates_attachment :image, content_type: {content_type: ["image/jpeg", "image/jpeg", "image/png", "image/gif"]}
+	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   	def self.search(search)
 	    if search[:name].present?
