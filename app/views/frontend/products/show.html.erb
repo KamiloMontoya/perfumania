@@ -78,7 +78,7 @@
           <div class="col-lg-8 col-md-8  col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2  recent">
               <h3>Productos relacionados</h3>
               <p></p>
-              <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
+              <div id="owl-productos" class="owl-carousel owl-theme wow fadeIn">
 
               <% @products.each do |product| %>
                 <div class="item view view-tenth">
@@ -105,22 +105,24 @@
 
 
 <script>
-    $("#owl-demo").owlCarousel({
+ var changge_related_prod = true;
+jQuery(document).ready(function(){
+        $("#owl-productos").owlCarousel({
             loop:true,
-            margin:10,
             nav:true,
             responsive:{
                 0:{
                     items:1
                 },
                 600:{
-                    items:3
+                    items:2
                 },
                 1000:{
                     items:5
                 }
             }
         });
+  });
 
 
 
