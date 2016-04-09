@@ -28,11 +28,15 @@ class Frontend::ProductsController < Frontend::ApplicationController
 	def product_related
 		product = Product.find(params[:id])
 
-		query = Product.where("note_id = ?", product.note_id).order(top_position: :asc).limit(5)
+		query = Product.where("note_id = ?", product.note_id).order(top_position: :asc).limit(10)
 		i = 0;
 		related_products = Hash.new 
 		query.each do |product|
-			related_products[i] = {'id' => product.id, 'name' => product.name, 'img_thumb_url' => product.image.url(:thumb)}
+			related_products[i] = {'id' => product.id, 
+									'name' => product.name, 
+									'img_thumb_url' => product.image.url(:thumb),
+									'img_original_url' => product.image.url(:original),
+									'img_medium_url'=> product.image.url(:medium) }
 			i = i+1
 		end		
 
