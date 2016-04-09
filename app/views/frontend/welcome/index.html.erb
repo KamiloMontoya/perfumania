@@ -94,13 +94,13 @@
           <hr>
 
           <div class="col-lg-7 col-sm-7 col-md-7">
-            <ul id="list-top" >
+           
             <% @top_products.each do |product| %>
-              <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" >
+              <p class="text-center" style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" >
                  <i class="fa fa-check fa-lg pr-10"></i><a><%= product.name %></a>
-                 </li>
+                 </p>
             <% end %>
-            </ul> 
+            
           </div>
           <div class="col-lg-5 col-sm-5 col-md-5">
             <div id="img-product">
