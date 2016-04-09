@@ -92,14 +92,16 @@
           <h1> Top 10 productos destacádos</h1>
           <hr>
 
-          <div class="col-lg-6 col-sm-6 col-md-6">
+          <div class="col-lg-8 col-sm-8 col-md-8">
             <ul id="list-top" class="list-unstyled">
             <% @top_products.each do |product| %>
-              <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" ><a></i><%= product.name %></a></li>
+              <li style="cursor:pointer;" id=<%= product.id %> onclick="modal_funt(<%= product.id %>);" >
+                 <i class="fa fa-check fa-lg pr-10"></i><a><%= product.name %></a>
+                 </li>
             <% end %>
             </ul> 
           </div>
-          <div class="col-lg-6 col-sm-6 col-md-6">
+          <div class="col-lg-4 col-sm-4 col-md-4">
             <div id="img-product">
                   <% if @top_products.first %>
                   <%= image_tag(@top_products.first.image.url(:medium), width: "100%", height: "100%") %>
@@ -118,8 +120,7 @@
           <% Tip.all.limit(10).each do |tip|%>
           <p>
             <a href="<%=url_for(frontend_tips_path)%>/#tip-<%=tip.id%>">
-            <i class="fa fa-check fa-lg pr-10">
-            </i>
+            <i class="fa fa-check fa-lg pr-10"></i>
              <%= tip.name %>..
              </a>
           </p>
@@ -165,7 +166,7 @@
         <!--Google MAps end-->
       </div>
   </div>
-  
+
 </div>
 
 <style>
