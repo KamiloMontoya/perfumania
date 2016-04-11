@@ -32,7 +32,7 @@
     <div class="row">
 
     <div class="row text-center">
-      <% Category.all.each do |category| %>
+      <% Category.all.order(id: :asc).each do |category| %>
         <div class="col-md-4">
           <div class="candidate wow fadeInLeft">
             <a href="products/<%= category.id %>"><%= category.name %></a>
