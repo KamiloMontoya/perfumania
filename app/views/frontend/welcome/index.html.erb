@@ -19,9 +19,6 @@
                   </a> 
                   <img  src=<%= product.image.url(:medium) %> data-step="1"
                       data-position="50,600" data-in="left" data-out="fade">
-
-                  <img data-fixed="" src="/site/css/fractionslider/images/main2-bg.jpg" width="100%" height="100%" rel="0" class="fs_obj fs_fixed_obj" style="width: 100%; height: 100%; display: inline;" data-fontsize="16px">
-
                 </div>
              <% end %>   
           </div>
@@ -201,9 +198,10 @@ height: 100% !important;
       'controls':       true, 
       'pager':        true,
       'responsive':       true,
-      'dimensions':       "400,400",
-      'increase':       false,
-      'pauseOnHover':     true
+      'dimensions':       "1000,400",
+      'increase':       true,
+      'pauseOnHover':     true,
+      'dimensions' : '1000, 400', 
     });
     $('.flexslider').flexslider({
       animation: "slide",
