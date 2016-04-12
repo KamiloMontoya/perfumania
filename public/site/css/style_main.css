@@ -3047,36 +3047,38 @@ height: 100% !important;
 }
    
 
-
-
 .slider-wrapper{
     position:relative;
     overflow:hidden;
-    z-index:0;
     
     width:100%;
-    height:100%;
     
    /* margin:200px auto;*/
-    background: url(/site/css/fractionslider/images/main2-bg.jpg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    
+    background:#1b1b1b;
+    
     border:1px solid #000;
     box-shadow:0 3px 5px #666;
 }
+
 .slider{
-    width:100%; 
-    height:100%;
-    margin:0 auto;
     position:relative;
-    z-index:0;  
+    width:100%; 
+
+    height:400px;
+/*  height:400px; when responsive, comment this out */
+    margin:0 auto;
+    
+   /* background:#1b1b1b;*/
+    background: url(/site/css/fractionslider/images/main2-bg.jpg);   
+    background-size: 100% 100%;
+
+
 }
-
-
 
 @media only screen and (min-width: 1000px){
     .slider{
-        width:1000px;
+        width:1300px;
     }
 }
 
