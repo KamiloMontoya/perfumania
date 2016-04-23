@@ -50,7 +50,7 @@ Rails.application.configure do
     port: 587,
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "perfumaniashopsoporte@gmail.com",
-    password: "perfumania2016"
+    user_name: ENV['EMAIL'],
+    password: ENV['EMAIL_PASSWORD']
   }
 end
