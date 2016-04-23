@@ -80,19 +80,15 @@ Rails.application.configure do
   # # Default Mailer Host
   # Rails.application.routes.default_url_options[:host] = 'domain.com'
 
-  config.action_mailer.default_url_options = { :host => 'fast-mesa-56641.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'http://fast-mesa-56641.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
-  # change to true to allow email to be sent during development
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "mail.google.com",####important
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV['EMAIL'],
-    password: ENV['EMAIL_PASSWORD']
+    user_name: "perfumaniashopsoporte@gmail.com",
+    password: "perfumania2016"
   }
 end
