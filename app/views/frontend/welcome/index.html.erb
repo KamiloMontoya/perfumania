@@ -8,8 +8,10 @@
             <div class="fs_loader"></div>
                <% Product.all.order(top_position: :asc).limit(3).each do |product| %>
                   <div class="slide"> 
-                  <h1    style="color:white"
-                      data-position="20,100" data-in="top" data-step="1"  data-ease-in="easeOutBounce">Perfumanía Shop <br> Inspirada en ... </h1>
+                 <!--  <h1    style="color:white"
+                      data-position="20,100" data-in="top" data-step="1"  data-ease-in="easeOutBounce">Perfumanía Shop <br> Inspirada en ... </h1> -->
+                   <h1    style="color:white"
+                      data-position="20,100" data-in="right" data-step="1">Perfumanía Shop <br> Inspirada en ... </h1>
                                   
                   <h2 style="color:white"
                       data-position="130,100" data-in="right" data-step="1" ><%= product.name %></h2>
