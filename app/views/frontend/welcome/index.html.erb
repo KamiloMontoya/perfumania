@@ -167,6 +167,9 @@
                   <select id="map_city" class="form-control">  
                     <option value="1"> Bogotá - Suba, Cra 91 # 139-06 </option>
                     <option value="2"> Bogotá - Fontibon, Cra 100 # 20c-23 </option>
+                    <option value="3"> Bogotá - Chapinero, Cra 11 # 71-65 </option>
+                    <option value="4"> Manizales, Cra 23 # 26-11 </option>
+                    <option value="5"> Manizales, Cra 21 # 19-13 </option>
                   </select>
               </div>
               <div class="google-maps">
@@ -199,11 +202,20 @@
 
   $( "#map_city" ).change(function() {
       var valor = $(this).val();
-        if(valor==1){
+      if(valor==1){
           $("#mapa").attr("src", "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d127244.79738513596!2d-73.99071956591796!3d4.700383168188126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f84fb326e37dd%3A0x8d1e72b1ba59e521!2sCra.+91+%23139-6%2C+Bogot%C3%A1%2C+Colombia!5e0!3m2!1ses-419!2sit!4v1460016032774");
       }
-        if(valor==2){
+      if(valor==2){
           $("#mapa").attr("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5422635664254!2d-74.14515625004935!3d4.675371443162771!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9c8c338eef7f%3A0xb30a0cb7d87b402d!2sCra.+100+%2320-23%2C+Bogot%C3%A1%2C+Colombia!5e0!3m2!1ses-419!2sit!4v1461729108855");
+      }
+      if(valor==3){
+          $("#mapa").attr("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.647574631505!2d-74.06122068523787!3d4.656780796617295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a5ca961ebc5%3A0xbf06ae78f45e1ee5!2sAk.+11+%2371-65%2C+Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1461731740818");
+      }
+      if(valor==4){
+          $("#mapa").attr("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.229639872586!2d-75.51685105798352!3d5.0664907297990895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e476ff0b8402b81%3A0xb06d936cd5de2d6d!2sCra.+23+%2326-11%2C+Manizales%2C+Caldas%2C+Colombia!5e0!3m2!1ses-419!2sit!4v1461731805100");
+      }
+      if(valor==5){
+          $("#mapa").attr("src", "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.21837534895!2d-75.52170455004895!3d5.068322139754271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e476ffbb22fe6e1%3A0x19133393ab14f540!2sCra.+21+%2319-13%2C+Manizales%2C+Caldas%2C+Colombia!5e0!3m2!1ses-419!2sit!4v1461731722301");
       }
           
   });
