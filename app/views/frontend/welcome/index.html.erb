@@ -11,7 +11,7 @@
                   <div class="slide"> 
                  <!--  <h1    style="color:white"
                       data-position="20,100" data-in="top" data-step="1"  data-ease-in="easeOutBounce">Perfumanía Shop <br> Inspirada en ... </h1> -->
-                  <div data-in="right" data-position="20,100" >
+                  <div data-in="right"  data-step="1" data-position="20,100" >
                       <h1 style="color:white"
                           data-position="20,100">Perfumanía Shop <br> Inspirada en ... </h1>
                       <br><br>
@@ -24,7 +24,7 @@
                       </a> 
                   </div>
                   
-                  <img  src=<%= product.image.url(:medium) %> data-step="1"
+                  <img  src=<%= product.image.url(:medium) %> data-step="2"
                       data-position="50,700" data-in="left" data-out="fade">
                 </div>
              <% end %>   
@@ -197,7 +197,7 @@
       'fullWidth':      true,
       // 'controls':       true, 
       'pager':        true,
-      'responsive':       false,
+      'responsive':       true,
       'dimensions':       "1000,400",
       'increase':       false,
       'pauseOnHover':     true
