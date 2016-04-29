@@ -1,31 +1,31 @@
   <!--breadcrumbs start-->
   <div class="breadcrumbs">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-sm-4">
-        <h1 class="wow fadeIn"> Nuestros Productos</h2>
-      </div>
-      <div class="col-lg-8 col-sm-8">
-        <ol class="breadcrumb pull-right">
-          <li>
-            <a href="/">
-              Inicio
-            </a>
-          </li>
-          <li class="active">
-              Nuestros Productos
-          </li>
-        </ol>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-sm-4">
+          <h1 class="wow fadeIn"> Nuestros Productos</h2>
+        </div>
+        <div class="col-lg-8 col-sm-8">
+          <ol class="breadcrumb pull-right">
+            <li>
+              <a href="/">
+                Inicio
+              </a>
+            </li>
+            <li class="active">
+                Nuestros Productos
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- <div class="property gray-bg"> -->
   <div class="container">
     <div class="row">
         <div class="col-md-12 career-head">
-            <h1 class="wow fadeIn"> Nuestros Productos</h2>
+            <h1 class="wow fadeIn"> Nuestros Productos</h1>
         </div>
     </div>
     <hr>
@@ -51,70 +51,17 @@
     </div>  
 
     <hr>
-
-   <!--  <div class="row">
-    <div class="col-md-3 col-md-offset-1">
-        <div class="candidate wow fadeInRight">
-            <div id="img-product">
-                <% if @products.first %>
-                <%= image_tag(@products.first.image.url(:medium), width: "100%", height: "100%") %>
-                <% end %>
-            </div>
-        </div>     
-    </div>
-    <div class="col-md-8">
-        <div class="candidate wow fadeInRight">
-            <% if @products.first %>
-            <h1 id="name-product"><%= @products.first.name %></h1>
-            <div id="desc-product">  
-                <p><%= @products.first.description %></p> 
-                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<%=@products.first.video_path.gsub(/.*?v=/, '')%>" frameborder="0" allowfullscreen ></iframe>
-            </div> 
-             <% end %>   
-        </div>     
-    </div>
   </div>
-  </div>   -->
-  <!-- </div> -->
 
-  <hr> 
-  <!-- Baner Fragancias -->
-<!--   <div class="bg-lg">
-    <div class="container">
-      <div class="row">
-          <div class="col-lg-8 col-md-8  col-sm-8 col-lg-offset-2 col-md-offset-2 col-sm-offset-2  recent">
-              <h3>Productos relacionados</h3>
-              <p></p>
-              <div id="owl-demo" class="owl-carousel owl-theme wow fadeIn">
-
-              <% @products.each do |product| %>
-                <div class="item view view-tenth">
-                  <%= image_tag(product.image.url(:thumb))%>
-                  <div class="mask">
-                      <a class="info" data-toggle="tooltip" data-placement="top" onclick="modal_funt(<%= product.id %>);" title=<%= product.name%>>
-                      <i class="fa fa-link"></i>
-                      </a>
-                  </div>
-                </div>
-               <% end %>             
-              </div>
-          </div>
-      </div>
-    </div>
-  </div> -->
-
+  </div>
 <script>
-    
-
     wow = new WOW(
       {
         boxClass:     'wow',      // default
         animateClass: 'animated', // default
         offset:       0          // default
       }
-    );
-
-    
+    );  
 
     wow.init();
     
