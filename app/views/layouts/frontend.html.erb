@@ -321,7 +321,7 @@
               $( "#img-product-modal" ).append('<img  style="width: 250px" src=' + data.img_medium + '>');
               if( data.video_id != ''){
                   $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
-                  '<iframe style="z-index: 10000;" width="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
+                  '<iframe style="z-index: 1000;" width="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
               }else{
                   $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>");     
               }
@@ -335,7 +335,7 @@
               $( "#name-product" ).append(data.product.name);
               if( data.video_id != ''){
                   $( "#desc-product" ).append( "<p>" + data.product.description + "</p>"+
-                  '<iframe style="z-index: 10000;" width="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
+                  '<iframe style="z-index: 1000;" width="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
               }else{
                   $( "#desc-product" ).append( "<p>" + data.product.description + "</p>");     
               }
