@@ -121,7 +121,34 @@
         //     }
         // });
         $("#owl-productos").owlCarousel({
-          items : 4,
+          autoPlay: 3000, //Set AutoPlay to 3 seconds
+          responsive: true,
+          addClassActive: true,
+          items: 4,
+          itemsDesktop: [1199, 3],
+          itemsDesktopSmall: [979, 3],
+          stopOnHover:true,
+          afterMove:function(){
+              //reset transform for all item
+              $(".owl-item").css({
+                  transform:"none"
+              })
+              //add transform for 2nd active slide
+              $(".active").eq(1).css({
+                  transform:"scale(1.9)",
+                  zIndex:3000,
+
+              })
+
+          },
+          //set init transform
+          afterInit:function(){
+              $(".active").eq(1).css({
+                  transform:"scale(1.9)",
+                  zIndex:3000,
+
+              })
+          }
         });
   });
 
