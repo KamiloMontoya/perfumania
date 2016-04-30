@@ -242,7 +242,7 @@
 
   function update_poduct_info(id){
     // $( "#img-product" ).html("");
-    // $('#img-product').html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');
+    // $('#img-product').html('<div class="text-center" ><img src="/site/img/loading_spinner.gif"/></div>');
     $.ajax({
        type: "GET",
        url: "/frontend/product_detail/"+id,
@@ -269,7 +269,7 @@
   }
 
   function productos_relacionados(id) {
-    // $("#owl-productos").html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');  
+    // $("#owl-productos").html('<div class="text-center" ><img src="/site/img/loading_spinner.gif"/></div>');  
     $.ajax({
          type: "GET",
          url: "/frontend/product_related/"+id,
@@ -304,7 +304,7 @@
 
   function modal_funt(id) {
     $("#myModal").modal('toggle');
-    $('#loading-modal').html('<div class="text-center" ><img src="/site/img/loading.gif"/></div>');
+    $('#loading-modal').html('<div class="text-center" ><img src="/site/img/loading_spinner.gif"/></div>');
     $( "#desc-product-modal" ).html("");
     $( "#img-product-modal" ).html("");
     $( ".modal-title" ).html("");
