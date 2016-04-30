@@ -5,7 +5,7 @@ class Backend::TipsController < Backend::ApplicationController
   # GET /tips
   # GET /tips.json
   def index
-    @tips = Tip.all.page(params[:page]).per(5)
+    @tips = Tip.all.page(params[:page]).per(10)
   end
 
   # GET /tips/1
