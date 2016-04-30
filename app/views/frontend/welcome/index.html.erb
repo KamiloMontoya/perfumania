@@ -12,20 +12,24 @@
         <% banner=Array.new%>
         <% banner=["site/img/louvre.jpg","site/img/paris.png","site/img/london.jpg","site/img/roma.jpg","site/img/londres.jpg"]%> 
         <% for i in (1..5) %> 
-            <div data-p="225.00" style="display: none;">
-                <img data-u="image" src=<%=banner[i-1]%> />
-                <% product=Product.where("top_position = ?", i).limit(1) %>
-                <h2 data-u="caption" data-t="1" style="position: absolute; top: 30px; left: 0px; width: 480px; height: 120px; font-size: 40px; color: #ffffff; line-height: 38px;">Perfumanía Shop<br>Inspirada en ...</h2>
-                <h1 data-u="caption" data-t="1" style="position: absolute; top: 210px; left: 0px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 38px;">
-                  <%= product[0].name %>
-                </h1>
-                <a  data-u="caption" data-t="1" style="z-index: 1; position: absolute; top: 390px; left: 0px; width: 120px; height: 40px; " href="/frontend/products/<%=product[0].category_id %>" class="btn btn-info btn-lg da-link">
-                  Ver más
-                </a> 
-                <div data-u="caption" data-t="0" style="position: absolute; top: 30px; left: 1000px; width: 445px; height: 300px;">
-                    <img src=<%= product[0].image.url(:medium) %> style="position: absolute; top: 0px; left: 0px; width: 400px; height: 450px;" /> 
-                </div>
-            </div>
+            <% product=Product.where("top_position = ?", i).limit(1) %>
+            <% if product[0] %>
+              <div data-p="225.00" style="display: none;">
+                  <img data-u="image" src=<%=banner[i-1]%> />
+                  
+                  <h2 data-u="caption" data-t="1" style="position: absolute; top: 30px; left: 0px; width: 480px; height: 120px; font-size: 40px; color: #ffffff; line-height: 38px;">Perfumanía Shop<br>Inspirada en ...</h2>
+
+                  <h1 data-u="caption" data-t="1" style="position: absolute; top: 210px; left: 0px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 38px;">
+                    <%= product[0] ? product[0].name : '' %>
+                  </h1>
+                  <a  data-u="caption" data-t="1" style="z-index: 1; position: absolute; top: 390px; left: 0px; width: 120px; height: 40px; " href="/frontend/products/<%=product[0].category_id %>" class="btn btn-info btn-lg da-link">
+                    Ver más
+                  </a> 
+                  <div data-u="caption" data-t="0" style="position: absolute; top: 30px; left: 1000px; width: 445px; height: 300px;">
+                      <img src=<%= product[0].image.url(:medium) %> style="position: absolute; top: 0px; left: 0px; width: 400px; height: 450px;" /> 
+                  </div>
+              </div>
+            <% end %>
         <% end %>     
             <a data-u="ad" href="http://www.jssor.com" style="display:none">jQuery Slider</a>
         
