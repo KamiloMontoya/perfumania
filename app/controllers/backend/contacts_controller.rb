@@ -6,19 +6,25 @@ class Backend::ContactsController < Backend::ApplicationController
   # GET /contacts.json
   def index
     #Se arma un hash con todos los filtros
-    search_array = {}
+    sentencia = []
     if (params[:filter_name] && params[:filter_name].to_s != '')
-       search_array[:name] = params[:filter_name]
-    elsif (params[:filter_email] && params[:filter_email].to_s != '')
-      search_array[:email] = params[:filter_email] 
-    elsif (params[:filter_read] && params[:filter_read].to_s != '')
-        search_array[:read] =  params[:filter_read].to_i
+       sentencia.push("( name LIKE '%#{params[:filter_name]}%' )")
+    end
+    if (params[:filter_email] && params[:filter_email].to_s != '')
+       sentencia.push("( email LIKE '%#{params[:filter_email]}%' )")
+    end
+    if (params[:filter_read] && params[:filter_read].to_s != '')
+        if params[:filter_read].to_i == 0
+          sentencia.push("( read_contact is not true )")
+        else
+          sentencia.push("( read_contact = true )")
+        end
     end
 
-    if search_array.length == 0
+    if sentencia.length == 0
       @contacts = Contact.all.page(params[:page]).order(updated_at: :asc).per(10)
     else
-      @contacts = Contact.all.page(params[:page]).order(updated_at: :asc).per(10).search( search_array )
+      @contacts = Contact.all.page(params[:page]).order(updated_at: :asc).per(10).where( sentencia.join(' AND ') )
     end
     
   end
