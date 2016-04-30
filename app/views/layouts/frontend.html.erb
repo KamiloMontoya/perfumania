@@ -251,7 +251,7 @@
            $( "#img-product" ).html("");
            $( "#desc-product" ).html("");
            $( "#name-product" ).html("");
-           $( "#img-product" ).append( '<img   style="width: 250px" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+           $( "#img-product" ).append( '<img   style="width: 100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
            $( "#name-product" ).append(data.product.name);
            if( data.video_id != ''){
               $( "#desc-product" ).append( "<p>" + data.product.description + "</p>"+
