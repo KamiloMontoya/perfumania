@@ -320,7 +320,7 @@
               $('#loading-modal').html('');
              
               $( ".modal-title" ).append( data.product.name);
-              $( "#img-product-modal" ).append('<img  style="width: 250px" src=' + data.img_medium + '>');
+              $( "#img-product-modal" ).append('<img  style="width: 100%" src=' + data.img_medium + '>');
               if( data.video_id != ''){
                   $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
                   '<iframe style="z-index: 1000;" width="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
