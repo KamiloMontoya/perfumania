@@ -226,7 +226,28 @@
   jQuery(document).ready(function(){
       jQuery('ul.superfish').superfish();
       $("#owl-demo").owlCarousel({
-        items : 4
+        items : 4,
+        afterMove:function(){
+            //reset transform for all item
+            $(".owl-item").css({
+                transform:"none"
+            })
+            //add transform for 2nd active slide
+            $(".active").eq(1).css({
+                transform:"scale(1.9)",
+                zIndex:3000,
+
+            })
+
+        },
+        //set init transform
+        afterInit:function(){
+            $(".active").eq(1).css({
+                transform:"scale(1.9)",
+                zIndex:3000,
+
+            })
+        }
       });
 
   });
