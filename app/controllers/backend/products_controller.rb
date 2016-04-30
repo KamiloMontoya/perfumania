@@ -8,19 +8,21 @@ class Backend::ProductsController < Backend::ApplicationController
   # GET /products.json
   def index
     #Se arma un hash con todos los filtros
-    search_array = {}
+    sentencia = []
     if (params[:filter_name] && params[:filter_name].to_s != '')
-       search_array[:name] = params[:filter_name]
-    elsif (params[:filter_categories] && params[:filter_categories].to_s != '')
-      search_array[:category] = params[:filter_categories] 
-    elsif (params[:filter_notes] && params[:filter_notes].to_s != '')
-      search_array[:note] = params[:filter_notes] 
+      sentencia.push("( name LIKE '%#{params[:filter_name]}%' OR description LIKE '%#{params[:filter_name]}%' )")
+    end
+    if (params[:filter_categories] && params[:filter_categories].to_s != '') 
+      sentencia.push("( category_id=#{params[:filter_categories]} )")
+    end
+    if (params[:filter_notes] && params[:filter_notes].to_s != '')
+      sentencia.push("( note_id=#{params[:filter_notes]} )")
     end
 
-    if search_array.length == 0
+    if sentencia.length == 0
       @products = Product.order(top_position: :asc).page(params[:page]).per(10)
     else
-      @products = Product.order(top_position: :asc).page(params[:page]).per(10).search( search_array )
+      @products = Product.order(top_position: :asc).page(params[:page]).per(10).where(sentencia.join(' AND '))
     end
 
     @notes = Note.all.collect {|n| [ n.name, n.id ] }

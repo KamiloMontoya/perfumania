@@ -20,18 +20,6 @@ class Product < ActiveRecord::Base
 	validates_attachment :image, content_type: {content_type: ["image/jpeg", "image/jpeg", "image/png", "image/gif"]}
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
-  	def self.search(search)
-	    if search[:name].present?
-	    	where("name LIKE '%#{search[:name]}%' OR description LIKE '%#{search[:name]}%'")
-		elsif search[:category].present?
-			where("category_id = ?", search[:category])
-		elsif search[:note].present?
-			where("note_id = ?", search[:note])
-		else
-		    #scoped
-		end
-	end
-
 	# after_save :save_image, :save_image_path
 
 	# def image=(file_data)
