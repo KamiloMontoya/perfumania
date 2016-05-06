@@ -1,15 +1,15 @@
-...<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="cosmic">
+    <meta name="description" content="perfumaniashop">
+    <meta name="author" content="perfumes">
     <meta name="keywords" content="">
     <link rel="shortcut icon" href="/site/img/favicon2.png">
 
     <title>
-      Perfumania
+      perfumaniashop
     </title>
 
     <!-- Bootstrap core CSS -->
@@ -34,7 +34,7 @@
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" type="text/css" href="/site/css/component.css?v=2134">
-    <link href="/site/css/style_main.css?v=20150533344" rel="stylesheet">
+    <link href="/site/css/style_main.css?v=201605051830" rel="stylesheet">
     <link href="/site/css/style-responsive.css" rel="stylesheet" />
 
     <!-- <link rel="stylesheet" type="text/css" href="/site/css/parallax-slider/parallax-slider.css?v=20150321" /> -->
@@ -85,7 +85,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a href="/"><img src="/site/img/logo2.png" width="230" alt="logo" /></a>
+              <a alt="perfumaniashop" href="/"><img src="/site/img/logo2.png" width="230" alt="logo" /></a>
           </div>
           <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
@@ -152,7 +152,7 @@
               <p><i class="fa fa-globe pr-10"></i>Bogotá, Colombia </p>
               <p><i class="fa fa-mobile pr-10"></i>Celular : (57) 318-6905690 </p>
               <p><i class="fa fa-phone pr-10"></i>Fijo: (57) (1) 8058539 </p>
-              <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="javascript:;">gerencia@perfumaniashop.com</a></p>
+              <p><i class="fa fa-envelope pr-10"></i>Email :   <a href="javascript:;">gerencia@perfumaniashop.co</a></p>
             </address>
           </div>
                     
@@ -251,7 +251,7 @@
            $( "#img-product" ).html("");
            $( "#desc-product" ).html("");
            $( "#name-product" ).html("");
-           $( "#img-product" ).append( '<img   style="width: 100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+           $( "#img-product" ).append( '<img  alt="esencia" style="width: 100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
            $( "#name-product" ).append(data.product.name);
            if( data.video_id != ''){
               $( "#desc-product" ).append( "<p>" + data.product.description + "</p>"+
@@ -289,7 +289,7 @@
                               // '</div>'; 
                                '<div class="item view view-tenth"  style="margin-right: 10px; margin-left: 10px">'+
                                 '<a style="cursor:zoom-in;" class="" data-toggle="tooltip" data-placement="top" onclick="modal_funt('+products[i].id+');" title="'+products[i].name+'">'+
-                                '<img style="width: 100%; height: 240px; margin-right: 10px; margin-left: 10px" src="'+products[i].img_medium_url+'"></img></a>'+  
+                                '<img alt="perfumes" style="width: 100%; height: 240px; margin-right: 10px; margin-left: 10px" src="'+products[i].img_medium_url+'"></img></a>'+  
                               '</div>';         
             } 
             $("#owl-productos").html('');
@@ -304,7 +304,7 @@
 
   function modal_funt(id) {
     $("#myModal").modal('toggle');
-    $('#loading-modal').html('<div class="text-center" ><img src="/site/img/loading_spinner.gif"/></div>');
+    $('#loading-modal').html('<div class="text-center" ><img alt="perfumania shop" src="/site/img/loading_spinner.gif"/></div>');
     $( "#desc-product-modal" ).html("");
     $( "#img-product-modal" ).html("");
     $( ".modal-title" ).html("");
@@ -320,7 +320,7 @@
               $('#loading-modal').html('');
              
               $( ".modal-title" ).append( data.product.name);
-              $( "#img-product-modal" ).append('<img  style="width: 100%" src=' + data.img_medium + '>');
+              $( "#img-product-modal" ).append('<img  alt="perfumaniashop" style="width: 100%" src=' + data.img_medium + '>');
               if( data.video_id != ''){
                   $( "#desc-product-modal" ).append( "<p>" + data.product.description + "</p>"+
                   '<iframe style="z-index: 1000;" width="100%" src="https://www.youtube.com/embed/'+data.video_id+'" frameborder="0" allowfullscreen ></iframe> ');
@@ -333,7 +333,7 @@
               $( "#img-product" ).html("");
               $( "#desc-product" ).html("");
               $( "#name-product" ).html("");
-              $( "#img-product" ).append( '<img   style="width: 100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
+              $( "#img-product" ).append( '<img  alt="franquicia" style="width: 100%" onclick="modal_funt('+ id +')" src=' + data.img_medium + '>');
               $( "#name-product" ).append(data.product.name);
               if( data.video_id != ''){
                   $( "#desc-product" ).append( "<p>" + data.product.description + "</p>"+
