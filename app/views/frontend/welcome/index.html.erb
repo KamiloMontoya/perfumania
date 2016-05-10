@@ -18,16 +18,16 @@
               yle="display: none;">
                   <img alt="esencia" data-u="image" src=<%=banner[i-1]%> />
                   
-                  <h2 data-u="caption" data-t="1" style="position: absolute; top: 30px; left: 0px; width: 480px; height: 120px; font-size: 40px; color: #ffffff; line-height: 38px;">Perfumanía Shop<br>Inspirada en ...</h2>
+                  <h2 data-u="caption" data-t="1" style="position: absolute; top: 20px; left: 0px; width: 480px; height: 120px; font-size: 40px; color: #ffffff; line-height: 38px;">Perfumanía Shop<br>Inspirada en ...</h2>
 
-                  <h1 data-u="caption" data-t="1" style="position: absolute; top: 210px; left: 0px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 38px;">
+                  <h1 data-u="caption" data-t="1" style="position: absolute; top: 170px; left: 0px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 38px;">
                     <%= product[0] ? product[0].name : '' %>
                   </h1>
-                  <a  data-u="caption" data-t="1" style="z-index: 1; position: absolute; top: 390px; left: 0px; width: 120px; height: 40px; " href="/frontend/products/<%=product[0].category_id %>" class="btn btn-info btn-lg da-link">
+                  <a  data-u="caption" data-t="1" style="z-index: 1; position: absolute; top: 350px; left: 0px; width: 120px; height: 40px; " href="/frontend/products/<%=product[0].category_id %>" class="btn btn-info btn-lg da-link">
                     Ver más
                   </a> 
                   <div data-u="caption" data-t="0" style="position: absolute; top: 30px; left: 1000px; width: 445px; height: 300px;">
-                      <img alt="esencias" src=<%= product[0].image.url(:medium) %> style="position: absolute; top: 0px; left: 0px; width: 400px; height: 450px;" /> 
+                      <img alt="esencias" src=<%= product[0].image.url(:medium) %> style="position: absolute; top: 0px; left: 0px; width: 400px; height: 400px;" /> 
                   </div>
               </div>
             <% end %>
