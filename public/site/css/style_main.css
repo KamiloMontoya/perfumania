@@ -1117,7 +1117,8 @@ section.contact-infos {
 .date-wrap .date {
     font-size: 30px;
     font-weight: 300;
-    background: #48cfad;
+    /*background: #48cfad;*/
+    background: #7D9EDC;
     color: #fff;
     border-radius: 1px 1px 0 0;
     -webkit-border-radius: 1px 1px 0 0;
@@ -1155,7 +1156,8 @@ section.contact-infos {
 .blog-item h1,
 .blog-item h1 a {
     font-size: 25px;
-    color: #48cfad;
+    /*color: #48cfad;*/
+    color: #7D9EDC;
     font-weight: 300;
 }
 .blog-item h1 {
@@ -1168,7 +1170,7 @@ section.contact-infos {
     font-size: 16px;
 }
 .author a,
-.st-view a { color: #48cfad }
+.st-view a { color: #7D9EDC;/*color: #48cfad*/ }
 .st-view { margin-top: 20px }
 .st-view ul li { margin-bottom: 5px }
 .blog-side-item h3 {
@@ -2574,7 +2576,8 @@ p { text-align: left }
     transition: all .3s ease;
 }
 .btn.btn-info {
-    background-color: #BCD4FF;
+    background-color: #7D9EDC;
+    /*background-color: #BCD4FF;*/
     border: none;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
@@ -2585,7 +2588,8 @@ p { text-align: left }
 .btn.btn-info:hover,
 .btn.btn-info:active,
 .btn.btn-info.hover {
-    background-color: #7D9EDC;
+    background-color: #BCD4FF;
+    /*background-color: #7D9EDC;*/
     border: none;
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
