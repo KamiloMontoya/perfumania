@@ -5,8 +5,8 @@ Author: cosmic
 Website:
 */
 body {
-    color: #797979;
-    /*color: #0A0909;*/
+   /* color: #797979;*/
+    color: #0A0909;
     font-family: 'Lato', sans-serif;
     /*font-family: 'Open Sans', sans-serif;*/
     padding: 0px !important;
@@ -22,6 +22,8 @@ body {
 
     /*background-image: url(http://www.solprof.com/sites/default/files/fondo-01.jpg);*/
     background-image: url(http://mgcrespo.neocities.org/wallpapers5.png);
+    background-size: 100% auto;
+    background-attachment: fixed;
    
 }
 a,
