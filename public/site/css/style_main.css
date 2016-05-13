@@ -21,10 +21,10 @@ body {
     /*background: linear-gradient(#C5C0C0, #F4F1F1); *//* Standard syntax */
 
    /* background-image: url(http://www.brewsterwallcovering.com/data/default/images/catalog/original/412-21977.jpg);*/
-   background-image: url(http://www.interiordesignerideas.co.za/images/bg-white-wood01.jpg);
+    background-image: url(http://www.interiordesignerideas.co.za/images/bg-white-wood01.jpg);
    
     background-size: 100% auto;
-    background-attachment: fixed;
+   /* background-attachment: fixed;*/
    
 }
 a,
