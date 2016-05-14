@@ -21,12 +21,12 @@ body {
     /*background: linear-gradient(#C5C0C0, #F4F1F1); *//* Standard syntax */
 
    /* background-image: url(http://www.brewsterwallcovering.com/data/default/images/catalog/original/412-21977.jpg);*/
-    background-image: url(http://www.interiordesignerideas.co.za/images/bg-white-wood01.jpg);
-   
+    background-image: url(/site/img/bg-white-wood01.jpg);
     background-size: 100% auto;
    /* background-attachment: fixed;*/
    
 }
+
 a,
 a:hover,
 a:focus {
@@ -830,13 +830,13 @@ ul.about-flex-slides { margin-left: 0 }
 }
 .contact-form { margin-bottom: 20px }
 .address h4 {
-    color: #797979;
+    color: #2F2F2F;
     margin-top: -3px;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 section.contact-infos {
-    border: 1px solid #eee;
+    border: 2px solid #eee;
     margin-bottom: 15px;
     padding: 10px;
 }

@@ -36,35 +36,36 @@
     </div>
     <div class="row">
 
-    <div class="col-lg-5 col-sm-5  col-md-5 ">
-        <div class="candidate wow fadeInLeft">
-            <ul id="list" class="list-unstyled">
-                <% @products.each do |product| %>
-                <li style="cursor:pointer;" onclick="update_poduct_info(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
-                <% end %>
-            </ul>
-            <%= paginate @products, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
+      <div class="col-lg-5 col-sm-5  col-md-5 ">
+          <div class="candidate wow fadeInLeft">
+              <ul id="list" class="list-unstyled">
+                  <% @products.each do |product| %>
+                  <li style="cursor:pointer;" onclick="update_poduct_info(<%= product.id %>);"><i class="fa fa-angle-right pr-10"></i> <a><%= product.name %> </a></li>
+                  <% end %>
+              </ul>
+              <%= paginate @products, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination-small pagination-centered" %>
 
-        </div>    
-    </div>
-    <div class="col-lg-3 col-sm-3 col-md-3">
-        <div class="candidate wow fadeInRight">
-            <div id="img-product">
-                <% if @products.first %>
-                <%= image_tag(@products.first.image.url(:medium),  style: "width: 100%") %>
-                <% end %>
-            </div>
-        </div>     
-    </div>
-    <div class="col-lg-4  col-sm-4 col-md-4">
-        <div class="candidate wow fadeInRight">
-            <% if @products.first %>
-            <h1 id="name-product"><%= @products.first.name %></h1>
-            <div id="desc-product">  
-                <p><%= @products.first.description %></p>  
-             </div> 
-             <% end %> 
-        </div>     
+          </div>    
+      </div>
+      <div class="col-lg-3 col-sm-3 col-md-3">
+          <div class="candidate wow fadeInRight">
+              <div id="img-product">
+                  <% if @products.first %>
+                  <%= image_tag(@products.first.image.url(:medium),  style: "width: 100%") %>
+                  <% end %>
+              </div>
+          </div>     
+      </div>
+      <div class="col-lg-4  col-sm-4 col-md-4">
+          <div class="candidate wow fadeInRight">
+              <% if @products.first %>
+              <h1 id="name-product"><%= @products.first.name %></h1>
+              <div id="desc-product">  
+                  <p><%= @products.first.description %></p>  
+               </div> 
+               <% end %> 
+          </div>     
+      </div>
     </div>
   </div>
 <!-- </div> -->
@@ -72,8 +73,9 @@
 <hr>
 
 <!-- Baner Fragancias -->
-<div class="bg-lg">
-  <div class="container">
+
+<div class="container-fluid">
+  <div class="bg-lg">
       <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 recent">
               <h3>Productos relacionados</h3>
@@ -93,7 +95,7 @@
   </div>
 </div>
 <br>
-</div>
+
 
 <!-- 
 <script src="/site/js/jquery.js"></script>  
